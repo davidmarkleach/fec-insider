@@ -152,7 +152,7 @@ def curate_with_claude(raw_articles: list[dict]) -> list[dict]:
     )
 
     msg = client.messages.create(
-        model="claude-sonnet-4-20250514",
+        model="claude-sonnet-4-6",
         max_tokens=8000,
         messages=[
             {
