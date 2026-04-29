@@ -19,6 +19,7 @@ import anthropic
 import feedparser
 import requests
 from bs4 import BeautifulSoup
+from googlenewsdecoder import gnewsdecoder
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 TEMPLATE_PATH = SCRIPT_DIR / "template.html"
@@ -69,15 +70,26 @@ HEADERS = {
 
 
 def resolve_google_news_url(url: str) -> str:
-    """Follow Google News redirect URLs to get the real article link."""
+    """Decode Google News redirect URLs to get the real article link.
+
+    Google News RSS links use a base64-encoded payload that maps to the real
+    article URL. Plain HTTP redirects don't work because Google News issues a
+    JavaScript-based redirect; we use the `googlenewsdecoder` package which
+    decodes the payload directly via Google's internal API.
+
+    Falls back to the original URL on any failure.
+    """
     if "news.google.com" not in url:
         return url
     try:
-        resp = requests.head(url, headers=HEADERS, timeout=10, allow_redirects=True)
-        if resp.url and "news.google.com" not in resp.url:
-            return resp.url
-    except Exception:
-        pass
+        result = gnewsdecoder(url, interval=1)
+        if isinstance(result, dict) and result.get("status") and result.get("decoded_url"):
+            decoded = result["decoded_url"]
+            if "news.google.com" not in decoded:
+                return decoded
+        print(f"  [warn] could not decode Google News URL: {url[:80]}...", file=sys.stderr)
+    except Exception as exc:
+        print(f"  [warn] error decoding Google News URL: {exc}", file=sys.stderr)
     return url
 
 
