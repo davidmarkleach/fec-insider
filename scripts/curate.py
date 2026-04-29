@@ -68,6 +68,19 @@ HEADERS = {
 }
 
 
+def resolve_google_news_url(url: str) -> str:
+    """Follow Google News redirect URLs to get the real article link."""
+    if "news.google.com" not in url:
+        return url
+    try:
+        resp = requests.head(url, headers=HEADERS, timeout=10, allow_redirects=True)
+        if resp.url and "news.google.com" not in resp.url:
+            return resp.url
+    except Exception:
+        pass
+    return url
+
+
 def fetch_feeds() -> list[dict]:
     """Pull articles from all RSS feeds, return de-duped list."""
     seen_titles = set()
@@ -87,7 +100,7 @@ def fetch_feeds() -> list[dict]:
                 continue
             seen_titles.add(title.lower())
 
-            link = entry.get("link", "")
+            link = resolve_google_news_url(entry.get("link", ""))
             summary = entry.get("summary") or entry.get("description") or ""
             summary = BeautifulSoup(summary, "html.parser").get_text(" ", strip=True)
             source = feed.feed.get("title", "")
@@ -111,28 +124,32 @@ Family Entertainment Center industry (bowling, arcades, trampoline parks,
 laser tag, go-karts, mini golf, escape rooms, VR attractions, etc.).
 
 I will give you a batch of raw article headlines and snippets scraped from
-industry RSS feeds and Google News.  Your job:
+industry RSS feeds and Google News.  Each article has an `idx` number.
+
+Your job:
 
 1. **Select the 25-30 most relevant and interesting articles** for FEC
    operators, suppliers, and investors. Discard anything off-topic.
    If fewer than 25 articles are relevant, that's fine — quality over quantity.
 2. For each selected article, produce:
+   - `idx` — the original article index number (REQUIRED — this is how we
+     look up the real URL, so it must match exactly)
    - `title`  — a crisp, informative headline (rewrite if the original is clickbait)
    - `summary` — 2-3 sentence plain-text summary written for an FEC industry
      audience.  Focus on *why it matters* for FEC operators.  No markdown.
-   - `url` — the original article URL (keep it unchanged)
    - `source` — short source name (e.g. "Blooloop", "IAAPA", "Workforce.com")
    - `categoryId` — one of: attractions, tech, business, ops, design
 3. Spread articles roughly evenly across the five categories when possible.
 4. Order articles so the most impactful / newsworthy come first.
 
 Return **only** a JSON array.  No markdown fences, no commentary.
+Do NOT include a "url" field — we will fill it in from the original data using `idx`.
 
 Example element:
 {
+  "idx": 3,
   "title": "Round1 Opens Third New Jersey Location",
   "summary": "The Japanese FEC giant opened a new venue at Menlo Park Mall…",
-  "url": "https://example.com/article",
   "source": "InterGame",
   "categoryId": "business"
 }
@@ -144,12 +161,17 @@ RAW ARTICLES:
 
 
 def curate_with_claude(raw_articles: list[dict]) -> list[dict]:
-    """Send raw articles to Claude and get back curated JSON."""
+    """Send raw articles to Claude and get back curated JSON.
+
+    Articles are numbered so Claude references them by index. We then
+    replace/fill the URL from the original feed data — never trusting
+    the LLM to copy URLs verbatim.
+    """
     client = anthropic.Anthropic()
 
     raw_block = "\n\n".join(
-        f"TITLE: {a['title']}\nURL: {a['url']}\nSOURCE: {a['source']}\nSNIPPET: {a['raw_summary']}"
-        for a in raw_articles
+        f"[{i}] TITLE: {a['title']}\nSOURCE: {a['source']}\nSNIPPET: {a['raw_summary']}"
+        for i, a in enumerate(raw_articles)
     )
 
     msg = client.messages.create(
@@ -164,23 +186,43 @@ def curate_with_claude(raw_articles: list[dict]) -> list[dict]:
     )
 
     text = msg.content[0].text.strip()
-    # Strip markdown fences if the model added any
     text = re.sub(r"^```(?:json)?\s*", "", text)
     text = re.sub(r"\s*```$", "", text)
 
     articles = json.loads(text)
     print(f"Claude selected {len(articles)} articles.")
+
+    for a in articles:
+        idx = a.pop("idx", None)
+        if idx is not None and 0 <= idx < len(raw_articles):
+            a["url"] = raw_articles[idx]["url"]
+        else:
+            a.setdefault("url", "")
+            print(f"  [warn] article '{a.get('title','')}' missing valid idx, url may be wrong", file=sys.stderr)
+
     return articles
 
 
 def enrich_articles(articles: list[dict]) -> list[dict]:
-    """Add category metadata (label, icon, color) to each article."""
+    """Add category metadata and validate/resolve URLs."""
+    from urllib.parse import urlparse
+
     for a in articles:
         cat_id = a.get("categoryId", "business")
         meta = CATEGORY_META.get(cat_id, CATEGORY_META["business"])
         a["categoryLabel"] = meta["label"]
         a["categoryIcon"] = meta["icon"]
         a["categoryColor"] = meta["color"]
+
+        url = (a.get("url") or "").strip()
+        if url:
+            url = resolve_google_news_url(url)
+            a["url"] = url
+
+            parsed = urlparse(url)
+            if parsed.path in ("", "/") and not parsed.query:
+                print(f"  [warn] bare-domain URL for '{a.get('title','')}': {url}", file=sys.stderr)
+
     return articles
 
 
