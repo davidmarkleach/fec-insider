@@ -396,6 +396,7 @@ function init(){
   document.body.style.margin="0";
   document.body.style.padding="0";
   document.body.style.minHeight="100vh";
+  document.body.style.visibility="visible";
   injectStyles();
   buildPage();
   loadArticles();
