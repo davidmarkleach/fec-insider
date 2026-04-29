@@ -1,63 +1,273 @@
 {
-  "generated": "2026-04-29T12:36:52.041269+00:00",
-  "count": 6,
+  "generated": "2026-04-29T12:55:17.611456+00:00",
+  "count": 27,
   "articles": [
     {
-      "title": "Round1 Opens Third New Jersey Location",
-      "summary": "The Japanese FEC giant opened a new venue at Menlo Park Mall, featuring bowling, arcade games, and karaoke. This expansion signals continued growth in the US market for entertainment-focused concepts.",
-      "url": "https://blooloop.com",
-      "source": "Blooloop",
-      "categoryId": "business",
-      "categoryLabel": "Business & Growth",
-      "categoryIcon": "📊",
-      "categoryColor": "#10B981"
-    },
-    {
-      "title": "AI-Powered Dynamic Pricing Boosts FEC Revenue by 22%",
-      "summary": "A new study shows that FECs using AI-driven dynamic pricing see an average revenue increase of 22%. The technology adjusts attraction prices based on demand, time of day, and seasonal patterns.",
-      "url": "https://blooloop.com",
-      "source": "Blooloop",
-      "categoryId": "tech",
-      "categoryLabel": "Technology",
-      "categoryIcon": "⚙️",
-      "categoryColor": "#3B82F6"
-    },
-    {
-      "title": "New VR Attraction Combines Physical and Digital Play",
-      "summary": "A startup has launched a hybrid VR experience that combines physical obstacle courses with immersive digital environments, creating a new category of attractions for family entertainment centers.",
-      "url": "https://blooloop.com",
-      "source": "InterGame",
-      "categoryId": "attractions",
-      "categoryLabel": "Attractions & Experiences",
-      "categoryIcon": "🎢",
-      "categoryColor": "#FF6B35"
-    },
-    {
-      "title": "IAAPA Releases 2026 Safety Guidelines Update",
-      "summary": "The International Association of Amusement Parks and Attractions has released updated safety guidelines for indoor entertainment centers, with new standards for trampolines, climbing walls, and go-karts.",
-      "url": "https://blooloop.com",
-      "source": "IAAPA",
+      "title": "Urban Air Trampoline Park to Pay $300K Settlement After 6-Year-Old's Go-Kart Death",
+      "summary": "Urban Air Adventure Park in Port St. Lucie, Florida has agreed to a $300,000 settlement following an investigation into a crash that killed a 6-year-old child at the facility. The case puts a sharp spotlight on safety protocols for go-kart and high-energy attractions within FEC environments. Operators should review their ride safety procedures, age and height restrictions, and liability coverage in light of this high-profile settlement.",
+      "source": "WPTV",
       "categoryId": "ops",
+      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQSS0tM1o4VEszLVA3SDBDS01kUnVlaFF5bzdqeEpMSnFVX25TVjRxQldzSVlYTW9wZ3dmbTJFMTQxZWxydE1lMFdWX3lZY0htZ0pMdmxlZ1BDX20wOHBrVWJDcGhoa0I4WjVvcTRBQkxtQW5oSGQ3OHVDNVNFbm1CTEJ3XzVMTWtaVDdmbC1VZE1jVEhZUDhxaGJYZTRjdXp1WGpfOUVxRGNUeUo0aGJWeExpd1U5eVNNLWRpR0xuSWt1Rks2bnZRakp6RTBpUEtUcHFFdA?oc=5",
       "categoryLabel": "Operations & Safety",
       "categoryIcon": "🛡️",
       "categoryColor": "#F59E0B"
     },
     {
-      "title": "Retro Arcade Aesthetic Drives Gen Z Foot Traffic",
-      "summary": "FECs embracing retro neon aesthetics and classic arcade games are seeing a 35% increase in Gen Z visitors. The nostalgic design trend combines well with modern social media sharing.",
-      "url": "https://blooloop.com",
-      "source": "Amusement Today",
+      "title": "Florida Settles with Family of 6-Year-Old Killed in Go-Kart Crash at FEC",
+      "summary": "A settlement has been reached between the state of Florida and the family of a 6-year-old killed in a go-kart crash at an indoor entertainment center. The case underscores the critical importance of rigorous safety standards, staff training, and proper rider screening at FEC go-kart attractions. FEC operators should treat this as a prompt to audit their own ride safety policies and insurance coverage.",
+      "source": "WIOD",
+      "categoryId": "ops",
+      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQUjhFYWR1OXMwTVdUeEdrRFBMSEE1VWVlU1VFX1RvcVhLeW9OdkdLSmQ4X2lSQW9sYUxDSnYxQUZCS0Q3TmdEZjFoNl9qQ20tUVZwa3hsa1lpZW9yVnJNOG5aNHRHeC1rdjRDNG8wVGoyZVJoUUdZa0I4djRucGZ1S1lkYnVZLVVLdFl1aVZRbkNtOTR6X2JDb2pQZ2REMFVmeTBfYmtMMDE0dmw2TlJDYUtCQmZxZWhwYU8wUWhBc3RQb0dMS3pEUllkTnJpTmprU2Rn0gG-AUFVX3lxTE5OUjBaZUFOTzdKRDRrelM3S3dHbVdwM1dVSnZCZE9Xa3ktV2N2emNlc3BMdDFmZWhDQklJcms4V0p0S1VDclhfUTRvRkdMYWZoTGdSRFB4ak1pNmFObEdTUXptdDh3c1Z5UkhqVFYyZFBqX0s3MUM2N2E3VUxEMnpibnZKc3FrN2wyLU1iUUJoWEVPdTBFbFBuYkxaYXJnM0VuRVJqaW12Q0lFZ1FTM1pTMVg3bVR3S1VwU2NsNmc?oc=5",
+      "categoryLabel": "Operations & Safety",
+      "categoryIcon": "🛡️",
+      "categoryColor": "#F59E0B"
+    },
+    {
+      "title": "North America Family & Indoor Entertainment Centers Market Projected Through 2032",
+      "summary": "A new market research report covers the North American family and indoor entertainment center sector from 2023 to 2032, offering projections on growth trends, investment patterns, and competitive dynamics. The report is a key resource for FEC operators and investors planning capital expenditures or expansions. Understanding long-range market trajectories can help operators make more informed decisions around new attractions and venue development.",
+      "source": "openPR.com",
+      "categoryId": "business",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQS1JRSDN4MVBWWU9XYV9URGtDNTZWTDlOak1KWVJESmhpcE1sOFVsRW04WjZva2ZydFJ2N1g0S1NkTnJ4bHJFSWRTbjRvUW5ucDJ1QzZ0Rm9jSE5xWFJKa0dXV1RRQU5meVhKTFk0S1NpVUdYVVBZWExfWmhQUklWZW9kVTJkUmNjaTNzV3RaclhPdzY3R21F?oc=5",
+      "categoryLabel": "Business & Growth",
+      "categoryIcon": "📊",
+      "categoryColor": "#10B981"
+    },
+    {
+      "title": "$50M Entertainment Complex Planned for Downtown Clearwater by Dallas Group",
+      "summary": "A Dallas-based entertainment group has announced plans for a $50 million multi-concept entertainment destination in downtown Clearwater, Florida, which will reportedly feature the world's largest movie theater screen among other attractions. The project reflects the continued trend of large-format, mixed-use entertainment destinations entering urban markets. FEC operators and developers should note the scale and concept mix as a benchmark for next-generation entertainment venues.",
+      "source": "The Business Journals",
+      "categoryId": "business",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNUV9DLWdtZXNpc2xWUE5McHROdkt0bjhiaTZoV25RUE82UTRpU2UtTEcxTnozNm11clhqdjk1QU1tMmtuMW4ydWhnaFktTjY3UVc0T3NKN3E0dlkyQ2FkVUJfUHBFZkVLQS1LM3Y1clFUTDRuUWY3UlRzdllyOS03ZVNYT1A2VTFQUGlsMHBpU3dYVUR0dGsxSlJCZw?oc=5",
+      "categoryLabel": "Business & Growth",
+      "categoryIcon": "📊",
+      "categoryColor": "#10B981"
+    },
+    {
+      "title": "World's Largest Movie Theater Screen Anchors New $50M Clearwater Entertainment Destination",
+      "summary": "A planned $50 million entertainment complex in downtown Clearwater, Florida will feature what is being billed as the world's largest movie theater screen, along with other entertainment concepts. The development highlights the growing appeal of landmark, experience-driven entertainment anchors in mixed-use destinations. For FEC operators, the project illustrates how bold headline attractions can differentiate a venue and drive destination traffic.",
+      "source": "Attractions Magazine",
+      "categoryId": "attractions",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNREpNYkNEeDZjT2tMQVdHWFZoOHZJY2ViOVBrSEJyVk5pT3pXbmR1Y2R6QjFKWGY3SWMwa3V6RFBReHdtNzloaWRHaUVkTWktQWJsLU1rV2FOSzd2MHJZWjJvbDZ2cTllRzBZVGxVbkRPTzViM20xcm5ZWE5hcjk4WkE5Ym9Ndmx6aGtLNQ?oc=5",
+      "categoryLabel": "Attractions & Experiences",
+      "categoryIcon": "🎢",
+      "categoryColor": "#FF6B35"
+    },
+    {
+      "title": "Adventure Parks Fill Vacant Retail Storefronts as Mall Conversion Trend Accelerates",
+      "summary": "Adventure and indoor entertainment parks are increasingly moving into closed retail spaces as mall landlords seek experiential tenants to replace departing stores. This trend presents significant real estate opportunities for FEC operators looking for affordable, high-footfall locations with existing infrastructure. The article explores how several operators have successfully converted former anchor stores into thriving indoor entertainment venues.",
+      "source": "Jacksonville Daily Record",
+      "categoryId": "business",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOdkxUclIxOHZ4dlMxb2VFaVF5aHpYUFM2SjhHUjlsWnFlZzM1ZHRVVjZIVkNBcmw2UTVrdXM1OGFIeldIY183dS0ySzluT1ViV3Z5b3RBY3JZNEdwWjYxVk1JOU1yM3FkYlBNZTY4TnNFak9tVEhCczBmcFZyWG1pVDRnbHRZT25jUjlaWFZIOG1LTjBXR0p1TGUwcHFRRzJk?oc=5",
+      "categoryLabel": "Business & Growth",
+      "categoryIcon": "📊",
+      "categoryColor": "#10B981"
+    },
+    {
+      "title": "Manteca, California to Get Second Bowling and Family Fun Center",
+      "summary": "Plans are moving forward for a second bowling alley and family fun center in Manteca, California, signaling continued consumer demand for FEC concepts in suburban markets. The project adds to the growing pipeline of new FEC openings across the country. Operators in similar mid-sized markets may see this as a signal of healthy demand for diversified entertainment offerings.",
+      "source": "Manteca Bulletin",
+      "categoryId": "business",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQc3MwSWFZWlpxQjYyc19ScFc2enRtLUNtRGJuNGQ2WGRMNzVvSnlZYjI2aDhheU42QnYyZi1tWnBNOVljS2FyajNMZi1KemVGRVp4LVJvRTJvS0tIdFFrSHpuNzhEelBOVEFIUGVWNlZRQW1mbWV5eXpKd0NkNWxpeGVnT2FCdUI5M3hVMmdOYktKeW5Mb2x3RG1JbVJNZU5UQXVTY1c4akFINnZfWjZrTDFtNU5kdw?oc=5",
+      "categoryLabel": "Business & Growth",
+      "categoryIcon": "📊",
+      "categoryColor": "#10B981"
+    },
+    {
+      "title": "ThunderZone Family Entertainment Center Sets Opening Date",
+      "summary": "ThunderZone Family Entertainment Center has announced its official opening date, adding a new player to the FEC landscape. The opening represents another data point in the ongoing expansion of the FEC sector across regional markets. Competitors and suppliers in the area should take note of the new venue's planned attraction mix and pricing strategy.",
+      "source": "The City Menus",
+      "categoryId": "business",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOUmF4T0lFYUxBRDR0cTFJSWFjYTVSWlV3LVlQUi1WNkdjdF9xdDJaeU16YWhHbzNSSDhEV3BxVXJPT183MnptcUJXLUNIZ3pKWERVNUp1YXp1TTkxSFpvNVp1cGtMbmk1VVJhTWVVaTJQMXRuTkVhSTRPaTdnNThkR3h6YTBoUHRWWVAxVkZRUWdEVEdBaEZYd0RDamdiSTRw?oc=5",
+      "categoryLabel": "Business & Growth",
+      "categoryIcon": "📊",
+      "categoryColor": "#10B981"
+    },
+    {
+      "title": "Chuck E. Cheese Named One of USA Today's Most Trusted Brands by Parents",
+      "summary": "Chuck E. Cheese has earned a spot on USA Today's list of most trusted brands among parents, a notable recognition for the iconic family entertainment brand. The distinction highlights the importance of brand trust and safety perception in driving repeat visits among families with young children. For competing FEC operators, this underscores the value of investing in brand reputation and transparent safety communication.",
+      "source": "The Manila Times",
+      "categoryId": "business",
+      "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPVWJLX0wxRmNfYlY3dEdYVERuWGV0bDYySDNYZUtHYm02VGl2cGdSb0hIV3J6eU1WdHVZQlh2RFlreFdac1BfaHFkLUw2Zm0yX3JtTFJmTGpkRG1uejRZX0JYak92MW5rNWV1Z2w4UmNnNlhwaG5FMkJoZjkzajFDYzIxX2lPVjJCTlBUTjE0SHFSc0NYLUdQTFhTYkhUZ1ZtMmw4VnNFemZEUm5lMVBKLWY4SVRxQUQ3NlJkbmFzbFpOSGtkOTZnZDYzeVhtMGk0RUlnSVRmZEswTXfSAeABQVVfeXFMTlUzY09KN3BTcDNyMDVlaGxSOURjbFpKV2t3dFNfRzdRejRCTENMVkY3SnF3ZFYxc2h5enRWZmpLX3czVEdXY0hJTG1vZGFZM3hKR2ZzanNKcmU3Y1EtT1J2eThUU2RaRDUza2prNWY3MDdjem0zbGpoUWZmZWhybEJxZE5Hb1FlbW9zQWFhRDdvZ29KQ0RqRjJJMGNwOXRzOHJuUVhFWmMzR3U3UXBDU2xLLU5LQXc2S210ZlMta0EtaVV3M3F0bzdQLW96TC1XSFFIUHlLdkdTdFJGamJleWQ?oc=5",
+      "categoryLabel": "Business & Growth",
+      "categoryIcon": "📊",
+      "categoryColor": "#10B981"
+    },
+    {
+      "title": "Scientology-Linked Group Behind $50M Clearwater Entertainment Destination Plan",
+      "summary": "A $50 million entertainment destination proposed for downtown Clearwater, Florida has drawn attention due to its reported ties to the Church of Scientology. The project has generated local debate, and the controversy may complicate permitting and community relations for the development. FEC industry observers are watching to see how the project navigates public scrutiny and whether the entertainment concepts proceed as announced.",
+      "source": "wtsp.com",
+      "categoryId": "business",
+      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOcTNSWWY3UE5QNjRQZUdFc2FaNEtzT0lFdmZQS3RtRkZ1OVZEVWt2V1NuNmF0S00tWEFrdjd5cGE1T1MtNXdubE5SZnp0TFhhZnB2UVItTHJmb0psdWxKREU5OVFuRDdUa1dzZDBUcU9EbVJGR2xwcXUtMEthT3RIZTk5dkhQVTdHcFBNdVNJOVVGN3BST1RrdHF0ZFNZV25rNThldnYxM29hQVZQdFQ2NlFFcGtnUV8wZkZRcUdFN0xPTGpMdWJld1Z2czJYTlVS?oc=5",
+      "categoryLabel": "Business & Growth",
+      "categoryIcon": "📊",
+      "categoryColor": "#10B981"
+    },
+    {
+      "title": "Kidtopia Indoor Playground with Obstacle Courses and Climbing Coming to Dublin, California",
+      "summary": "Kidtopia is set to open a new indoor playground in Dublin, California, featuring obstacle courses, indoor climbing structures, and active play areas. The concept targets a growing demand for structured active play environments for children in suburban communities. The opening adds to the expanding market of soft-play and active entertainment venues competing within the broader FEC space.",
+      "source": "Patch",
+      "categoryId": "attractions",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPOUhMT1h3S1gwcmhhSVlPMFpMRUlaWUpQZHpOdjdpRVp6ZXpUUTR0a3l5b3B3c1B2Mm83YklLc1dQdHRKWFpvYURNR2VBcDhIZ2Z5UlBnb3E4RmFiWm1OUTE0SGQ5Z2JxTDlUME1XWS1TTXFBbmV2Mkg0VWgzXzdnZVNGV2tRZFhjVldsS29JTkxUU1ZyMzR5RVI3eDZZMVo3ZU01aDVwelMtQdIBzwFBVV95cUxNdktaNG9UaWxYbUVfNzNxS21MdjNtWFYtR0JJZk96aWtpakdXaHVFUUt1NmtJelJVSjQ5Q0oyM1JibU9mS210WXd3M2diODdfY1BlQ1l6Z3VkaFZqNWxYcW16LXBfSEtwdnlvbTctR1doWUx5Nm5zaEs2ZXI1SXJZQmZ6ejFHNGtFZjAzVGJjMWJJZGVHODFBZ3BGY0w4UnBWbHFsZmxkRUlqMjNyaWFWQU1JaXFtSzVlcVYwWGxUSThqVHZxZjhUdlJCV2JZNlU?oc=5",
+      "categoryLabel": "Attractions & Experiences",
+      "categoryIcon": "🎢",
+      "categoryColor": "#FF6B35"
+    },
+    {
+      "title": "iSmash Rage Room Concept Opens in Rapid City, South Dakota",
+      "summary": "iSmash, a destruction and rage room entertainment concept, is opening a new location in Rapid City, South Dakota in May. The format, which allows guests to smash objects in a controlled environment, continues to grow as an alternative FEC attraction drawing curious first-time visitors. Operators looking to add novelty experiences to their mix may find the rage room format a low-barrier, high-engagement option.",
+      "source": "KOTA Territory News",
+      "categoryId": "attractions",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFB0VzBGNURqcnJYdzU5WEVnblAzTzd5eXQwNThLcGJYOWxGX0RiZG4wTzJ3NXRnR2VQX3M1azN0SDgzRDZoUHhhQUhKX21fTFRjam1TTDVGM2I4cE5JT04xbXlveUFQRFVIMHpfT0hvc0vSAYQBQVVfeXFMTmVXNFVMR0Q1eFp5bzBIenVITVNBckU0blVBc2N6OW1ZSWI2XzNUS1M0Z0FlZk15SXVxNjI2QllsaTc3QkM5MHNuUUhKSU5GN05McGlqenJFenZXUmtFNG1kYXJwbzFnTG1tR2ZUVzhSd0VuZm12TXhoQnFEWGo0bW1rc2oy?oc=5",
+      "categoryLabel": "Attractions & Experiences",
+      "categoryIcon": "🎢",
+      "categoryColor": "#FF6B35"
+    },
+    {
+      "title": "New Rage Room 'Breaking Point' Set to Open in Kitimat, British Columbia",
+      "summary": "A new rage room concept called Breaking Point is set to open in Kitimat, B.C., continuing the expansion of destruction-based entertainment into smaller Canadian markets. The format requires minimal square footage and relatively low startup costs, making it accessible for independent FEC entrepreneurs. The trend reflects broader consumer interest in stress-relief and experiential novelty attractions.",
+      "source": "Terrace Standard",
+      "categoryId": "attractions",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPZnNtMGcxMWs4OGI1RjdNTjEwZkFmc1lxWnBVMEJMSmh0TEN4bzBzRE5tbFUyM0w4cDFnTlFvMVctdXpLQUhVYUYxdUFfa0lmckpMYlN3ZVNCMGp5ODlEa1NRbGpEQm5BRlZZYXpWOE41RmppSTdzU1NVOVRnWXNoQlFwUTlBUXFTZEZjalZ4V2w?oc=5",
+      "categoryLabel": "Attractions & Experiences",
+      "categoryIcon": "🎢",
+      "categoryColor": "#FF6B35"
+    },
+    {
+      "title": "Bengaluru Entertainment Venue Relaunches as Next-Gen Sports Bar and Arcade Hybrid",
+      "summary": "Amoeba in Bengaluru, India has relaunched as a next-generation sports bar combining entertainment and social gaming elements in a refreshed format. The repositioning reflects a global trend of FEC operators blending bar and lounge hospitality with interactive entertainment to attract adult audiences. Operators considering F&B-forward rebrands may find the concept a useful case study in hybrid venue design.",
+      "source": "Passionate In Marketing",
       "categoryId": "design",
+      "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxOSW9pcUxGZTJxbUxQd1VHZUI2bWY2YWlYUUlFMDNiVGU5TnplOUxVa1F2UUdiUGRCZUI4NE8wSnFET2ZkbzJoQ212elBRcmFhUVNObllPb29PLU1Ca000bjZfdWU2LS1xLUgxMkZ6Y1FRSHNNSm5pVmt6REx3eERmbTEtZHhGTzlVMmRIQUk0WktSVzVSbndlN1BqUlpoa2MzZXZybmx5RVlDaldGNDAzUkRYZmozUUw4S3pXNkdkdkpoS2RXM3JOMGY3c3R1M0F4R25jbk5QYllWQmU4MmdDUjh2U3lsOGRraExSUQ?oc=5",
       "categoryLabel": "Design & Trends",
       "categoryIcon": "🎨",
       "categoryColor": "#EC4899"
     },
     {
-      "title": "Indoor Go-Kart Market to Reach $2.8B by 2028",
-      "summary": "Market analysts project the indoor go-kart industry will grow to $2.8 billion by 2028, driven by electric kart adoption and increased demand for premium racing experiences.",
-      "url": "https://blooloop.com",
-      "source": "Market Research",
+      "title": "Chinese Playground Equipment Manufacturer Eyes African Market Expansion",
+      "summary": "A Chinese indoor playground manufacturer is actively targeting the African market, citing rising demand for structured children's entertainment infrastructure on the continent. The move signals a broader global expansion of FEC-style attractions into emerging markets. Equipment suppliers and international FEC developers should monitor this trend as it may reshape sourcing dynamics and competitive pricing globally.",
+      "source": "Vanguard News",
+      "categoryId": "attractions",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOX3FpeG00V2luNjJwX2hRcnhKamwyMS1jYnEtTUxkNFVaUjQyWlVtN1d3ZGVvcU5PdUpaSlJTSUpaRWRDRFl1WnF4YkdrT0JBdk1SS1NFTlJCd19NQ1dHdUFuRHNRS0ItQ1VKakg4RjV6R0pvUWRObW1DVXVPSzFHRHlFanhld2xMSkR3cTdqRTFNY0tMUVJQTUpnd3VZLTZmOGJ2TDRzRXk1ZmvSAbABQVVfeXFMT0JHSGh4V1M3ZFgyUE9zNW9KQ2JYdkRNd2YtUV9hcDhSNTA0MEV1c0I2MVh0YjdzRWhCckJVa3lWZnJTX3VOZE8xSVZ1R1BjdkRfT3lqYXRCZ2JNazg4T255R0xOdGpJaE84UGJXM215TS1hNjdFLVM4RjJJVGJITk1SbVFsOW9uel9FQ2I3YVRxWnJYcE1hRGFjMEFOQ2U0VzNYYjNtMUdjSU5LU3JoU3Y?oc=5",
+      "categoryLabel": "Attractions & Experiences",
+      "categoryIcon": "🎢",
+      "categoryColor": "#FF6B35"
+    },
+    {
+      "title": "Carowinds Names Bridgette Bywater as New Park President",
+      "summary": "Carowinds amusement park in Charlotte, North Carolina has appointed Bridgette Bywater as its new park president, bringing 36 years of amusement industry experience to the role. Her background in operational excellence and safety leadership positions the park for continued performance improvements. Leadership changes at major regional parks often signal shifts in operational priorities and investment focus that can influence broader industry trends.",
+      "source": "Amusement Today",
+      "categoryId": "ops",
+      "url": "https://amusementtoday.com/2026/04/carowinds-names-bridgette-bywater-new-park-president/",
+      "categoryLabel": "Operations & Safety",
+      "categoryIcon": "🛡️",
+      "categoryColor": "#F59E0B"
+    },
+    {
+      "title": "Six Flags Great Adventure's New Shoreline Pier Takes Shape Ahead of Season Opening",
+      "summary": "Construction of Six Flags Great Adventure's revamped Shoreline Pier zone in Jackson, New Jersey is progressing rapidly, with the new spinning attraction Barrels O' Fun now visible above ground. The major area reinvestment is part of a broader push to refresh the park experience and draw repeat visitors. FEC and amusement park operators can look to this project as an example of how reimagining existing zones can reinvigorate guest interest.",
+      "source": "Amusement Today",
+      "categoryId": "design",
+      "url": "https://amusementtoday.com/2026/04/six-flags-great-adventures-shoreline-pier-continues-to-rise/",
+      "categoryLabel": "Design & Trends",
+      "categoryIcon": "🎨",
+      "categoryColor": "#EC4899"
+    },
+    {
+      "title": "Hurricane Harbor Arlington Reopens May 16 with Fast Lane Program and Upgraded Attractions",
+      "summary": "Six Flags Hurricane Harbor Arlington will kick off its 2026 season on May 16, introducing a new Fast Lane skip-the-line program alongside park-wide attraction upgrades. The addition of a premium queuing product alongside capital improvements reflects a dual strategy of enhancing guest experience and driving per-capita revenue. FEC and waterpark operators should note how tiered access programs can meaningfully lift yield during peak periods.",
+      "source": "Amusement Today",
+      "categoryId": "ops",
+      "url": "https://amusementtoday.com/2026/04/hurricane-harbor-arlington-makes-a-splash-with-may-16-season-opening/",
+      "categoryLabel": "Operations & Safety",
+      "categoryIcon": "🛡️",
+      "categoryColor": "#F59E0B"
+    },
+    {
+      "title": "Aquatica Orlando Expands AquaGlow Nighttime Event for Third Season",
+      "summary": "Aquatica Orlando's AquaGlow nighttime event returns for its third year with all-new neon-themed slide experiences and enhanced entertainment programming running select nights through September. The event demonstrates how waterparks and FECs can extend operating hours and generate incremental revenue through ticketed after-dark events. Operators looking to boost shoulder-period attendance should consider how themed evening events can create urgency and add a premium experience layer.",
+      "source": "Amusement Today",
+      "categoryId": "ops",
+      "url": "https://amusementtoday.com/2026/04/aquatica-orlandos-aquaglow-returns-with-all-new-nighttime-slide-experiences-and-electrifying-entertainment/",
+      "categoryLabel": "Operations & Safety",
+      "categoryIcon": "🛡️",
+      "categoryColor": "#F59E0B"
+    },
+    {
+      "title": "PortAventura World and Hard Rock Cafe Partner to Open First In-Park Hard Rock Cafe in Europe",
+      "summary": "PortAventura World in Spain has announced a partnership with Hard Rock International to open a Hard Rock Cafe at the entrance of its theme park this summer, marking the first such in-park location in Europe. The deal illustrates how branded F&B partnerships can elevate the perceived value and draw of an entertainment destination. FEC operators with significant dining footprints should take note of how co-branding with recognized hospitality names can differentiate the guest experience.",
+      "source": "Amusement Today",
       "categoryId": "business",
+      "url": "https://amusementtoday.com/2026/04/portaventura-world-and-hard-rock-international-seal-an-agreement-to-open-hard-rock-cafe-portaventura/",
+      "categoryLabel": "Business & Growth",
+      "categoryIcon": "📊",
+      "categoryColor": "#10B981"
+    },
+    {
+      "title": "Gardaland Resort Reports Strong Start to 2026 Season Amid Global Trend Alignment",
+      "summary": "Gardaland Resort in Italy has reported a positive opening to its 2026 season, with early attendance and hotel performance reflecting strong guest demand aligned with global entertainment trends. The park points to a robust spring market driven by favorable weather and pent-up leisure spending. International performance benchmarks like Gardaland's can offer useful context for FEC operators assessing their own seasonal readiness.",
+      "source": "Amusement Today",
+      "categoryId": "business",
+      "url": "https://amusementtoday.com/2026/04/gardaland-resort-the-2026-season-kicks-off-with-global-trends-in-fun/",
+      "categoryLabel": "Business & Growth",
+      "categoryIcon": "📊",
+      "categoryColor": "#10B981"
+    },
+    {
+      "title": "France's Futuroscope Named World's Best Theme Park in TripAdvisor Travellers' Choice Awards",
+      "summary": "Futuroscope, the technology and education-focused theme park in France, has topped TripAdvisor's global Travellers' Choice rankings for theme parks and waterparks, displacing Ferrari World Abu Dhabi from last year's top spot. The win highlights growing consumer appreciation for immersive, tech-driven and educational entertainment experiences. FEC operators can draw lessons from Futuroscope's model, which blends cutting-edge technology with accessible family entertainment to generate outstanding guest satisfaction scores.",
+      "source": "Blooloop",
+      "categoryId": "attractions",
+      "url": "https://blooloop.com/futuroscope-tripadvisor-travellers-choice-awards/",
+      "categoryLabel": "Attractions & Experiences",
+      "categoryIcon": "🎢",
+      "categoryColor": "#FF6B35"
+    },
+    {
+      "title": "Six Flags Magic Mountain Closes Zone for Looney Tunes-Themed Makeover",
+      "summary": "Six Flags Magic Mountain has closed a section of the park for a Looney Tunes-branded redesign, signaling continued investment in themed entertainment zones to strengthen family appeal. IP-driven area makeovers are an increasingly common strategy for large parks looking to attract younger demographics and extend dwell time. FEC operators considering themed zones or character licensing agreements may find this a relevant case study in brand-driven attraction investment.",
+      "source": "Blooloop",
+      "categoryId": "design",
+      "url": "https://www.ocregister.com/2026/04/27/six-flags-magic-mountain-closes-kids-area-for-looney-tunes-land-makeover/",
+      "categoryLabel": "Design & Trends",
+      "categoryIcon": "🎨",
+      "categoryColor": "#EC4899"
+    },
+    {
+      "title": "Coachella Partners with Google DeepMind AI to Explore the Future of Live Entertainment",
+      "summary": "The Coachella music festival has collaborated with Google DeepMind to test artificial intelligence applications in the live entertainment experience, from personalized content to real-time crowd analytics. The experiment represents one of the most high-profile deployments of AI in a large-scale live event setting to date. FEC operators exploring AI-driven personalization, dynamic pricing, or operational efficiency tools should monitor findings from this initiative closely.",
+      "source": "Blooloop",
+      "categoryId": "tech",
+      "url": "https://decrypt.co/365532/coachella-google-deepmind-ai-test-future-live-entertainment",
+      "categoryLabel": "Technology",
+      "categoryIcon": "⚙️",
+      "categoryColor": "#3B82F6"
+    },
+    {
+      "title": "AI-Powered Visitor Engagement Tools Launched for Cultural and Entertainment Venues",
+      "summary": "Experiential design studio Dpt. has launched a suite of AI-powered tools enabling fictional characters and historical figures to interact directly with guests at attractions and cultural venues. The technology is designed to increase visitor satisfaction, extend dwell time, and boost per-visitor revenue. FEC operators exploring interactive or educational entertainment formats should pay attention to how conversational AI characters could be adapted for arcade, escape room, or themed attraction contexts.",
+      "source": "Blooloop",
+      "categoryId": "tech",
+      "url": "https://blooloop.com/dpt-ai-solutions-suite/",
+      "categoryLabel": "Technology",
+      "categoryIcon": "⚙️",
+      "categoryColor": "#3B82F6"
+    },
+    {
+      "title": "How Invisible Audio Design Shapes Guest Perception at Entertainment Attractions",
+      "summary": "An experienced theme park sound designer explores how ambient and environmental audio that blends seamlessly into the physical setting is more powerful than overt sound effects in shaping guest immersion and perception. The piece argues that the best attraction audio goes unnoticed by guests yet fundamentally shapes the emotional tone of a space. FEC operators investing in themed zones, escape rooms, or immersive attractions should consider how professional audio design can elevate the guest experience without calling attention to itself.",
+      "source": "Blooloop",
+      "categoryId": "design",
+      "url": "https://blooloop.com/sonic-perception-invisible-audio/",
+      "categoryLabel": "Design & Trends",
+      "categoryIcon": "🎨",
+      "categoryColor": "#EC4899"
+    },
+    {
+      "title": "Resorts World New York City Opens City's First Table Games Casino",
+      "summary": "Resorts World New York City has opened the first table games casino in New York City's history, transforming its Queens facility into a full Las Vegas-style gaming resort with over 240 table games and 2,500 slot machines. The landmark opening accelerates the competitive landscape for entertainment spending in the New York metro area. FEC operators in the region should factor the new gaming destination into their competitive analysis as it will compete for discretionary leisure dollars.",
+      "source": "Blooloop",
+      "categoryId": "business",
+      "url": "https://blooloop.com/resorts-world-nyc-casino/",
       "categoryLabel": "Business & Growth",
       "categoryIcon": "📊",
       "categoryColor": "#10B981"
