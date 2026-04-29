@@ -313,6 +313,45 @@
     text-align: center; padding: 40px 20px; color: #10B981;
     font-family: 'Lato', sans-serif; font-size: 15px; font-weight: 600;
   }
+
+  /* ========== Subscribe Form ========== */
+  .subscribe-area {
+    display: flex; flex-direction: column; gap: 14px; padding: 24px 16px;
+    flex: 1; overflow-y: auto;
+  }
+  .subscribe-area p {
+    font-family: 'Lato', sans-serif; font-size: 14px; line-height: 1.6;
+    color: var(--ink-70);
+  }
+  .subscribe-area label {
+    font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 600;
+    color: var(--ink);
+  }
+  .subscribe-area input {
+    width: 100%; padding: 10px 14px; border: 1px solid #d1d5db;
+    border-radius: 12px; font-family: 'Lato', sans-serif; font-size: 16px;
+    outline: none; color: var(--ink);
+  }
+  .subscribe-area input:focus { border-color: var(--accent); }
+  .subscribe-submit {
+    align-self: stretch; padding: 14px 28px; border-radius: 24px;
+    border: none; background: var(--accent); color: #fff;
+    font-family: 'Lato', sans-serif; font-size: 15px; font-weight: 600;
+    cursor: pointer; transition: background-color 0.2s;
+  }
+  .subscribe-submit:hover { background: #6D28D9; }
+  .subscribe-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+  .subscribe-status {
+    text-align: center; padding: 8px; border-radius: 8px;
+    font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 500;
+    display: none;
+  }
+  .subscribe-status.success {
+    display: block; color: #10B981; background: #ecfdf5;
+  }
+  .subscribe-status.error {
+    display: block; color: #EF4444; background: #fef2f2;
+  }
 </style>
 </head>
 <body>
@@ -329,10 +368,10 @@
 
 <!-- Bottom Action Bar -->
 <nav class="action-bar" id="actionBar">
-  <a href="#subscribe" class="action-btn accent" aria-label="Subscribe to newsletter">
+  <button class="action-btn accent" id="openSubscribe" aria-label="Subscribe to newsletter">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
     <span>Subscribe</span>
-  </a>
+  </button>
   <button class="action-btn" id="openChat" aria-label="Open chat">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
     <span>Chat</span>
@@ -381,6 +420,26 @@
     <label for="feedbackEmail">Email (optional)</label>
     <input type="email" id="feedbackEmail" placeholder="your@email.com">
     <button class="feedback-submit" id="feedbackSubmit">Send Feedback</button>
+  </div>
+</div>
+
+<!-- Subscribe Panel -->
+<div class="slide-panel" id="subscribePanel" role="dialog" aria-label="Subscribe">
+  <div class="panel-header">
+    <div class="panel-header-info">
+      <div class="panel-header-title">Subscribe to FEC Insider</div>
+      <div class="panel-header-sub">Get daily FEC industry news in your inbox</div>
+    </div>
+    <button class="panel-close" id="closeSubscribe" aria-label="Close subscribe">&times;</button>
+  </div>
+  <div class="subscribe-area" id="subscribeArea">
+    <p>Stay ahead of the curve with curated news and insights for the Family Entertainment Center industry, delivered straight to your inbox.</p>
+    <label for="subscribeEmail">Email address</label>
+    <input type="email" id="subscribeEmail" placeholder="your@email.com" required>
+    <label for="subscribeName">Name (optional)</label>
+    <input type="text" id="subscribeName" placeholder="Your name">
+    <div class="subscribe-status" id="subscribeStatus"></div>
+    <button class="subscribe-submit" id="subscribeSubmit">Subscribe</button>
   </div>
 </div>
 
@@ -456,6 +515,7 @@ renderFeed();
 /* ---------- Action Bar & Panels ---------- */
 const chatPanel = document.getElementById("chatPanel");
 const feedbackPanel = document.getElementById("feedbackPanel");
+const subscribePanel = document.getElementById("subscribePanel");
 const overlay = document.getElementById("panelOverlay");
 const chatMessages = document.getElementById("chatMessages");
 const chatInput = document.getElementById("chatInput");
@@ -472,10 +532,15 @@ function closeAllPanels() {
   overlay.classList.remove("open");
   chatPanel.classList.remove("open");
   feedbackPanel.classList.remove("open");
+  subscribePanel.classList.remove("open");
   document.body.classList.remove("panel-open");
   window.scrollTo(0, panelScrollY);
 }
 
+document.getElementById("openSubscribe").addEventListener("click", () => {
+  openPanel(subscribePanel);
+  setTimeout(() => document.getElementById("subscribeEmail").focus(), 350);
+});
 document.getElementById("openChat").addEventListener("click", () => {
   openPanel(chatPanel);
   setTimeout(() => chatInput.focus(), 350);
@@ -483,6 +548,7 @@ document.getElementById("openChat").addEventListener("click", () => {
 document.getElementById("openFeedback").addEventListener("click", () => {
   openPanel(feedbackPanel);
 });
+document.getElementById("closeSubscribe").addEventListener("click", closeAllPanels);
 document.getElementById("closeChat").addEventListener("click", closeAllPanels);
 document.getElementById("closeFeedback").addEventListener("click", closeAllPanels);
 overlay.addEventListener("click", closeAllPanels);
@@ -561,6 +627,48 @@ document.getElementById("feedbackSubmit").addEventListener("click", async () => 
   } catch (e) { /* best-effort */ }
 
   document.querySelector("#feedbackPanel .feedback-area").innerHTML = '<div class="feedback-success">\u2705 Thank you for your feedback!</div>';
+});
+
+/* ---------- Subscribe ---------- */
+document.getElementById("subscribeSubmit").addEventListener("click", async () => {
+  const emailInput = document.getElementById("subscribeEmail");
+  const nameInput = document.getElementById("subscribeName");
+  const statusEl = document.getElementById("subscribeStatus");
+  const submitBtn = document.getElementById("subscribeSubmit");
+  const email = emailInput.value.trim();
+  const name = nameInput.value.trim();
+
+  if (!email) { emailInput.focus(); return; }
+
+  statusEl.className = "subscribe-status";
+  statusEl.style.display = "none";
+  submitBtn.disabled = true;
+  submitBtn.textContent = "Subscribing...";
+
+  try {
+    const res = await fetch(CHAT_API + "/subscribe", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, name: name || undefined })
+    });
+    const data = await res.json();
+    if (res.ok && data.success) {
+      statusEl.className = "subscribe-status success";
+      statusEl.textContent = "You're subscribed! Check your inbox.";
+      statusEl.style.display = "block";
+      submitBtn.textContent = "Subscribed";
+      emailInput.disabled = true;
+      nameInput.disabled = true;
+    } else {
+      throw new Error(data.error || "Something went wrong");
+    }
+  } catch (e) {
+    statusEl.className = "subscribe-status error";
+    statusEl.textContent = e.message || "Failed to subscribe. Please try again.";
+    statusEl.style.display = "block";
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Subscribe";
+  }
 });
 
 /* ---------- iframe height ---------- */
