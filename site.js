@@ -392,6 +392,10 @@ a.fec-card:hover .fec-card-title{text-decoration:underline;text-decoration-color
 
 /* ---------- Init ---------- */
 function init(){
+  document.body.style.backgroundColor="#070714";
+  document.body.style.margin="0";
+  document.body.style.padding="0";
+  document.body.style.minHeight="100vh";
   injectStyles();
   buildPage();
   loadArticles();
