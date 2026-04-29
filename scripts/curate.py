@@ -23,6 +23,7 @@ from bs4 import BeautifulSoup
 SCRIPT_DIR = Path(__file__).resolve().parent
 TEMPLATE_PATH = SCRIPT_DIR / "template.html"
 OUTPUT_PATH = SCRIPT_DIR.parent / "index.html"
+ARTICLES_JSON_PATH = SCRIPT_DIR.parent / "articles.json"
 
 CATEGORY_META = {
     "attractions": {
@@ -215,6 +216,15 @@ def main():
     html = render_html(curated)
     OUTPUT_PATH.write_text(html, encoding="utf-8")
     print(f"Wrote {OUTPUT_PATH} ({len(html):,} bytes, {len(curated)} articles).")
+
+    articles_payload = {
+        "generated": datetime.now(timezone.utc).isoformat(),
+        "count": len(curated),
+        "articles": curated,
+    }
+    articles_json = json.dumps(articles_payload, ensure_ascii=False, indent=2)
+    ARTICLES_JSON_PATH.write_text(articles_json, encoding="utf-8")
+    print(f"Wrote {ARTICLES_JSON_PATH} ({len(articles_json):,} bytes).")
 
 
 if __name__ == "__main__":
