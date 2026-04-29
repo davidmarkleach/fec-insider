@@ -43,7 +43,7 @@
   }
   .container {
     max-width: 720px; margin: 0 auto;
-    padding: 32px 20px 36px;
+    padding: 32px 20px 100px;
   }
   .header { margin-bottom: 28px; }
   .title {
@@ -139,99 +139,98 @@
     to   { opacity: 1; transform: translateY(0); }
   }
 
-  /* ========== Chat Widget ========== */
-  .chat-launcher {
-    position: fixed; bottom: 24px; right: 24px; z-index: 9999;
-    width: 60px; height: 60px; border-radius: 50%; border: none;
-    cursor: pointer; padding: 0; overflow: hidden;
-    box-shadow: 0 4px 16px rgba(124,58,237,0.4), 0 2px 4px rgba(0,0,0,0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background: var(--accent);
+  /* ========== Bottom Action Bar ========== */
+  .action-bar {
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 9000;
+    display: flex; justify-content: space-around; align-items: stretch;
+    padding: 6px 0;
+    padding-bottom: calc(6px + env(safe-area-inset-bottom, 0));
+    background: linear-gradient(to top, rgba(7,7,20,0.97) 50%, rgba(7,7,20,0.85));
+    backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    border-top: 1px solid rgba(255,255,255,0.08);
   }
-  .chat-launcher:hover {
-    transform: scale(1.08);
-    box-shadow: 0 6px 24px rgba(124,58,237,0.5), 0 4px 8px rgba(0,0,0,0.3);
+  .action-btn {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 3px; flex: 1;
+    background: none; border: none; color: var(--on-dark-70);
+    font-family: 'Lato', sans-serif; font-size: 11px; font-weight: 600;
+    letter-spacing: 0.02em;
+    cursor: pointer; padding: 8px 4px; border-radius: 10px;
+    transition: color 0.2s, background 0.2s;
+    text-decoration: none; -webkit-tap-highlight-color: transparent;
+    min-height: 52px;
   }
-  .chat-launcher img {
-    width: 100%; height: 100%; object-fit: cover; display: block;
+  .action-btn:hover, .action-btn:focus-visible {
+    color: var(--on-dark); background: rgba(255,255,255,0.06);
   }
-  .chat-launcher .close-icon {
-    display: none; position: absolute; inset: 0;
-    background: var(--accent); color: white;
-    font-size: 28px; line-height: 60px; text-align: center;
-  }
-  .chat-launcher.open img { display: none; }
-  .chat-launcher.open .close-icon { display: block; }
-
-  .chat-badge {
-    position: absolute; top: -2px; right: -2px;
-    width: 18px; height: 18px; border-radius: 50%;
-    background: #FF6B35; border: 2px solid var(--bg);
-    animation: pulse-badge 2s infinite;
-  }
-  .chat-launcher.open .chat-badge { display: none; }
-  @keyframes pulse-badge {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.2); }
+  .action-btn svg { width: 22px; height: 22px; flex-shrink: 0; }
+  .action-btn.accent { color: var(--accent-strong); }
+  .action-btn.accent:hover, .action-btn.accent:focus-visible {
+    color: #fff; background: var(--accent-a20);
   }
 
-  .chat-panel {
-    position: fixed; bottom: 96px; right: 24px; z-index: 9998;
-    width: 380px; max-height: 520px; border-radius: 16px;
-    background: #ffffff; overflow: hidden;
-    box-shadow: 0 8px 40px rgba(0,0,0,0.35), 0 0 0 1px rgba(0,0,0,0.08);
+  /* ========== Panel Overlay & Slide-up Panels ========== */
+  .panel-overlay {
+    position: fixed; inset: 0; z-index: 9998;
+    background: rgba(0,0,0,0.55);
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  .panel-overlay.open { opacity: 1; pointer-events: auto; }
+
+  body.panel-open { overflow: hidden; }
+
+  .slide-panel {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 9999;
+    height: 92vh; height: 92dvh;
+    background: #fff; border-radius: 20px 20px 0 0;
     display: flex; flex-direction: column;
-    transform: scale(0.9) translateY(20px); opacity: 0;
-    pointer-events: none;
-    transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), opacity 0.2s ease;
-    transform-origin: bottom right;
+    transform: translateY(100%);
+    transition: transform 0.35s cubic-bezier(0.32,0.72,0,1);
+    overflow: hidden;
+    box-shadow: 0 -8px 40px rgba(0,0,0,0.4);
   }
-  .chat-panel.open {
-    transform: scale(1) translateY(0); opacity: 1; pointer-events: auto;
-  }
-  @media (max-width: 440px) {
-    .chat-panel { right: 8px; left: 8px; width: auto; bottom: 88px; max-height: 70vh; }
-    .chat-launcher { bottom: 16px; right: 16px; }
+  .slide-panel.open { transform: translateY(0); }
+  @media (min-width: 641px) {
+    .slide-panel { max-width: 480px; margin: 0 auto; height: 80vh; }
   }
 
-  .chat-header {
+  .panel-header {
     background: linear-gradient(135deg, var(--accent) 0%, #5B21B6 100%);
     padding: 16px 18px; display: flex; align-items: center; gap: 12px;
-    flex-shrink: 0;
+    flex-shrink: 0; border-radius: 20px 20px 0 0;
   }
-  .chat-header-avatar {
+  .panel-header-avatar {
     width: 36px; height: 36px; border-radius: 50%; object-fit: cover;
     border: 2px solid rgba(255,255,255,0.3);
   }
-  .chat-header-info { flex: 1; }
-  .chat-header-title {
-    font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600;
+  .panel-header-info { flex: 1; min-width: 0; }
+  .panel-header-title {
+    font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 600;
     color: #fff; line-height: 1.2;
   }
-  .chat-header-sub {
+  .panel-header-sub {
     font-family: 'Lato', sans-serif; font-size: 12px; color: rgba(255,255,255,0.75);
   }
-
-  .chat-tabs {
-    display: flex; border-bottom: 1px solid #e5e7eb; flex-shrink: 0;
+  .panel-close {
+    width: 36px; height: 36px; border-radius: 50%; border: none;
+    background: rgba(255,255,255,0.15); color: #fff;
+    font-size: 22px; text-align: center;
+    cursor: pointer; flex-shrink: 0;
+    transition: background 0.2s;
+    display: flex; align-items: center; justify-content: center;
+    line-height: 1;
   }
-  .chat-tab {
-    flex: 1; padding: 10px; text-align: center; font-family: 'Lato', sans-serif;
-    font-size: 13px; font-weight: 600; color: #6b7280; background: none;
-    border: none; cursor: pointer; border-bottom: 2px solid transparent;
-    transition: color 0.2s, border-color 0.2s;
-  }
-  .chat-tab:hover { color: var(--ink); }
-  .chat-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+  .panel-close:hover { background: rgba(255,255,255,0.25); }
 
+  /* ========== Chat Messages ========== */
   .chat-messages {
     flex: 1; overflow-y: auto; padding: 16px; display: flex;
-    flex-direction: column; gap: 12px; min-height: 200px;
+    flex-direction: column; gap: 12px;
     scrollbar-width: thin; scrollbar-color: #d1d5db transparent;
   }
   .chat-messages::-webkit-scrollbar { width: 4px; }
   .chat-messages::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 2px; }
-
   .chat-msg {
     max-width: 85%; padding: 10px 14px; border-radius: 16px;
     font-family: 'Lato', sans-serif; font-size: 14px; line-height: 1.5;
@@ -258,18 +257,20 @@
   }
 
   .chat-input-area {
-    padding: 12px 16px; border-top: 1px solid #e5e7eb;
+    padding: 12px 16px;
+    padding-bottom: calc(12px + env(safe-area-inset-bottom, 0));
+    border-top: 1px solid #e5e7eb;
     display: flex; gap: 8px; align-items: center; flex-shrink: 0;
   }
   .chat-input {
     flex: 1; padding: 10px 14px; border: 1px solid #d1d5db;
-    border-radius: 24px; font-family: 'Lato', sans-serif; font-size: 14px;
+    border-radius: 24px; font-family: 'Lato', sans-serif; font-size: 16px;
     outline: none; color: var(--ink); transition: border-color 0.2s;
   }
   .chat-input:focus { border-color: var(--accent); }
   .chat-input::placeholder { color: #9ca3af; }
   .chat-send {
-    width: 36px; height: 36px; border-radius: 50%; border: none;
+    width: 40px; height: 40px; border-radius: 50%; border: none;
     background: var(--accent); color: #fff; cursor: pointer;
     display: flex; align-items: center; justify-content: center;
     transition: background-color 0.2s, transform 0.15s;
@@ -280,29 +281,29 @@
   .chat-send:disabled { opacity: 0.5; cursor: not-allowed; }
   .chat-send svg { width: 18px; height: 18px; }
 
+  /* ========== Feedback Form ========== */
   .feedback-area {
-    display: none; flex-direction: column; gap: 10px; padding: 16px;
+    display: flex; flex-direction: column; gap: 12px; padding: 20px 16px;
     flex: 1; overflow-y: auto;
   }
-  .feedback-area.active { display: flex; }
   .feedback-area label {
     font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 600;
     color: var(--ink);
   }
   .feedback-area textarea {
-    width: 100%; min-height: 100px; padding: 12px; border: 1px solid #d1d5db;
-    border-radius: 12px; font-family: 'Lato', sans-serif; font-size: 14px;
+    width: 100%; min-height: 120px; padding: 12px; border: 1px solid #d1d5db;
+    border-radius: 12px; font-family: 'Lato', sans-serif; font-size: 16px;
     resize: vertical; outline: none; color: var(--ink);
   }
   .feedback-area textarea:focus { border-color: var(--accent); }
   .feedback-area input[type="email"] {
     width: 100%; padding: 10px 14px; border: 1px solid #d1d5db;
-    border-radius: 12px; font-family: 'Lato', sans-serif; font-size: 14px;
+    border-radius: 12px; font-family: 'Lato', sans-serif; font-size: 16px;
     outline: none; color: var(--ink);
   }
   .feedback-area input:focus { border-color: var(--accent); }
   .feedback-submit {
-    align-self: flex-end; padding: 10px 24px; border-radius: 24px;
+    align-self: flex-end; padding: 12px 28px; border-radius: 24px;
     border: none; background: var(--accent); color: #fff;
     font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 600;
     cursor: pointer; transition: background-color 0.2s;
@@ -326,38 +327,59 @@
   <div class="footer"><p>Powered by AI &middot; <span class="brand">FEC Insider</span> &middot; Subscriber Exclusive</p></div>
 </div>
 
-<!-- Chat Widget -->
-<button class="chat-launcher" id="chatLauncher" aria-label="Open chat">
-  <img src="avatar.png" alt="FEC Insider assistant">
-  <span class="close-icon">&times;</span>
-  <span class="chat-badge"></span>
-</button>
+<!-- Bottom Action Bar -->
+<nav class="action-bar" id="actionBar">
+  <a href="#subscribe" class="action-btn accent" aria-label="Subscribe to newsletter">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
+    <span>Subscribe</span>
+  </a>
+  <button class="action-btn" id="openChat" aria-label="Open chat">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+    <span>Chat</span>
+  </button>
+  <button class="action-btn" id="openFeedback" aria-label="Leave feedback">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+    <span>Feedback</span>
+  </button>
+</nav>
 
-<div class="chat-panel" id="chatPanel">
-  <div class="chat-header">
-    <img class="chat-header-avatar" src="avatar.png" alt="">
-    <div class="chat-header-info">
-      <div class="chat-header-title">FEC Insider</div>
-      <div class="chat-header-sub">Ask me about today's FEC news</div>
+<div class="panel-overlay" id="panelOverlay"></div>
+
+<!-- Chat Panel -->
+<div class="slide-panel" id="chatPanel" role="dialog" aria-label="Chat">
+  <div class="panel-header">
+    <img class="panel-header-avatar" src="avatar.png" alt="">
+    <div class="panel-header-info">
+      <div class="panel-header-title">FEC Insider</div>
+      <div class="panel-header-sub">Ask me about today's FEC news</div>
     </div>
-  </div>
-  <div class="chat-tabs">
-    <button class="chat-tab active" data-tab="chat">Chat</button>
-    <button class="chat-tab" data-tab="feedback">Leave Feedback</button>
+    <button class="panel-close" id="closeChat" aria-label="Close chat">&times;</button>
   </div>
   <div class="chat-messages" id="chatMessages">
-    <div class="chat-msg bot">Hey! I'm the FEC Insider assistant. Ask me anything about today's industry news, or switch to the Feedback tab to share your thoughts.</div>
+    <div class="chat-msg bot">Hey! I'm the FEC Insider assistant. Ask me anything about today's industry news.</div>
   </div>
-  <div class="chat-input-area" id="chatInputArea">
+  <div class="chat-input-area">
     <input class="chat-input" id="chatInput" type="text" placeholder="Ask about today's FEC news..." autocomplete="off">
     <button class="chat-send" id="chatSend" aria-label="Send message">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
     </button>
   </div>
-  <div class="feedback-area" id="feedbackArea">
-    <label>We'd love to hear from you</label>
-    <textarea id="feedbackText" placeholder="What do you think of FEC Insider? What topics should we cover?"></textarea>
-    <input type="email" id="feedbackEmail" placeholder="Email (optional)">
+</div>
+
+<!-- Feedback Panel -->
+<div class="slide-panel" id="feedbackPanel" role="dialog" aria-label="Leave feedback">
+  <div class="panel-header">
+    <div class="panel-header-info">
+      <div class="panel-header-title">Leave Feedback</div>
+      <div class="panel-header-sub">We'd love to hear from you</div>
+    </div>
+    <button class="panel-close" id="closeFeedback" aria-label="Close feedback">&times;</button>
+  </div>
+  <div class="feedback-area">
+    <label for="feedbackText">What do you think of FEC Insider?</label>
+    <textarea id="feedbackText" placeholder="What topics should we cover? How can we improve?"></textarea>
+    <label for="feedbackEmail">Email (optional)</label>
+    <input type="email" id="feedbackEmail" placeholder="your@email.com">
     <button class="feedback-submit" id="feedbackSubmit">Send Feedback</button>
   </div>
 </div>
@@ -702,38 +724,46 @@ renderHeader();
 renderTabs();
 renderFeed();
 
-/* ---------- Chat Widget ---------- */
-const launcher = document.getElementById("chatLauncher");
-const panel = document.getElementById("chatPanel");
-const messages = document.getElementById("chatMessages");
+/* ---------- Action Bar & Panels ---------- */
+const chatPanel = document.getElementById("chatPanel");
+const feedbackPanel = document.getElementById("feedbackPanel");
+const overlay = document.getElementById("panelOverlay");
+const chatMessages = document.getElementById("chatMessages");
 const chatInput = document.getElementById("chatInput");
 const chatSend = document.getElementById("chatSend");
-const chatInputArea = document.getElementById("chatInputArea");
-const feedbackArea = document.getElementById("feedbackArea");
 
-launcher.addEventListener("click", () => {
-  const open = panel.classList.toggle("open");
-  launcher.classList.toggle("open", open);
-  if (open) chatInput.focus();
-});
+let panelScrollY = 0;
+function openPanel(panel) {
+  panelScrollY = window.scrollY;
+  document.body.classList.add("panel-open");
+  overlay.classList.add("open");
+  panel.classList.add("open");
+}
+function closeAllPanels() {
+  overlay.classList.remove("open");
+  chatPanel.classList.remove("open");
+  feedbackPanel.classList.remove("open");
+  document.body.classList.remove("panel-open");
+  window.scrollTo(0, panelScrollY);
+}
 
-document.querySelectorAll(".chat-tab").forEach(tab => {
-  tab.addEventListener("click", () => {
-    document.querySelectorAll(".chat-tab").forEach(t => t.classList.remove("active"));
-    tab.classList.add("active");
-    const isFeedback = tab.dataset.tab === "feedback";
-    messages.style.display = isFeedback ? "none" : "flex";
-    chatInputArea.style.display = isFeedback ? "none" : "flex";
-    feedbackArea.classList.toggle("active", isFeedback);
-  });
+document.getElementById("openChat").addEventListener("click", () => {
+  openPanel(chatPanel);
+  setTimeout(() => chatInput.focus(), 350);
 });
+document.getElementById("openFeedback").addEventListener("click", () => {
+  openPanel(feedbackPanel);
+});
+document.getElementById("closeChat").addEventListener("click", closeAllPanels);
+document.getElementById("closeFeedback").addEventListener("click", closeAllPanels);
+overlay.addEventListener("click", closeAllPanels);
 
 function addMessage(text, type) {
   const div = document.createElement("div");
   div.className = `chat-msg ${type}`;
   div.textContent = text;
-  messages.appendChild(div);
-  messages.scrollTop = messages.scrollHeight;
+  chatMessages.appendChild(div);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
   return div;
 }
 
@@ -742,8 +772,8 @@ function showTyping() {
   div.className = "chat-msg bot typing";
   div.id = "typingIndicator";
   div.innerHTML = '<span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span>';
-  messages.appendChild(div);
-  messages.scrollTop = messages.scrollHeight;
+  chatMessages.appendChild(div);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 function hideTyping() {
   const el = document.getElementById("typingIndicator");
@@ -801,7 +831,7 @@ document.getElementById("feedbackSubmit").addEventListener("click", async () => 
     });
   } catch (e) { /* best-effort */ }
 
-  feedbackArea.innerHTML = '<div class="feedback-success">\u2705 Thank you for your feedback!</div>';
+  document.querySelector("#feedbackPanel .feedback-area").innerHTML = '<div class="feedback-success">\u2705 Thank you for your feedback!</div>';
 });
 
 /* ---------- iframe height ---------- */
