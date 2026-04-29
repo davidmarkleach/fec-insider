@@ -1,0 +1,66 @@
+{
+  "generated": "2026-04-29T12:36:52.041269+00:00",
+  "count": 6,
+  "articles": [
+    {
+      "title": "Round1 Opens Third New Jersey Location",
+      "summary": "The Japanese FEC giant opened a new venue at Menlo Park Mall, featuring bowling, arcade games, and karaoke. This expansion signals continued growth in the US market for entertainment-focused concepts.",
+      "url": "https://blooloop.com",
+      "source": "Blooloop",
+      "categoryId": "business",
+      "categoryLabel": "Business & Growth",
+      "categoryIcon": "📊",
+      "categoryColor": "#10B981"
+    },
+    {
+      "title": "AI-Powered Dynamic Pricing Boosts FEC Revenue by 22%",
+      "summary": "A new study shows that FECs using AI-driven dynamic pricing see an average revenue increase of 22%. The technology adjusts attraction prices based on demand, time of day, and seasonal patterns.",
+      "url": "https://blooloop.com",
+      "source": "Blooloop",
+      "categoryId": "tech",
+      "categoryLabel": "Technology",
+      "categoryIcon": "⚙️",
+      "categoryColor": "#3B82F6"
+    },
+    {
+      "title": "New VR Attraction Combines Physical and Digital Play",
+      "summary": "A startup has launched a hybrid VR experience that combines physical obstacle courses with immersive digital environments, creating a new category of attractions for family entertainment centers.",
+      "url": "https://blooloop.com",
+      "source": "InterGame",
+      "categoryId": "attractions",
+      "categoryLabel": "Attractions & Experiences",
+      "categoryIcon": "🎢",
+      "categoryColor": "#FF6B35"
+    },
+    {
+      "title": "IAAPA Releases 2026 Safety Guidelines Update",
+      "summary": "The International Association of Amusement Parks and Attractions has released updated safety guidelines for indoor entertainment centers, with new standards for trampolines, climbing walls, and go-karts.",
+      "url": "https://blooloop.com",
+      "source": "IAAPA",
+      "categoryId": "ops",
+      "categoryLabel": "Operations & Safety",
+      "categoryIcon": "🛡️",
+      "categoryColor": "#F59E0B"
+    },
+    {
+      "title": "Retro Arcade Aesthetic Drives Gen Z Foot Traffic",
+      "summary": "FECs embracing retro neon aesthetics and classic arcade games are seeing a 35% increase in Gen Z visitors. The nostalgic design trend combines well with modern social media sharing.",
+      "url": "https://blooloop.com",
+      "source": "Amusement Today",
+      "categoryId": "design",
+      "categoryLabel": "Design & Trends",
+      "categoryIcon": "🎨",
+      "categoryColor": "#EC4899"
+    },
+    {
+      "title": "Indoor Go-Kart Market to Reach $2.8B by 2028",
+      "summary": "Market analysts project the indoor go-kart industry will grow to $2.8 billion by 2028, driven by electric kart adoption and increased demand for premium racing experiences.",
+      "url": "https://blooloop.com",
+      "source": "Market Research",
+      "categoryId": "business",
+      "categoryLabel": "Business & Growth",
+      "categoryIcon": "📊",
+      "categoryColor": "#10B981"
+    }
+  ]
+}
