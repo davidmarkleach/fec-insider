@@ -40,8 +40,6 @@
     max-width: 720px; margin: 0 auto;
     padding: 32px 20px 36px;
   }
-
-  /* ---------- Header ---------- */
   .header { margin-bottom: 28px; }
   .title {
     font-family: 'Montserrat', sans-serif;
@@ -64,8 +62,6 @@
     font-size: 13px; color: var(--on-dark-45);
     font-weight: 400;
   }
-
-  /* ---------- Tabs ---------- */
   .tabs {
     display: flex; gap: 4px; margin-bottom: 22px;
     overflow-x: auto; padding-bottom: 2px; scrollbar-width: none;
@@ -94,8 +90,6 @@
       inset 0 0 0 1px var(--accent-a30),
       inset 0 0 0 2px rgba(255, 255, 255, 0.06);
   }
-
-  /* ---------- Cards ---------- */
   .feed { display: flex; flex-direction: column; gap: 14px; }
   .card {
     display: block;
@@ -155,8 +149,6 @@
     color: var(--ink-70);
     font-weight: 400;
   }
-
-  /* ---------- Footer ---------- */
   .footer {
     margin-top: 34px; padding-top: 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -170,7 +162,6 @@
   .footer .brand {
     color: var(--on-dark); font-weight: 700;
   }
-
   @keyframes fadeSlideIn {
     from { opacity: 0; transform: translateY(8px); }
     to   { opacity: 1; transform: translateY(0); }
@@ -182,7 +173,7 @@
   <div class="header">
     <h1 class="title">FEC <strong>Insider</strong></h1>
     <p class="subtitle">Curated news for the Family Entertainment Center industry</p>
-    <p class="timestamp" id="timestamp" data-iso="2026-04-28T23:00:00.000Z"></p>
+    <p class="timestamp" id="timestamp" data-iso="2026-04-29T00:03:09.707016+00:00"></p>
   </div>
   <div class="tabs" id="tabs"></div>
   <div class="feed" id="feed"></div>
@@ -191,337 +182,306 @@
 <script>
 const articles = [
   {
-    "title": "Global FEC Market Projected to Top $80 Billion by 2033",
-    "summary": "New research projects the Family Entertainment Center market will surge from $45.6 billion in 2026 to over $80 billion by 2033, driven by rising urban populations, mall-based entertainment growth, and demand for weather-independent leisure. The 13.9% compound annual growth rate signals a major expansion cycle ahead for operators.",
-    "category": "market",
-    "source": "Workforce.com",
-    "url": "https://www.workforce.com/news/global-fec-market",
-    "categoryId": "business",
-    "categoryLabel": "Business & Growth",
-    "categoryIcon": "\ud83d\udcca",
-    "categoryColor": "#10B981"
-  },
-  {
-    "title": "Embed AI Debuts Revolutionary AI-Powered Platform for Family Entertainment Centers",
-    "summary": "Embed unveiled its AI-enabled ecosystem at Amusement Expo 2026, integrating hardware and software powered by Apple, Google Cloud, and AWS. The platform automates operations, enables agile pricing, smart staffing, and revenue predictions while delivering personalized guest experiences through machine learning.",
-    "category": "tech",
-    "source": "EIN Presswire",
-    "url": "https://www.einpresswire.com/article/861813393/the-next-frontier-is-here-embed-ai-to-rise-for-family-entertainment-centres",
-    "categoryId": "tech",
-    "categoryLabel": "Technology",
-    "categoryIcon": "\u2699\ufe0f",
-    "categoryColor": "#3B82F6"
-  },
-  {
-    "title": "Hybrid Immersive Attractions Lead FEC Design Trends in 2026",
-    "summary": "The top trend reshaping family entertainment centers this year is hybrid immersive attractions that blend physical movement with digital interaction. From arcades with motion-based games to bowling with interactive lane projections, these experiences create the social, competitive moments guests crave while justifying premium pricing.",
-    "category": "attractions",
-    "source": "Party Center Software",
-    "url": "https://www.partycentersoftware.com/blog/top-5-family-entertainment-center-trends-in-2026",
-    "categoryId": "attractions",
-    "categoryLabel": "Attractions & Experiences",
-    "categoryIcon": "\ud83c\udfa2",
-    "categoryColor": "#FF6B35"
-  },
-  {
-    "title": "Launch Entertainment Accelerates National Expansion With 12-State Rollout",
-    "summary": "Launch Family Entertainment is aggressively scaling across the U.S. with a 37,000 sq ft park under construction in Manchester, New Hampshire, and a 31,000 sq ft location planned for Pensacola, Florida. The franchise is now expanding into Arizona, Connecticut, Georgia, Kansas, Missouri, New Jersey, and six additional states.",
-    "category": "business",
-    "source": "Launch Franchising",
-    "url": "https://launchfamilyentertainment.com/franchise/2026/03/03/launch-family-entertainment-featured-intergame-magazine/",
-    "categoryId": "business",
-    "categoryLabel": "Business & Growth",
-    "categoryIcon": "\ud83d\udcca",
-    "categoryColor": "#10B981"
-  },
-  {
-    "title": "RFID Wristbands Go Mainstream as Cashless Becomes the FEC Standard",
-    "summary": "Cashless payment via RFID wristbands and game cards has shifted from a nice-to-have to a must-have for family entertainment centers in 2026. AI-enhanced RFID systems now enable predictive crowd management, personalized guest experiences, and real-time operational intelligence while eliminating cash theft risks entirely.",
-    "category": "tech",
-    "source": "Billfold Tech",
-    "url": "https://www.billfold.tech/blog/rfid-wristbands-for-events",
-    "categoryId": "tech",
-    "categoryLabel": "Technology",
-    "categoryIcon": "\u2699\ufe0f",
-    "categoryColor": "#3B82F6"
-  },
-  {
-    "title": "New ASTM Safety Standards Merge Global Requirements for Amusement Rides",
-    "summary": "The 2026 amusement ride safety framework merges ASTM F2291 design criteria, EN 13814 structural fatigue requirements, and ISO 17842 into a unified standard. FEC operators with rides and active attractions need to review compliance now, as the merged requirements introduce new structural fatigue testing protocols.",
-    "category": "ops",
-    "source": "Carnee Rides",
-    "url": "https://www.carneerides.com/amusement-ride-safety-standards/",
+    "title": "Urban Air Trampoline Park Agrees to $300K Settlement After 6-Year-Old's Go-Kart Death",
+    "summary": "Urban Air in Port St. Lucie, Florida has agreed to pay $300,000 following an investigation into a crash that killed a 6-year-old girl at the facility. The settlement carries significant implications for FEC operators running go-kart or multi-attraction venues, underscoring the critical importance of safety protocols, equipment maintenance, and liability coverage. Operators should review their own risk management procedures and insurance policies in light of this case.",
+    "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQSS0tM1o4VEszLVA3SDBDS01kUnVlaFF5bzdqeEpMSnFVX25TVjRxQldzSVlYTW9wZ3dmbTJFMTQxZWxydE1lMFdWX3lZQ0htZ0pMdmxlZ1BDX20wOHBrVWJDcGhoa0I4WjVvcTRBQkxtQW5oSGQ3OHVDNVNFbm1CTEJ3XzVMTWtaVDdmbC1VZE1jVEhZUDhxaGJYZTRjdXp1WGpfOUVxRGNUeUo0aGJWeExpd1U5eVNNLWRpR0xuSWt1Rks2bnZRakp6RTBpUEtUcHFFdA",
+    "source": "WPTV",
     "categoryId": "ops",
     "categoryLabel": "Operations & Safety",
-    "categoryIcon": "\ud83d\udee1\ufe0f",
+    "categoryIcon": "🛡️",
     "categoryColor": "#F59E0B"
   },
   {
-    "title": "VR Escape Rooms and AR Arenas Drive Next Wave of FEC Innovation",
-    "summary": "Demand is surging for immersive attractions that go beyond traditional arcade games. VR escape rooms, augmented reality arenas, interactive art installations, and competitive esports zones are emerging as high-margin additions that attract older demographics and boost per-visit spending significantly.",
-    "category": "attractions",
-    "source": "Research and Markets",
-    "url": "https://www.researchandmarkets.com/reports/5766991/familyindoor-entertainment-centers-market-report",
-    "categoryId": "attractions",
-    "categoryLabel": "Attractions & Experiences",
-    "categoryIcon": "\ud83c\udfa2",
-    "categoryColor": "#FF6B35"
-  },
-  {
-    "title": "AI-Driven Dynamic Pricing Helps FECs Maximize Revenue Per Guest",
-    "summary": "Family entertainment centers are adopting AI-powered dynamic pricing that automatically adjusts rates based on demand, time of day, and historical patterns. Early adopters report significant revenue increases per guest by optimizing pricing for peak vs. off-peak periods without manual intervention.",
-    "category": "tech",
-    "source": "Marwey",
-    "url": "https://www.marwey.com/ai-technology-family-entertainment-centers-2026.html",
-    "categoryId": "tech",
-    "categoryLabel": "Technology",
-    "categoryIcon": "\u2699\ufe0f",
-    "categoryColor": "#3B82F6"
-  },
-  {
-    "title": "Big Play Atlanta to Open 42,000 Sq Ft Mega Entertainment Complex",
-    "summary": "Big Play Atlanta announced plans for a massive 42,000-square-foot family entertainment center in metro Atlanta, set to open in 2026. The venue will combine multiple attraction types under one roof as part of the growing trend of large-format hybrid FECs designed to capture multi-generational audiences.",
-    "category": "business",
-    "source": "Cincinnati.com",
-    "url": "https://www.cincinnati.com/press-release/story/53299/big-play-atlanta-set-to-redefine-family-entertainment-in-metro-atlanta-in-2026/",
+    "title": "Slick City Action Park Surpasses 150 Units Signed or Open, Cements Fastest-Growing FEC Brand Status",
+    "summary": "Slick City Action Park has crossed the milestone of 150 units signed or open, reinforcing its position as the fastest-growing brand in the family entertainment center sector. The slide-focused indoor action park concept has rapidly expanded through franchising, signaling strong investor and franchisee confidence in the model. FEC operators and investors should take note of the brand's growth trajectory as a benchmark for scalable indoor attraction concepts.",
+    "url": "https://www.globenewswire.com/news-release/2026/04/06/3268486/0/en/Slick-City-Action-Park-Surpasses-150-Units-Signed-or-Open-Cementing-Position-as-Fastest-Growing-FEC-Brand.html",
+    "source": "GlobeNewswire",
     "categoryId": "business",
     "categoryLabel": "Business & Growth",
-    "categoryIcon": "\ud83d\udcca",
+    "categoryIcon": "📊",
     "categoryColor": "#10B981"
   },
   {
-    "title": "AI Automation Transforms FEC Staffing With Smart Scheduling",
-    "summary": "With labor often the largest variable cost for FEC operators, AI-powered workforce management tools are becoming essential. New forecasting systems analyze historical sales, local events, and weather data to predict staffing needs per shift, helping operators cut overtime costs while maintaining service quality.",
-    "category": "ops",
-    "source": "Workforce.com",
-    "url": "https://www.workforce.com/news/global-fec-market",
-    "categoryId": "ops",
-    "categoryLabel": "Operations & Safety",
-    "categoryIcon": "\ud83d\udee1\ufe0f",
-    "categoryColor": "#F59E0B"
-  },
-  {
-    "title": "Round1 Opens Third New Jersey Location as Japanese FEC Giant Expands",
-    "summary": "Round1 Bowling and Arcade opened its third New Jersey location at the Menlo Park Mall in Edison on February 7, 2026. The Japanese entertainment company continues its aggressive U.S. expansion, bringing its signature mix of bowling, arcade gaming, karaoke, and active attractions to mall-based venues nationwide.",
-    "category": "business",
-    "source": "InterGame",
-    "url": "https://www.intergameonline.com/coin-op/news/round1-opens-third-new-jersey-fec",
+    "title": "$50M Entertainment Destination Planned for Downtown Clearwater, Including World's Largest Cinema Screen",
+    "summary": "A Dallas-based entertainment group is planning a $50 million large-scale entertainment complex at the Cleveland Street Corridor entrance in downtown Clearwater, Florida, which will feature the world's largest cinema screen alongside other attractions. The project highlights the continued trend of mixed-use entertainment destinations anchoring urban revitalization efforts. FEC operators and investors should monitor how this development model — combining cinema, dining, and experiential entertainment — performs in mid-sized city markets.",
+    "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNREpNYkNEeDZjT2tMQVdHWFZoOHZJY2ViOVBrSEJyVk5pT3pXbmR1Y2R6QjFKWGY3SWMwa3V6RFBReHdtNzloaWRHaUVkTWktQWJsLU1rV2FOSzd2MHJZWjJvbDZ2cTllRzBZVGxVbkRPTzViM20xcm5ZWE5hcjk4WkE5Ym9Ndmx6aGtLNQ",
+    "source": "Attractions Magazine",
     "categoryId": "business",
     "categoryLabel": "Business & Growth",
-    "categoryIcon": "\ud83d\udcca",
+    "categoryIcon": "📊",
     "categoryColor": "#10B981"
   },
   {
-    "title": "Multi-Generational Appeal: How Hybrid FECs Balance All Ages Under One Roof",
-    "summary": "The rise of hybrid FECs that combine trampolines, bowling, arcades, VR, and food & beverage is redefining the industry. These venues are designed to simultaneously engage toddlers, teens, and parents, increasing dwell time and per-visit spend by ensuring every family member finds an attraction that fits.",
-    "category": "attractions",
+    "title": "Urban Air Franchisee Expands Portfolio with Arizona Park Acquisition",
+    "summary": "Urban Air franchisee Shekar Laveti has grown his portfolio by acquiring an additional Arizona location, reflecting ongoing franchisee-driven expansion within the trampoline and adventure park segment. This type of multi-unit acquisition strategy is increasingly common among well-capitalized FEC franchisees looking to scale quickly within established brands. The move signals continued franchisee confidence in the Urban Air model despite the brand's concurrent legal challenges.",
+    "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQUWtxR2U2OXVrVkkzMzBKMTdVYXE3UTBOMXNtUVU0R3BNVXpvQlpmcWZKRVE1X05XaUNXb0JuU2w2TmxhbDZFT0xSalRkdGRBZmZyclBKTGF5Zkc0US16TEZvYU5TeHVDZ1F6MVJKRzdsNzRJQWFnNWVIVUgzXy1wNkRZVWY3T0lDU3c3LTBQeHJ5VXpRa1lGVkhhU29YR0tpOUdHeG9QN1lzd3Y4R1prWkhkVktuSDh5SjNWcWtn",
+    "source": "citybiz",
+    "categoryId": "business",
+    "categoryLabel": "Business & Growth",
+    "categoryIcon": "📊",
+    "categoryColor": "#10B981"
+  },
+  {
+    "title": "Adventure Parks Eyeing Vacant Retail Spaces as Expansion Opportunity",
+    "summary": "Adventure and indoor entertainment parks are increasingly targeting closed retail stores as prime locations for new venues, taking advantage of large footprints, existing parking, and favorable lease terms. This trend reflects the broader repositioning of struggling retail real estate toward experiential entertainment uses. FEC operators looking to expand should consider distressed retail as a cost-effective entry point into new markets.",
+    "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOdkxUclIxOHZ4dlMxb2VFaVF5aHpYUFM2SjhHUjlsWnFlZzM1ZHRVVjZIVkNBcmw2UTVrdXM1OGFIeldIY183dS0ySzluT1ViV3Z5b3RBY3JZNEdwWjYxVk1JOU1yM3FkYlBNZTY4TnNFak9tVEhCczBmcFZyWG1pVDRnbHRZT25jUjlaWFZIOG1LTjBXR0p1TGUwcHFRRzJk",
+    "source": "Jacksonville Daily Record",
+    "categoryId": "business",
+    "categoryLabel": "Business & Growth",
+    "categoryIcon": "📊",
+    "categoryColor": "#10B981"
+  },
+  {
+    "title": "North America Family and Indoor Entertainment Center Market Report Projects Growth Through 2032",
+    "summary": "A newly released market report covering the North American family and indoor entertainment center sector projects sustained growth from 2023 through 2032, driven by demand for experiential leisure and expansion of franchise concepts. The report provides operators and investors with a forward-looking view of the sector's revenue potential and competitive dynamics. FEC stakeholders can use this data to guide strategic planning, site selection, and capital allocation decisions.",
+    "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQS1JRSDN4MVBWWU9XYV9URGtDNTZWTDlOak1KWVJESmhpcE1sOFVsRW00WjZva2ZydFJ2N1g0S1NkTnJ4bHJFSWRTbjRvUW5ucDJ1QzZ0Rm9jSE5xWFJKa0dXV1RRQU5meVhKTFk0S1NpVUdYVVBZWExfWmhQUklWZW9kVTJkUmNjaTNzV3RaclhPdzY3R21F",
+    "source": "openPR.com",
+    "categoryId": "business",
+    "categoryLabel": "Business & Growth",
+    "categoryIcon": "📊",
+    "categoryColor": "#10B981"
+  },
+  {
+    "title": "Disneyland Rolls Out Facial Recognition Entry System with Opt-Out Option",
+    "summary": "Disneyland has launched a facial recognition system at park entrances in California, using biometric technology to match guest faces to ticket records, while offering alternative lanes for guests who decline to participate. The system deletes biometric data within 30 days except in fraud or legal cases. FEC operators considering biometric entry or cashless ID technologies should watch this rollout closely for guest acceptance patterns and compliance considerations.",
+    "url": "https://blooloop.com/disneyland-opt-out-facial-recognition/",
     "source": "Blooloop",
-    "url": "https://blooloop.com/valo-motion-7-trends-2026/",
-    "categoryId": "design",
-    "categoryLabel": "Design & Trends",
-    "categoryIcon": "\ud83c\udfa8",
-    "categoryColor": "#EC4899"
-  },
-  {
-    "title": "Mobile-First Booking and Contactless Entry Now Industry Standard",
-    "summary": "Digital ticketing, contactless entry, and mobile checkout have become baseline expectations for FEC guests in 2026. Cloud-based booking systems now let guests browse attractions, purchase packages, and reserve party rooms online, dramatically speeding up check-in and integrating with sales and reporting platforms.",
-    "category": "tech",
-    "source": "Valo Motion",
-    "url": "https://www.valomotion.com/blog/7-trends-shaping-active-indoor-entertainment",
     "categoryId": "tech",
     "categoryLabel": "Technology",
-    "categoryIcon": "\u2699\ufe0f",
+    "categoryIcon": "⚙️",
     "categoryColor": "#3B82F6"
   },
   {
-    "title": "GENDA Inc. Acquires Indigo NewCo, Adding 100+ UK Entertainment Venues",
-    "summary": "Japanese company GENDA Inc. completed its acquisition of Indigo NewCo Limited in late 2025, adding over 100 amusement arcade and family entertainment venues across the United Kingdom. The deal expands GENDA's global footprint and signals growing international appetite for FEC consolidation.",
-    "category": "business",
-    "source": "Research and Markets",
-    "url": "https://www.researchandmarkets.com/reports/5766991/familyindoor-entertainment-centers-market-report",
+    "title": "Manteca's Second Bowling Alley and Family Fun Center Moves Forward",
+    "summary": "A second bowling alley and family fun center is advancing in Manteca, California, adding to the city's entertainment options and signaling continued local investor confidence in the FEC format. The project represents the type of community-level FEC development that continues to drive grassroots growth in the sector outside major metropolitan areas. Operators in similar mid-sized markets may see this as validation for new venue investments.",
+    "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQc3MwSWFZWlpxQjYyc19ScFc2enRtLUNtRGJuNGQ2WGRMNzVvSnlZYjI2aDhheU42QnYyZi1tWnBNOVljS2FyajNMZi1KemVGRVp4LVJvRTJvS0tIdFFrSHpuNzhEelBOVEFIUGVWNlZRQW1mbWV5eXpKd0NkNWxpeGVnT2FCdUI5M3hVMmdOYktKeW5Mb2x3RG1JbVJNZU5UQXVTY1c4akFINnZfWjZrTDFtNU5kdw",
+    "source": "Manteca Bulletin",
     "categoryId": "business",
     "categoryLabel": "Business & Growth",
-    "categoryIcon": "\ud83d\udcca",
+    "categoryIcon": "📊",
     "categoryColor": "#10B981"
   },
   {
-    "title": "Interactive LED Floors Redefine Entertainment Standards at Family Centers",
-    "summary": "WETop has introduced new interactive LED floor technology that transforms traditional play areas into immersive digital experiences. The floors respond to movement with projected games and visuals, offering FEC operators a high-engagement, low-staffing attraction that appeals to young children and families alike.",
-    "category": "attractions",
-    "source": "Evening Sun",
-    "url": "https://www.eveningsun.com/press-release/story/78254/interactive-led-floors-redefine-family-entertainment-standards-wetop-introduces-new-immersive-technology/",
+    "title": "ThunderZone Family Entertainment Center Announces Opening Date",
+    "summary": "ThunderZone Family Entertainment Center has announced its official opening date, adding a new multi-attraction venue to its local market. New FEC openings continue at a steady pace across the US, reflecting ongoing consumer appetite for out-of-home entertainment. Operators and suppliers can track new entrants like ThunderZone to gauge competitive trends and regional market saturation.",
+    "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOUmF4T0lFYUxBRDR0cTFJSWFjYTVSWlV3LVlQUi1WNkdjdF9xdDJaeU16YWhHbzNSSDhEV3BxVXJPT183MnptcUJXLUNIZ3pKWERVNUp1YXp1TTkxSFpvNVp1cGtMbmk1VVJhTWVVaTJQMXRuTkVhSTRPaTdnNThkR3h6YTBoUHRWWVAxVkZRUWdEVEdBaEZYd0RDamdiSTRw",
+    "source": "The City Menus",
+    "categoryId": "business",
+    "categoryLabel": "Business & Growth",
+    "categoryIcon": "📊",
+    "categoryColor": "#10B981"
+  },
+  {
+    "title": "Large-Scale Entertainment Center Planned for North Haven, Connecticut",
+    "summary": "Reports indicate that a large-scale entertainment center is coming to North Haven, Connecticut, potentially bringing significant new attraction options to the New England market. Details on the concept and operator have not yet been fully disclosed, but the project reflects continued investment in experiential entertainment across suburban markets. FEC operators in the Northeast should monitor the development for competitive and partnership implications.",
+    "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPdFZxT1ZCMVJ1SW5wbjV1Rl96VUE1ODgwVEp6OEVRM0pZY1JSTkJVMDZLbHpmanNOaFV2SlJPUzhGSUlva18zYXdzaUYxSlZpMTU3Y1Rxb2I4NFczdkVHa29acTRzSXFsczFlZ0ZJSWZ3YkVxejB2cHdFNFZTV042OGVyTWFJTzF4dF96amVyTHhKZkxiZ3c3dnFWSTNfdW9L",
+    "source": "Patch",
+    "categoryId": "business",
+    "categoryLabel": "Business & Growth",
+    "categoryIcon": "📊",
+    "categoryColor": "#10B981"
+  },
+  {
+    "title": "Orbit Action Park Coming to Madison, Wisconsin",
+    "summary": "A new action park concept called Orbit is set to open in Madison, Wisconsin, adding another player to the growing indoor action park segment that competes directly with trampoline parks and multi-attraction FECs. The entry of new branded concepts into mid-sized markets continues to reshape the competitive landscape for established local operators. FEC owners in similar markets should assess how differentiated their offerings are as new concepts arrive.",
+    "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNd0tJMjJLS3pDUXBQNTlhVWFOdWJZdVFHUXc3dDdHVVRyWU1CSXI3UnhMUXhjSXlXSHNLNllJUTlOQndDdldRRWhQTmhHajFfOGdULVBTNXhyVThwMkhjNVFaN05TWEdCenZoa2NiNy1KMWVONnRhQmVhSGVWa1RKTE9wVUFCdkpkZGJxVTBaUmZxdw",
+    "source": "Axios",
     "categoryId": "attractions",
     "categoryLabel": "Attractions & Experiences",
-    "categoryIcon": "\ud83c\udfa2",
+    "categoryIcon": "🎢",
     "categoryColor": "#FF6B35"
   },
   {
-    "title": "Sustainability Emerges as Competitive Advantage for FEC Operators",
-    "summary": "Energy-efficient attractions, LED lighting upgrades, and sustainable facility design are no longer just cost-saving measures\u2014they're becoming a marketing differentiator. Eco-conscious families increasingly factor sustainability into their entertainment choices, and operators who invest early gain both lower operating costs and stronger brand loyalty.",
-    "category": "ops",
-    "source": "Valo Motion",
-    "url": "https://www.valomotion.com/blog/7-trends-shaping-active-indoor-entertainment",
+    "title": "iSmash Rage Room Concept Opens in Rapid City, South Dakota",
+    "summary": "iSmash, a rage room and smash entertainment concept, is opening a new location in Rapid City, South Dakota in May, continuing the expansion of this niche but growing FEC attraction type. Rage rooms and destruction-based entertainment have carved out a loyal consumer base as stress-relief experiences, complementing more traditional FEC offerings. Operators exploring attraction diversification may want to evaluate whether smash-room concepts fit their venue mix.",
+    "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFB0VzBGNURqcnJYdzU5WEVnblAzTzd5eXQwNThLcGJYOWxGX0RiZG4wTzJ3NXRnR2VQX3M1azN0SDgzRDZoUHhhQUhKX21fTFRjam1TTDVGM2I4cE5JT04xbXlveUFQRFVIMHpfT0hvc0s",
+    "source": "KOTA Territory News",
+    "categoryId": "attractions",
+    "categoryLabel": "Attractions & Experiences",
+    "categoryIcon": "🎢",
+    "categoryColor": "#FF6B35"
+  },
+  {
+    "title": "Paultons Park Launches Unlimited Monthly Membership Model",
+    "summary": "UK theme park Paultons Park has introduced an unlimited visits subscription for a monthly fee, joining a growing list of attractions experimenting with membership-based revenue models. This approach can smooth seasonal revenue fluctuations and build a loyal repeat-visitor base, which is increasingly relevant for FEC operators looking to stabilize cash flow. Domestic FEC operators may find the subscription model worth exploring as consumer expectations around membership perks continue to evolve.",
+    "url": "https://www.hampshirechronicle.co.uk/news/26040728.paultons-park-launches-unlimited-days-monthly-fee/",
+    "source": "Hampshire Chronicle",
     "categoryId": "ops",
     "categoryLabel": "Operations & Safety",
-    "categoryIcon": "\ud83d\udee1\ufe0f",
+    "categoryIcon": "🛡️",
     "categoryColor": "#F59E0B"
   },
   {
-    "title": "AI-Driven Weapons Detectors Speed Up Venue Entry Without Sacrificing Safety",
-    "summary": "A new generation of touchless AI-powered screening systems is arriving at entertainment venues in 2026, replacing slow metal detector lines with rapid walk-through scanners. These systems use machine learning to identify threats accurately while processing guests significantly faster than traditional security checkpoints.",
-    "category": "ops",
-    "source": "Ticket Fairy",
-    "url": "https://www.ticketfairy.com/blog/venue-security-in-2026-ensuring-safety-without-sacrificing-the-fan-experience",
+    "title": "Laredo Gambling Raid Nets 6 Arrests and Seizure of 88 Machines at Amusement Center",
+    "summary": "An undercover investigation of an amusement center on McPherson Road in Laredo, Texas resulted in six arrests and the seizure of 88 gaming machines suspected of being used for illegal gambling. The case is a reminder for FEC and amusement center operators of the legal risks associated with redemption and gaming equipment that can cross into regulated gambling territory. Operators should ensure their gaming setups comply with local and state amusement gaming laws to avoid similar enforcement actions.",
+    "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNa0RYQ3ZBVDRTSDBlNVRoQnpyLTVaSTdoU2JvVS1kd1lrb3VNZ1k0MjVibEVpczVNYTF3UjBnejNNVm9BSzZIbjNJdDg2b2NXcVRZaXRzZHBMRFNRYzNnWEo5Y2hsVHYtblpQQ0Q2MnpzdTY5Nk5aRjVwYkFaQmZ6VXNxNmVsZnBHR3ZwQXQ3LWlld0k3UG94RGtocUVKQXBOZw",
+    "source": "Laredo Morning Times",
     "categoryId": "ops",
     "categoryLabel": "Operations & Safety",
-    "categoryIcon": "\ud83d\udee1\ufe0f",
+    "categoryIcon": "🛡️",
     "categoryColor": "#F59E0B"
   },
   {
-    "title": "Social-First Attraction Design Creates Shareable Moments That Market Themselves",
-    "summary": "FEC operators are increasingly designing attractions around social sharing, building environments that naturally generate Instagram and TikTok content. Competition-focused group experiences, dramatic lighting, and visually striking setups turn guests into organic marketers\u2014reducing customer acquisition costs while boosting word-of-mouth referrals.",
-    "category": "design",
-    "source": "Party Center Software",
-    "url": "https://www.partycentersoftware.com/blog/top-5-family-entertainment-center-trends-in-2026",
-    "categoryId": "design",
-    "categoryLabel": "Design & Trends",
-    "categoryIcon": "\ud83c\udfa8",
-    "categoryColor": "#EC4899"
-  },
-  {
-    "title": "Cloud-Based POS Systems Transform FEC Operations With Real-Time Analytics",
-    "summary": "Modern point-of-sale systems now provide FEC operators with unified dashboards tracking games management, prize inventory, party bookings, food & beverage sales, and customer data in real time. The shift to cloud-based POS eliminates data silos and gives managers instant visibility into every revenue stream.",
-    "category": "tech",
+    "title": "Shaping Guest Experience Through Invisible Audio Design",
+    "summary": "A Blooloop feature explores how expertly designed sound effects that blend seamlessly into themed environments — rather than calling attention to themselves — are critical to creating believable and immersive guest experiences. The article uses real-world examples from theme parks to illustrate how sound can reinforce storytelling without the guest ever noticing it. FEC operators investing in themed environments, escape rooms, or immersive attractions should consider how intentional audio design can elevate their overall guest experience.",
+    "url": "https://blooloop.com/sonic-perception-invisible-audio/",
     "source": "Blooloop",
-    "url": "https://blooloop.com/play/in-depth/cashless-business-solution/",
-    "categoryId": "tech",
-    "categoryLabel": "Technology",
-    "categoryIcon": "\u2699\ufe0f",
-    "categoryColor": "#3B82F6"
-  },
-  {
-    "title": "Low-Maintenance Attractions Gain Favor as FECs Simplify Operations",
-    "summary": "With staffing challenges persisting across the industry, operators are gravitating toward unattended and low-maintenance attractions that deliver consistent guest experiences without heavy labor requirements. Self-service kiosks, automated redemption, and sensor-based attractions reduce operational complexity while maintaining high throughput.",
-    "category": "ops",
-    "source": "Valo Motion",
-    "url": "https://www.valomotion.com/blog/7-trends-shaping-active-indoor-entertainment",
-    "categoryId": "ops",
-    "categoryLabel": "Operations & Safety",
-    "categoryIcon": "\ud83d\udee1\ufe0f",
-    "categoryColor": "#F59E0B"
-  },
-  {
-    "title": "Sensory-Friendly Spaces and Inclusive Design Drive FEC Renovation Wave",
-    "summary": "Instead of full facility overhauls, savvy FEC operators are making targeted upgrades like sensory-friendly quiet rooms, updated food & beverage menus with allergen-friendly options, and ADA-compliant attraction modifications. These incremental investments improve ROI and expand the addressable market to underserved guest segments.",
-    "category": "design",
-    "source": "Valo Motion",
-    "url": "https://www.valomotion.com/blog/7-trends-shaping-active-indoor-entertainment",
     "categoryId": "design",
     "categoryLabel": "Design & Trends",
-    "categoryIcon": "\ud83c\udfa8",
+    "categoryIcon": "🎨",
     "categoryColor": "#EC4899"
   },
   {
-    "title": "North American FEC Companies Pivot to Experience-First Revenue Models",
-    "summary": "The biggest shift in FEC strategy for 2026 is the move from attraction-first to experience-first thinking. Operators are designing end-to-end guest journeys\u2014from online discovery through post-visit engagement\u2014that prioritize memorable moments over simple ride counts, driving higher satisfaction scores and repeat visits.",
-    "category": "business",
-    "source": "LinkedIn",
-    "url": "https://www.linkedin.com/pulse/2026-north-america-family-entertainment-center-kbrmc/",
-    "categoryId": "business",
-    "categoryLabel": "Business & Growth",
-    "categoryIcon": "\ud83d\udcca",
-    "categoryColor": "#10B981"
+    "title": "The Case for Low-Ego Design Teams in Themed Entertainment Projects",
+    "summary": "An opinion piece from Cuningham's Orlando office argues that themed entertainment projects succeed most when design teams deprioritize individual credit in favor of collective outcomes, reducing project risk and improving client relationships. The firm highlights three concrete ways a collaborative, low-ego culture translates into better results for attraction owners and operators. FEC owners undertaking major renovations or new builds should consider cultural fit alongside creative credentials when selecting design partners.",
+    "url": "https://blooloop.com/low-ego-design-teams/",
+    "source": "Blooloop",
+    "categoryId": "design",
+    "categoryLabel": "Design & Trends",
+    "categoryIcon": "🎨",
+    "categoryColor": "#EC4899"
   },
   {
-    "title": "Party-Ready Attractions Drive Revenue as FECs Optimize for Group Bookings",
-    "summary": "Operators are prioritizing attractions that transition seamlessly between walk-in play and reserved events like birthday parties and corporate outings. Bundled packages that let guests book, reserve, and upgrade attractions online are proving to be a high-margin revenue driver across all FEC formats.",
-    "category": "attractions",
-    "source": "Party Center Software",
-    "url": "https://www.partycentersoftware.com/blog/top-5-family-entertainment-center-trends-in-2026",
+    "title": "EPIC Entertainment Group Expands Story-Led Seasonal Experiences Across the US",
+    "summary": "EPIC Entertainment Group is rolling out a portfolio of spring and summer immersive and narrative-driven experiences at partner destinations across the United States, building on strong holiday season results. The company emphasizes that destinations must now compete not just for visitors but for cultural relevance, positioning story-driven programming as a key differentiator. FEC operators looking to add seasonal programming layers or themed events should consider how narrative-focused design partnerships can drive repeat visitation and incremental revenue.",
+    "url": "https://blooloop.com/epic-entertainment-group-destination-strategy/",
+    "source": "Blooloop",
+    "categoryId": "design",
+    "categoryLabel": "Design & Trends",
+    "categoryIcon": "🎨",
+    "categoryColor": "#EC4899"
+  },
+  {
+    "title": "Square Enix Opening Branded Cafes in Los Angeles and Tokyo This Spring",
+    "summary": "Japanese video game publisher Square Enix is opening officially licensed themed cafes in Los Angeles and Shinjuku, Tokyo in spring 2026, featuring menus and merchandise tied to Final Fantasy, Dragon Quest, and Kingdom Hearts. The LA location marks the first official Square Enix cafe with a full menu in the United States, reflecting growing demand for IP-branded immersive dining experiences. FEC operators with arcade or entertainment components should note how gaming IP activations are evolving into full destination dining and retail experiences.",
+    "url": "https://blooloop.com/square-enix-cafe-la-tokyo/",
+    "source": "Blooloop",
     "categoryId": "attractions",
     "categoryLabel": "Attractions & Experiences",
-    "categoryIcon": "\ud83c\udfa2",
+    "categoryIcon": "🎢",
     "categoryColor": "#FF6B35"
   },
   {
-    "title": "Modular Attraction Design Lets FECs Refresh Without Full Renovations",
-    "summary": "The modular and sustainable design trend is transforming how FECs approach capital expenditure. Attractions chosen for their longevity, upgradability, and energy efficiency allow operators to keep experiences fresh with software updates and module swaps rather than costly full replacements.",
-    "category": "design",
-    "source": "Party Center Software",
-    "url": "https://www.partycentersoftware.com/blog/top-5-family-entertainment-center-trends-in-2026",
-    "categoryId": "design",
-    "categoryLabel": "Design & Trends",
-    "categoryIcon": "\ud83c\udfa8",
-    "categoryColor": "#EC4899"
-  },
-  {
-    "title": "Embed Ecosystem Integrates Hardware and Software in Single FEC Platform",
-    "summary": "Embed's new Ecosystem platform unifies cashless payment systems, POS terminals, kiosks, mobile wallets, and RFID wearables into a single interconnected solution for FEC operators. The hyper-integrated approach eliminates the need for multiple vendors and gives operators a unified view of all revenue and operations data.",
-    "category": "tech",
-    "source": "Embed",
-    "url": "https://www.embedcard.com/newsroom/embed-the-fec-solutions-trailblazer-ushers-in-a-new-era-of-innovation",
-    "categoryId": "tech",
-    "categoryLabel": "Technology",
-    "categoryIcon": "\u2699\ufe0f",
-    "categoryColor": "#3B82F6"
-  },
-  {
-    "title": "Eco-Friendly Indoor Play Areas Set New Standard for Family Centers",
-    "summary": "A growing number of FECs are investing in sustainable materials, natural lighting integration, and energy-efficient HVAC systems as part of new-build and renovation projects. These eco-friendly designs resonate with environmentally conscious families while delivering measurable savings on utility and maintenance costs.",
-    "category": "design",
-    "source": "ESACart",
-    "url": "https://www.esacart.com/a-top-family-fun-center-design-trends-to-watch-in-2026.html",
-    "categoryId": "design",
-    "categoryLabel": "Design & Trends",
-    "categoryIcon": "\ud83c\udfa8",
-    "categoryColor": "#EC4899"
-  },
-  {
-    "title": "Integrated Command Centers Bring Real-Time Monitoring to FEC Safety",
-    "summary": "New venue regulations in 2026 are driving FECs to implement integrated command centers for real-time crowd monitoring. These systems combine AI-driven capacity tracking, documented emergency communication protocols, and data-driven crowd management into a single operations hub\u2014raising the safety bar industry-wide.",
-    "category": "ops",
-    "source": "Ticket Fairy",
-    "url": "https://www.ticketfairy.com/blog/venue-security-in-2026-ensuring-safety-without-sacrificing-the-fan-experience",
-    "categoryId": "ops",
-    "categoryLabel": "Operations & Safety",
-    "categoryIcon": "\ud83d\udee1\ufe0f",
-    "categoryColor": "#F59E0B"
-  },
-  {
-    "title": "Data Analytics Enables Proactive FEC Decision-Making Across All Operations",
-    "summary": "FEC operators are increasingly using data analytics to move from reactive to proactive management. By analyzing visitor behavior, spending patterns, and attraction usage data, operators can optimize staffing levels, predict maintenance needs, adjust inventory, and personalize marketing\u2014all before issues arise.",
-    "category": "tech",
-    "source": "Marwey",
-    "url": "https://www.marwey.com/ai-technology-family-entertainment-centers-2026.html",
-    "categoryId": "tech",
-    "categoryLabel": "Technology",
-    "categoryIcon": "\u2699\ufe0f",
-    "categoryColor": "#3B82F6"
-  },
-  {
-    "title": "Round Lake Beach Announces New Entertainment Complex With Seven Screens",
-    "summary": "Round Lake Beach, Illinois has greenlit a new family entertainment complex featuring seven movie screens, a full-service restaurant, and an extensive games area. The project highlights the continued demand for large-format entertainment destinations that combine dining, cinema, and interactive play under one roof.",
-    "category": "business",
-    "source": "Round Lake Beach",
-    "url": "https://roundlakebeachil.gov/news_detail_T3_R68.php",
+    "title": "Resorts World New York City Opens NYC's First Table Games Casino",
+    "summary": "Resorts World New York City, owned by Genting Group, has opened New York City's first commercial table games casino, featuring over 240 table games and 2,500 slot machines after securing a long-awaited gaming license. The launch marks a major milestone in the expansion of gaming-adjacent entertainment in the New York metro market. FEC operators and entertainment venue developers in the region should assess how the new casino destination may affect competitive entertainment spending in the area.",
+    "url": "https://blooloop.com/resorts-world-nyc-casino/",
+    "source": "Blooloop",
     "categoryId": "business",
     "categoryLabel": "Business & Growth",
-    "categoryIcon": "\ud83d\udcca",
+    "categoryIcon": "📊",
     "categoryColor": "#10B981"
   },
   {
-    "title": "Esports Zones Emerge as High-Margin Addition for Forward-Thinking FECs",
-    "summary": "Competitive gaming areas are proving to be a smart investment for FECs targeting teens and young adults. Dedicated esports zones with tournament infrastructure, streaming setups, and spectator seating create recurring event revenue while attracting a demographic that traditional attractions may miss.",
-    "category": "attractions",
-    "source": "Workforce.com",
-    "url": "https://www.workforce.com/news/global-fec-market",
+    "title": "Futuroscope Named World's Best Theme Park in Tripadvisor Travellers' Choice Awards",
+    "summary": "France's Futuroscope, known for its blend of technology, education, and entertainment, has topped Tripadvisor's 2026 Travellers' Choice Awards for best theme parks and water parks globally, displacing last year's winner Ferrari World Abu Dhabi. The recognition highlights consumer appetite for tech-forward, experience-driven attractions over pure thrill-ride destinations. FEC operators can draw inspiration from Futuroscope's positioning at the intersection of immersive tech and educational entertainment as they plan future attraction investments.",
+    "url": "https://blooloop.com/futuroscope-tripadvisor-travellers-choice-awards/",
+    "source": "Blooloop",
     "categoryId": "attractions",
     "categoryLabel": "Attractions & Experiences",
-    "categoryIcon": "\ud83c\udfa2",
+    "categoryIcon": "🎢",
     "categoryColor": "#FF6B35"
+  },
+  {
+    "title": "Six Flags Great Adventure's Shoreline Pier Redevelopment Takes Shape",
+    "summary": "Construction is visibly progressing on Six Flags Great Adventure's new Shoreline Pier, replacing the park's iconic Boardwalk with a reimagined waterfront entertainment zone featuring new attractions including the spinning ride Barrels O' Fun. The project illustrates how major regional parks are investing in destination-level area redevelopments rather than single-attraction additions. FEC operators planning facility refreshes can look to Shoreline Pier as a model for how thematic area overhauls can drive renewed guest interest.",
+    "url": "https://amusementtoday.com/2026/04/six-flags-great-adventures-shoreline-pier-continues-to-rise/",
+    "source": "Amusement Today",
+    "categoryId": "attractions",
+    "categoryLabel": "Attractions & Experiences",
+    "categoryIcon": "🎢",
+    "categoryColor": "#FF6B35"
+  },
+  {
+    "title": "ZIERER Debuts Force 360 Coaster at Duinrell, Replacing 40-Year-Old Predecessor",
+    "summary": "ZIERER has launched its new Force 360 Coaster with the inaugural Kikker8baan installation at Duinrell in the Netherlands, replacing the beloved Kikkerbaan after more than four decades of service. The project demonstrates how ride manufacturers and parks can honor legacy attractions while modernizing the guest experience for a new generation. FEC and amusement park operators considering attraction replacement should note how ZIERER balanced heritage preservation with contemporary ride engineering.",
+    "url": "https://blooloop.com/zierer-kikker8baan-duinrell/",
+    "source": "Blooloop",
+    "categoryId": "attractions",
+    "categoryLabel": "Attractions & Experiences",
+    "categoryIcon": "🎢",
+    "categoryColor": "#FF6B35"
+  },
+  {
+    "title": "Carowinds Names Bridgette Bywater as New Park President",
+    "summary": "Carowinds and Carolina Harbor Waterpark have appointed Bridgette Bywater as their new park president, bringing 36 years of amusement industry experience focused on operational excellence and safety leadership to the role. Leadership transitions at major regional parks often signal shifts in operational priorities and guest experience strategy. FEC operators and industry professionals should watch how Bywater shapes the park's direction as a bellwether for broader industry management trends.",
+    "url": "https://amusementtoday.com/2026/04/carowinds-names-bridgette-bywater-new-park-president/",
+    "source": "Amusement Today",
+    "categoryId": "ops",
+    "categoryLabel": "Operations & Safety",
+    "categoryIcon": "🛡️",
+    "categoryColor": "#F59E0B"
+  },
+  {
+    "title": "Hurricane Harbor Arlington Announces May 16 Season Opening with Fast Lane and Upgrades",
+    "summary": "Six Flags Hurricane Harbor Arlington is reopening for its 2026 season on May 16, introducing a new Fast Lane program and park-wide attraction and amenity upgrades. The addition of Fast Lane reflects the continued push by major waterpark operators to offer premium access tiers as a revenue driver. FEC operators with seasonal attractions can take note of how tiered pricing and operational improvements are being packaged to boost per-cap spending.",
+    "url": "https://amusementtoday.com/2026/04/hurricane-harbor-arlington-makes-a-splash-with-may-16-season-opening/",
+    "source": "Amusement Today",
+    "categoryId": "ops",
+    "categoryLabel": "Operations & Safety",
+    "categoryIcon": "🛡️",
+    "categoryColor": "#F59E0B"
+  },
+  {
+    "title": "Aquatica Orlando Brings Back AquaGlow Nighttime Event with New Experiences for 2026",
+    "summary": "Aquatica Orlando is returning its AquaGlow nighttime event for a third year with all-new slide experiences, enhanced entertainment, and expanded neon-themed programming running select nights from May through September. The event is a strong example of how waterparks can extend operating hours and generate additional revenue through limited-capacity evening events with a distinct identity. FEC operators running seasonal outdoor attractions should evaluate how nighttime event programming can add a meaningful revenue stream.",
+    "url": "https://amusementtoday.com/2026/04/aquatica-orlandos-aquaglow-returns-with-all-new-nighttime-slide-experiences-and-electrifying-entertainment/",
+    "source": "Amusement Today",
+    "categoryId": "ops",
+    "categoryLabel": "Operations & Safety",
+    "categoryIcon": "🛡️",
+    "categoryColor": "#F59E0B"
+  },
+  {
+    "title": "LEGOLAND Florida to Host FIFA World Cup 2026 Themed Experience",
+    "summary": "LEGOLAND Florida Resort is launching an all-new FIFA World Cup 2026 Experience exclusively at LEGOLAND Resorts, combining soccer fandom with LEGO play in a high-energy themed event format. The partnership illustrates how major attraction brands are leveraging global sporting events to drive incremental visitation and media attention. FEC operators should consider how timely IP tie-ins with major cultural or sporting events can create compelling limited-time programming.",
+    "url": "https://amusementtoday.com/2026/04/a-bricktastic-fifa-world-cup-2026-celebration-at-legoland-florida/",
+    "source": "Amusement Today",
+    "categoryId": "attractions",
+    "categoryLabel": "Attractions & Experiences",
+    "categoryIcon": "🎢",
+    "categoryColor": "#FF6B35"
+  },
+  {
+    "title": "The Giant — A 30-Meter Moving LED Statue Attraction — Gets PwC Feasibility Backing for Dublin",
+    "summary": "A PwC feasibility study co-funded by Dublin City Council and Enterprise Ireland has validated The Giant, a 30-meter programmable LED human-shaped statue attraction, as a powerful catalyst for city-center tourism and regeneration with George's Dock identified as the optimal site. The concept blends art, technology, storytelling, and digital innovation in a format that could redefine landmark attractions globally. FEC and attraction developers interested in large-format immersive public art installations should follow this project as it advances toward development.",
+    "url": "https://blooloop.com/the-giant-pwc-feasibility/",
+    "source": "Blooloop",
+    "categoryId": "design",
+    "categoryLabel": "Design & Trends",
+    "categoryIcon": "🎨",
+    "categoryColor": "#EC4899"
+  },
+  {
+    "title": "project:syntropy Sets New Benchmark for Immersive Digital Twin Technology at Shanghai Exhibition",
+    "summary": "project:syntropy has designed and delivered a cutting-edge Digital Sandtable visual system for the Shanghai Urban Planning Exhibition Center, establishing a new industry benchmark for real-time immersive digital twin technology in public attractions. The project highlights how advanced rendering infrastructure and real-time data integration are transforming interactive exhibition and visitor attraction design. FEC and attraction operators exploring immersive tech investments should watch how digital twin systems evolve from urban planning tools into visitor-facing entertainment experiences.",
+    "url": "https://blooloop.com/project-syntropy-supec-digital-twins/",
+    "source": "Blooloop",
+    "categoryId": "tech",
+    "categoryLabel": "Technology",
+    "categoryIcon": "⚙️",
+    "categoryColor": "#3B82F6"
+  },
+  {
+    "title": "Coachella Partners with Google DeepMind AI to Explore the Future of Live Entertainment",
+    "summary": "Coachella has partnered with Google DeepMind to test artificial intelligence applications in live entertainment, exploring how AI can enhance programming, personalization, and the overall festival experience. While focused on large-scale live events, the technologies being piloted — including AI-driven personalization and real-time content adaptation — have clear applicability for FEC operators seeking to modernize their guest experience platforms. The partnership signals that AI is moving from back-office efficiency tools to front-of-house guest engagement in the entertainment sector.",
+    "url": "https://decrypt.co/365532/coachella-google-deepmind-ai-test-future-live-entertainment",
+    "source": "Decrypt",
+    "categoryId": "tech",
+    "categoryLabel": "Technology",
+    "categoryIcon": "⚙️",
+    "categoryColor": "#3B82F6"
+  },
+  {
+    "title": "Middle East Theme Parks Facing Headwinds from Tourism Decline",
+    "summary": "Theme parks across the Middle East are experiencing pressure from a decline in international tourism, affecting attendance and revenue at major regional attractions. The trend reflects broader geopolitical and economic factors influencing travel patterns to the region. FEC operators with exposure to tourism-dependent markets should assess their guest mix and consider strategies to strengthen local and regional visitation to offset international visitor shortfalls.",
+    "url": "https://licensinginternational.org/news/middle-east-theme-parks-hit-by-tourism-decline/",
+    "source": "Licensing International",
+    "categoryId": "business",
+    "categoryLabel": "Business & Growth",
+    "categoryIcon": "📊",
+    "categoryColor": "#10B981"
   }
 ];
-
 const CATEGORIES = [
   { id: "all",         label: "All Updates" },
   { id: "attractions", label: "Attractions" },
@@ -530,28 +490,20 @@ const CATEGORIES = [
   { id: "ops",         label: "Operations" },
   { id: "design",      label: "Design & Trends" }
 ];
-
 let activeCat = "all";
-
 function formatTimestamp(iso) {
   try {
     const d = new Date(iso);
     if (isNaN(d.getTime())) return "";
-    const date = d.toLocaleDateString(undefined, {
-      month: "short", day: "numeric", year: "numeric"
-    });
-    const time = d.toLocaleTimeString(undefined, {
-      hour: "numeric", minute: "2-digit"
-    });
+    const date = d.toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" });
+    const time = d.toLocaleTimeString(undefined, { hour: "numeric", minute: "2-digit" });
     return `Updated ${date} \u00b7 ${time}`;
   } catch (e) { return ""; }
 }
-
 function renderHeader() {
   const el = document.getElementById("timestamp");
   el.textContent = formatTimestamp(el.dataset.iso);
 }
-
 function renderTabs() {
   const container = document.getElementById("tabs");
   container.innerHTML = CATEGORIES.map(c =>
@@ -565,16 +517,12 @@ function renderTabs() {
     });
   });
 }
-
 function safeHref(url) {
   if (!url || typeof url !== "string") return null;
   const u = url.trim();
   if (!/^https?:\/\//i.test(u)) return null;
-  return u.replace(/[&<>"']/g, c => (
-    { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]
-  ));
+  return u.replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 }
-
 function renderFeed() {
   const filtered = activeCat === "all"
     ? articles
@@ -583,9 +531,7 @@ function renderFeed() {
   container.innerHTML = filtered.map((a, i) => {
     const href = safeHref(a.url);
     const tag = href ? "a" : "article";
-    const attrs = href
-      ? `href="${href}" target="_blank" rel="noopener noreferrer"`
-      : "";
+    const attrs = href ? `href="${href}" target="_blank" rel="noopener noreferrer"` : "";
     const catColor = a.categoryColor || "var(--accent)";
     return `
     <${tag} class="card" ${attrs} style="animation-delay: ${i * 0.05}s">
@@ -598,26 +544,17 @@ function renderFeed() {
     </${tag}>`;
   }).join("");
 }
-
 renderHeader();
 renderTabs();
 renderFeed();
-
 function postHeight() {
   if (window.parent === window) return;
-  const h = Math.max(
-    document.documentElement.scrollHeight,
-    document.body.scrollHeight
-  );
+  const h = Math.max(document.documentElement.scrollHeight, document.body.scrollHeight);
   window.parent.postMessage({ type: "fec-insider:height", height: h }, "*");
 }
-if (window.ResizeObserver) {
-  new ResizeObserver(postHeight).observe(document.body);
-}
+if (window.ResizeObserver) { new ResizeObserver(postHeight).observe(document.body); }
 window.addEventListener("load", postHeight);
-if (document.fonts && document.fonts.ready) {
-  document.fonts.ready.then(postHeight);
-}
+if (document.fonts && document.fonts.ready) { document.fonts.ready.then(postHeight); }
 setTimeout(postHeight, 100);
 setTimeout(postHeight, 1000);
 </script>
