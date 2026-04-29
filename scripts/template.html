@@ -445,7 +445,7 @@
 
 <script>
 const CHAT_API = "{{CHAT_API_URL}}";
-const articles = {{ARTICLES_JSON}};
+let articles = [];
 const CATEGORIES = [
   { id: "all",         label: "All Updates" },
   { id: "attractions", label: "Attractions" },
@@ -464,8 +464,9 @@ function formatTimestamp(iso) {
     return `Updated ${date} \u00b7 ${time}`;
   } catch (e) { return ""; }
 }
-function renderHeader() {
+function renderHeader(iso) {
   const el = document.getElementById("timestamp");
+  if (iso) { el.dataset.iso = iso; }
   el.textContent = formatTimestamp(el.dataset.iso);
 }
 function renderTabs() {
@@ -488,10 +489,14 @@ function safeHref(url) {
   return u.replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 }
 function renderFeed() {
+  const container = document.getElementById("feed");
+  if (!articles.length) {
+    container.innerHTML = '<div style="text-align:center;padding:40px 20px;color:var(--on-dark-60);font-size:15px">Loading today\'s news\u2026</div>';
+    return;
+  }
   const filtered = activeCat === "all"
     ? articles
     : articles.filter(a => a.categoryId === activeCat);
-  const container = document.getElementById("feed");
   container.innerHTML = filtered.map((a, i) => {
     const href = safeHref(a.url);
     const tag = href ? "a" : "article";
@@ -511,6 +516,13 @@ function renderFeed() {
 renderHeader();
 renderTabs();
 renderFeed();
+fetch("articles.json?t=" + Date.now())
+  .then(r => { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+  .then(data => { articles = data.articles || data; renderHeader(data.generated); renderTabs(); renderFeed(); })
+  .catch(e => {
+    console.error("Failed to load articles:", e);
+    document.getElementById("feed").innerHTML = '<div style="text-align:center;padding:40px 20px;color:var(--on-dark-60);font-size:15px">Unable to load articles. Please try again later.</div>';
+  });
 
 /* ---------- Action Bar & Panels ---------- */
 const chatPanel = document.getElementById("chatPanel");

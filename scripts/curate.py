@@ -185,12 +185,10 @@ def enrich_articles(articles: list[dict]) -> list[dict]:
 
 
 def render_html(articles: list[dict]) -> str:
-    """Inject articles JSON and timestamp into the HTML template."""
+    """Inject timestamp and config into the HTML template (articles loaded at runtime from articles.json)."""
     template = TEMPLATE_PATH.read_text(encoding="utf-8")
     now_iso = datetime.now(timezone.utc).isoformat()
-    articles_json = json.dumps(articles, ensure_ascii=False, indent=2)
     html = template.replace("{{TIMESTAMP_ISO}}", now_iso)
-    html = html.replace("{{ARTICLES_JSON}}", articles_json)
     html = html.replace("{{GA4_ID}}", os.environ.get("GA4_ID", "G-XXXXXXXXXX"))
     html = html.replace("{{CLARITY_ID}}", os.environ.get("CLARITY_ID", "xxxxxxxxxx"))
     html = html.replace("{{CHAT_API_URL}}", os.environ.get("CHAT_API_URL", "https://fec-insider-chat.davidmarkleach.workers.dev"))
