@@ -7,6 +7,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@400;500;600;700&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','');</script>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","");</script>
 <style>
   :root {
     --bg:            #070714;
@@ -48,9 +53,7 @@
     color: var(--on-dark);
     margin-bottom: 10px;
   }
-  .title strong {
-    font-weight: 700; color: var(--accent-strong);
-  }
+  .title strong { font-weight: 700; color: var(--accent-strong); }
   .subtitle {
     font-family: 'Lato', sans-serif;
     font-size: 16px; line-height: 1.5;
@@ -79,92 +82,235 @@
     transition: background-color 0.2s ease, color 0.2s ease,
                 box-shadow 0.2s ease, border-color 0.2s ease;
   }
-  .tab:hover {
-    background: rgba(255, 255, 255, 0.06);
-    color: var(--on-dark);
-  }
+  .tab:hover { background: rgba(255, 255, 255, 0.06); color: var(--on-dark); }
   .tab.active {
     background: var(--accent-a10);
     color: var(--on-dark);
-    box-shadow:
-      inset 0 0 0 1px var(--accent-a30),
-      inset 0 0 0 2px rgba(255, 255, 255, 0.06);
+    box-shadow: inset 0 0 0 1px var(--accent-a30), inset 0 0 0 2px rgba(255, 255, 255, 0.06);
   }
   .feed { display: flex; flex-direction: column; gap: 14px; }
   .card {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    background: #ffffff;
-    border-radius: 1.25rem;
-    padding: 22px 24px;
-    box-shadow:
-      0 0 0 1px var(--on-dark-ring),
-      0 2px 3px 0 rgba(0, 0, 0, 0.10),
-      0 1px 1px 0 rgba(0, 0, 0, 0.08),
-      0 16px 32px -10px rgba(0, 0, 0, 0.45);
+    display: block; text-decoration: none; color: inherit;
+    background: #ffffff; border-radius: 1.25rem; padding: 22px 24px;
+    box-shadow: 0 0 0 1px var(--on-dark-ring), 0 2px 3px 0 rgba(0,0,0,0.10),
+      0 1px 1px 0 rgba(0,0,0,0.08), 0 16px 32px -10px rgba(0,0,0,0.45);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     animation: fadeSlideIn 0.5s ease-out both;
   }
   a.card { cursor: pointer; }
   .card:hover {
     transform: translateY(-2px);
-    box-shadow:
-      0 0 0 1px rgba(255, 255, 255, 0.22),
-      0 4px 6px 0 rgba(0, 0, 0, 0.12),
-      0 20px 40px -10px rgba(0, 0, 0, 0.55);
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.22), 0 4px 6px 0 rgba(0,0,0,0.12),
+      0 20px 40px -10px rgba(0,0,0,0.55);
   }
   a.card:hover h3 {
-    text-decoration: underline;
-    text-decoration-color: var(--accent);
-    text-decoration-thickness: 2px;
-    text-underline-offset: 3px;
+    text-decoration: underline; text-decoration-color: var(--accent);
+    text-decoration-thickness: 2px; text-underline-offset: 3px;
   }
   .card-top {
     display: flex; justify-content: space-between; align-items: baseline;
     gap: 12px; margin-bottom: 8px;
   }
   .card-cat {
-    font-family: 'Lato', sans-serif;
-    font-size: 12px; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.1em;
-    white-space: nowrap;
+    font-family: 'Lato', sans-serif; font-size: 12px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.1em; white-space: nowrap;
   }
   .card-source {
-    font-family: 'Lato', sans-serif;
-    font-size: 12px; color: var(--ink-50);
-    font-weight: 400; text-align: right;
-    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    font-family: 'Lato', sans-serif; font-size: 12px; color: var(--ink-50);
+    font-weight: 400; text-align: right; overflow: hidden;
+    text-overflow: ellipsis; white-space: nowrap;
   }
   .card h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 18px; font-weight: 600;
-    letter-spacing: -0.01em; line-height: 1.3;
-    color: var(--ink);
-    margin-bottom: 8px;
+    font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 600;
+    letter-spacing: -0.01em; line-height: 1.3; color: var(--ink); margin-bottom: 8px;
   }
   .card p {
-    font-family: 'Lato', sans-serif;
-    font-size: 14px; line-height: 1.6;
-    color: var(--ink-70);
-    font-weight: 400;
+    font-family: 'Lato', sans-serif; font-size: 14px; line-height: 1.6;
+    color: var(--ink-70); font-weight: 400;
   }
   .footer {
     margin-top: 34px; padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.08); text-align: center;
   }
-  .footer p {
-    font-family: 'Lato', sans-serif;
-    font-size: 13px; color: var(--on-dark-60);
-    font-weight: 400;
-  }
-  .footer .brand {
-    color: var(--on-dark); font-weight: 700;
-  }
+  .footer p { font-family: 'Lato', sans-serif; font-size: 13px; color: var(--on-dark-60); font-weight: 400; }
+  .footer .brand { color: var(--on-dark); font-weight: 700; }
   @keyframes fadeSlideIn {
     from { opacity: 0; transform: translateY(8px); }
     to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ========== Chat Widget ========== */
+  .chat-launcher {
+    position: fixed; bottom: 24px; right: 24px; z-index: 9999;
+    width: 60px; height: 60px; border-radius: 50%; border: none;
+    cursor: pointer; padding: 0; overflow: hidden;
+    box-shadow: 0 4px 16px rgba(124,58,237,0.4), 0 2px 4px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: var(--accent);
+  }
+  .chat-launcher:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 24px rgba(124,58,237,0.5), 0 4px 8px rgba(0,0,0,0.3);
+  }
+  .chat-launcher img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+  }
+  .chat-launcher .close-icon {
+    display: none; position: absolute; inset: 0;
+    background: var(--accent); color: white;
+    font-size: 28px; line-height: 60px; text-align: center;
+  }
+  .chat-launcher.open img { display: none; }
+  .chat-launcher.open .close-icon { display: block; }
+
+  .chat-badge {
+    position: absolute; top: -2px; right: -2px;
+    width: 18px; height: 18px; border-radius: 50%;
+    background: #FF6B35; border: 2px solid var(--bg);
+    animation: pulse-badge 2s infinite;
+  }
+  .chat-launcher.open .chat-badge { display: none; }
+  @keyframes pulse-badge {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+  }
+
+  .chat-panel {
+    position: fixed; bottom: 96px; right: 24px; z-index: 9998;
+    width: 380px; max-height: 520px; border-radius: 16px;
+    background: #ffffff; overflow: hidden;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.35), 0 0 0 1px rgba(0,0,0,0.08);
+    display: flex; flex-direction: column;
+    transform: scale(0.9) translateY(20px); opacity: 0;
+    pointer-events: none;
+    transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), opacity 0.2s ease;
+    transform-origin: bottom right;
+  }
+  .chat-panel.open {
+    transform: scale(1) translateY(0); opacity: 1; pointer-events: auto;
+  }
+  @media (max-width: 440px) {
+    .chat-panel { right: 8px; left: 8px; width: auto; bottom: 88px; max-height: 70vh; }
+    .chat-launcher { bottom: 16px; right: 16px; }
+  }
+
+  .chat-header {
+    background: linear-gradient(135deg, var(--accent) 0%, #5B21B6 100%);
+    padding: 16px 18px; display: flex; align-items: center; gap: 12px;
+    flex-shrink: 0;
+  }
+  .chat-header-avatar {
+    width: 36px; height: 36px; border-radius: 50%; object-fit: cover;
+    border: 2px solid rgba(255,255,255,0.3);
+  }
+  .chat-header-info { flex: 1; }
+  .chat-header-title {
+    font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600;
+    color: #fff; line-height: 1.2;
+  }
+  .chat-header-sub {
+    font-family: 'Lato', sans-serif; font-size: 12px; color: rgba(255,255,255,0.75);
+  }
+
+  .chat-tabs {
+    display: flex; border-bottom: 1px solid #e5e7eb; flex-shrink: 0;
+  }
+  .chat-tab {
+    flex: 1; padding: 10px; text-align: center; font-family: 'Lato', sans-serif;
+    font-size: 13px; font-weight: 600; color: #6b7280; background: none;
+    border: none; cursor: pointer; border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .chat-tab:hover { color: var(--ink); }
+  .chat-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+  .chat-messages {
+    flex: 1; overflow-y: auto; padding: 16px; display: flex;
+    flex-direction: column; gap: 12px; min-height: 200px;
+    scrollbar-width: thin; scrollbar-color: #d1d5db transparent;
+  }
+  .chat-messages::-webkit-scrollbar { width: 4px; }
+  .chat-messages::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 2px; }
+
+  .chat-msg {
+    max-width: 85%; padding: 10px 14px; border-radius: 16px;
+    font-family: 'Lato', sans-serif; font-size: 14px; line-height: 1.5;
+    animation: fadeSlideIn 0.3s ease-out;
+  }
+  .chat-msg.bot {
+    align-self: flex-start; background: #f3f4f6; color: var(--ink);
+    border-bottom-left-radius: 4px;
+  }
+  .chat-msg.user {
+    align-self: flex-end; background: var(--accent); color: #fff;
+    border-bottom-right-radius: 4px;
+  }
+  .chat-msg.typing { display: flex; gap: 4px; align-items: center; padding: 12px 18px; }
+  .typing-dot {
+    width: 8px; height: 8px; border-radius: 50%; background: #9ca3af;
+    animation: typing-bounce 1.4s infinite both;
+  }
+  .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+  .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes typing-bounce {
+    0%, 60%, 100% { transform: translateY(0); }
+    30% { transform: translateY(-6px); }
+  }
+
+  .chat-input-area {
+    padding: 12px 16px; border-top: 1px solid #e5e7eb;
+    display: flex; gap: 8px; align-items: center; flex-shrink: 0;
+  }
+  .chat-input {
+    flex: 1; padding: 10px 14px; border: 1px solid #d1d5db;
+    border-radius: 24px; font-family: 'Lato', sans-serif; font-size: 14px;
+    outline: none; color: var(--ink); transition: border-color 0.2s;
+  }
+  .chat-input:focus { border-color: var(--accent); }
+  .chat-input::placeholder { color: #9ca3af; }
+  .chat-send {
+    width: 36px; height: 36px; border-radius: 50%; border: none;
+    background: var(--accent); color: #fff; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background-color 0.2s, transform 0.15s;
+    flex-shrink: 0;
+  }
+  .chat-send:hover { background: #6D28D9; }
+  .chat-send:active { transform: scale(0.92); }
+  .chat-send:disabled { opacity: 0.5; cursor: not-allowed; }
+  .chat-send svg { width: 18px; height: 18px; }
+
+  .feedback-area {
+    display: none; flex-direction: column; gap: 10px; padding: 16px;
+    flex: 1; overflow-y: auto;
+  }
+  .feedback-area.active { display: flex; }
+  .feedback-area label {
+    font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 600;
+    color: var(--ink);
+  }
+  .feedback-area textarea {
+    width: 100%; min-height: 100px; padding: 12px; border: 1px solid #d1d5db;
+    border-radius: 12px; font-family: 'Lato', sans-serif; font-size: 14px;
+    resize: vertical; outline: none; color: var(--ink);
+  }
+  .feedback-area textarea:focus { border-color: var(--accent); }
+  .feedback-area input[type="email"] {
+    width: 100%; padding: 10px 14px; border: 1px solid #d1d5db;
+    border-radius: 12px; font-family: 'Lato', sans-serif; font-size: 14px;
+    outline: none; color: var(--ink);
+  }
+  .feedback-area input:focus { border-color: var(--accent); }
+  .feedback-submit {
+    align-self: flex-end; padding: 10px 24px; border-radius: 24px;
+    border: none; background: var(--accent); color: #fff;
+    font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 600;
+    cursor: pointer; transition: background-color 0.2s;
+  }
+  .feedback-submit:hover { background: #6D28D9; }
+  .feedback-success {
+    text-align: center; padding: 40px 20px; color: #10B981;
+    font-family: 'Lato', sans-serif; font-size: 15px; font-weight: 600;
   }
 </style>
 </head>
@@ -173,18 +319,56 @@
   <div class="header">
     <h1 class="title">FEC <strong>Insider</strong></h1>
     <p class="subtitle">Curated news for the Family Entertainment Center industry</p>
-    <p class="timestamp" id="timestamp" data-iso="2026-04-29T00:08:34.875429+00:00"></p>
+    <p class="timestamp" id="timestamp" data-iso="2026-04-29T00:46:53.760249+00:00"></p>
   </div>
   <div class="tabs" id="tabs"></div>
   <div class="feed" id="feed"></div>
   <div class="footer"><p>Powered by AI &middot; <span class="brand">FEC Insider</span> &middot; Subscriber Exclusive</p></div>
 </div>
+
+<!-- Chat Widget -->
+<button class="chat-launcher" id="chatLauncher" aria-label="Open chat">
+  <img src="avatar.png" alt="FEC Insider assistant">
+  <span class="close-icon">&times;</span>
+  <span class="chat-badge"></span>
+</button>
+
+<div class="chat-panel" id="chatPanel">
+  <div class="chat-header">
+    <img class="chat-header-avatar" src="avatar.png" alt="">
+    <div class="chat-header-info">
+      <div class="chat-header-title">FEC Insider</div>
+      <div class="chat-header-sub">Ask me about today's FEC news</div>
+    </div>
+  </div>
+  <div class="chat-tabs">
+    <button class="chat-tab active" data-tab="chat">Chat</button>
+    <button class="chat-tab" data-tab="feedback">Leave Feedback</button>
+  </div>
+  <div class="chat-messages" id="chatMessages">
+    <div class="chat-msg bot">Hey! I'm the FEC Insider assistant. Ask me anything about today's industry news, or switch to the Feedback tab to share your thoughts.</div>
+  </div>
+  <div class="chat-input-area" id="chatInputArea">
+    <input class="chat-input" id="chatInput" type="text" placeholder="Ask about today's FEC news..." autocomplete="off">
+    <button class="chat-send" id="chatSend" aria-label="Send message">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+    </button>
+  </div>
+  <div class="feedback-area" id="feedbackArea">
+    <label>We'd love to hear from you</label>
+    <textarea id="feedbackText" placeholder="What do you think of FEC Insider? What topics should we cover?"></textarea>
+    <input type="email" id="feedbackEmail" placeholder="Email (optional)">
+    <button class="feedback-submit" id="feedbackSubmit">Send Feedback</button>
+  </div>
+</div>
+
 <script>
+const CHAT_API = "";
 const articles = [
   {
-    "title": "Urban Air Trampoline Park to Pay $300K Settlement After 6-Year-Old's Go-Kart Death",
-    "summary": "Urban Air Adventure Park in Port St. Lucie, Florida has agreed to a $300,000 settlement following an investigation into a go-kart crash that killed a six-year-old girl. The case highlights critical safety and liability considerations for FEC operators running motorized attractions. Operators should review go-kart safety protocols, age/height restrictions, and liability insurance coverage in light of this settlement.",
-    "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQSS0tM1o4VEszLVA3SDBDS01kUnVlaFF5bzdqeEpMSnFVX25TVjRxQldzSVlYTW9wZ3dmbTJFMTQxZWxydE1lMFdWX3lZQ0htZ0pMdmxlZ1BDX20wOHBrVWJDcGhoa0I0WjVvcTRBQkxtQW5oSGQ3OHVDNVNFbm1CTEJ3XzVMTWtaVDdmbC1VZE1jVEhZUDhxaGJYZTRjdXp1WGpfOUVxRGNUeUo0aGJWeExpd1U5eVNNLWRpR0xuSWt1Rks2bnZRakp6RTBpUEtUcHFFdA",
+    "title": "Urban Air Adventure Park Agrees to $300K Settlement After 6-Year-Old's Go-Kart Death",
+    "summary": "Urban Air's Port St. Lucie location has agreed to pay $300,000 following a state investigation into a crash that killed a six-year-old child. The case underscores the critical importance of ride safety protocols, staff training, and equipment maintenance at FEC venues. Operators should review their own go-kart and attraction safety procedures in light of this high-profile settlement.",
+    "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQSS0tM1o4VEszLVA3SDBDS01kUnVlaFF5bzdqeEpMSnFVX25TVjRxQldzSVlYTW9wZ3dmbTJFMTQxZWxydE1lMFdWX3lZQ0h0Z0pMdmxlZ1BDX20wOHBrVWJDcGhoa0I4WjVvcTRBQkxtQW5oSGQ3OHVDNVNFbm1CTEJ3XzVMTWtaVDdmbC1VZE1jVEhZUDhxaGJYZTRjdXp1WGpfOUVxRGNUeUo0aGJWeExpd1U5eVNNLWRpR0xuSWt1Rks2bnZRakp6RTBpUEtUcHFFdA",
     "source": "WPTV",
     "categoryId": "ops",
     "categoryLabel": "Operations & Safety",
@@ -192,8 +376,8 @@ const articles = [
     "categoryColor": "#F59E0B"
   },
   {
-    "title": "Slick City Action Park Surpasses 150 Units Signed or Open, Cementing FEC Franchise Lead",
-    "summary": "Slick City Action Park has crossed 150 signed or open locations, reinforcing its position as the fastest-growing brand in the family entertainment center franchise space. The slide-based indoor action park concept has rapidly scaled since its launch, signaling strong franchisee demand for differentiated FEC formats. Competitors and prospective franchisees should take note of the momentum behind activity-based FEC models.",
+    "title": "Slick City Action Park Surpasses 150 Units Signed or Open, Cementing Fastest-Growing FEC Brand Status",
+    "summary": "Slick City Action Park has crossed the 150-unit threshold for locations either open or under signed agreement, reinforcing its position as the fastest-expanding brand in the FEC sector. The milestone signals strong franchisee demand for indoor slide-based entertainment concepts. For operators and investors, it highlights how differentiated, active-play formats continue to attract capital and franchise interest.",
     "url": "https://www.globenewswire.com/news-release/2026/04/06/3268486/0/en/Slick-City-Action-Park-Surpasses-150-Units-Signed-or-Open-Cementing-Position-as-Fastest-Growing-FEC-Brand.html",
     "source": "GlobeNewswire",
     "categoryId": "business",
@@ -202,30 +386,10 @@ const articles = [
     "categoryColor": "#10B981"
   },
   {
-    "title": "Dallas Group Plans $50M Entertainment Destination for Downtown Clearwater, Including World's Largest Cinema Screen",
-    "summary": "A Dallas-based entertainment group is planning a $50 million large-scale entertainment complex in downtown Clearwater, Florida, anchored by what is billed as the world's largest cinema screen. The project has drawn attention both for its ambition and for reported ties to the Church of Scientology, which could affect public reception. For FEC investors and developers, the project illustrates continued appetite for destination entertainment complexes in mid-sized urban markets.",
-    "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNUV9DLWdtZXNpc2xWUE5McHROdkt0bjhiaTZoV25RUE82UTRpU2UtTEcxTnozNm11clhqdjk1QU1tMmtuMW4ydWhnaFktTjY3UVc0T3NKN3E0dlkyQ2FkVUJfUHBFZkVLQS1LM3Y1clFUTDRuUWY3UlRzdllyOS03ZVNYT1A2VTFQUGlsMHBpU3dYVUR0dGsxSlJCZw",
-    "source": "The Business Journals",
-    "categoryId": "business",
-    "categoryLabel": "Business & Growth",
-    "categoryIcon": "📊",
-    "categoryColor": "#10B981"
-  },
-  {
-    "title": "North America Family & Indoor Entertainment Centers Market Forecast to 2032",
-    "summary": "A new market research report outlines growth projections for the North American family and indoor entertainment center sector through 2032, covering key drivers, competitive dynamics, and emerging attraction categories. The report provides strategic context for operators and investors evaluating expansion or capital investment decisions. Strong post-pandemic recovery and rising demand for experiential leisure underpin optimistic long-term forecasts.",
-    "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQS1JRSDN4MVBWWU9XYV9URGtDNTZWTDlOak1KWVJESmhpcE1sOFVsRW04WjZva2ZydFJ2N1g0S1NkTnJ4bHJFSWRTbjRvUW5ucDJ1QzZ0Rm9jSE5xWFJKa0dXV1RRQU5meVhKTFk0S1NpVUdYVVBZWExfWmhQUklWZW9kVTJkUmNjaTNzV1RaclhPdzY3R21F",
-    "source": "openPR.com",
-    "categoryId": "business",
-    "categoryLabel": "Business & Growth",
-    "categoryIcon": "📊",
-    "categoryColor": "#10B981"
-  },
-  {
-    "title": "Adventure Parks Eye Vacant Retail Spaces as Expansion Opportunity",
-    "summary": "Indoor adventure parks and FEC operators are increasingly targeting shuttered retail locations as affordable, high-traffic venues for new facilities, according to reporting from the Jacksonville Daily Record. The trend reflects both the ongoing retail apocalypse and the growing consumer preference for experiential over transactional destinations. FEC developers looking to expand should consider the structural and zoning advantages that former big-box and mall spaces can offer.",
-    "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOdkxUclIxOHZ4dlMxb2VFaVF5aHpYUFM2SjhHUjlsWnFlZzM1ZHRVVjZIVkNBcmw2UTVrdXM1OGFIeldIY183dS0ySzluT1ViV3Z5b3RBY3JZNEdwWjYxVk1JOU1yM3FkYlBNZTY4TnNFak9tVEhCczBmcFZyWG1pVDRnbHRZT25jUjlaWFZIOG1LTjBXR0p1TGUwcHFRRzJk",
-    "source": "Jacksonville Daily Record",
+    "title": "$50M Entertainment Destination with World's Largest Cinema Screen Planned for Downtown Clearwater",
+    "summary": "A Dallas-based entertainment group is planning a $50 million destination complex in downtown Clearwater, Florida, anchored by what would be the world's largest movie theater screen alongside additional entertainment offerings. The project adds to a growing trend of large-scale, mixed-use entertainment destinations competing in the same market as FECs. Operators in the region should monitor how such flagship developments influence consumer expectations and foot traffic patterns.",
+    "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNREpNYkNEeDZjT2tMQVdHWFZoOHZJY2ViOVBrSEJyVk5pT3pXbmR1Y2R6QjFKWGY3SWMwa3V6RFBReHdtNzloaWRHaUVkVGktQWJsLU1rV2FOSzd2MHJZWjJvbDZ2cTllRzBZVGxVbkRPTzViM20xcm5ZWE5hcjk4WkE5Ym9Ndmx6aGtLNQ",
+    "source": "Attractions Magazine",
     "categoryId": "business",
     "categoryLabel": "Business & Growth",
     "categoryIcon": "📊",
@@ -233,7 +397,7 @@ const articles = [
   },
   {
     "title": "Urban Air Franchisee Expands Portfolio with Arizona Park Acquisition",
-    "summary": "Urban Air franchisee Shekar Laveti has acquired an additional Arizona location, growing his multi-unit portfolio within the trampoline and adventure park brand. The move reflects continued franchisee confidence in the Urban Air model despite ongoing legal scrutiny following safety incidents at other locations. Multi-unit franchising remains a dominant growth strategy across the FEC sector.",
+    "summary": "Urban Air franchisee Shekar Laveti has grown his portfolio by acquiring an existing Arizona location, reflecting continued franchisee-level consolidation within the trampoline and adventure park segment. The move illustrates how experienced multi-unit operators are scaling through acquisition rather than purely new builds. This trend has implications for FEC valuations and exit strategies across the broader sector.",
     "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQUWtxR2U2OXVrVkkzMzBKMTdVYXE3UTBOMXNtUVU0R3BNVXpvQlpmcWZKRVE1X05XaUNXb0JuU2w2TmxhbDZFT0xSalRkdGRBZmZyclBKTGF5Zkc0US16TEZvYU5TeHVDZ1F6MVJKRzdsNzRJQWFnNWVIVUgzXy1wNkRZVWY3T0lDU3c3LTBQeHJ5VXpRa1lGVkhhU29YR0tpOUdHeG9QN1lzd3Y4R1prWkhkVktuSDh5SjNWcWtn",
     "source": "citybiz",
     "categoryId": "business",
@@ -242,38 +406,28 @@ const articles = [
     "categoryColor": "#10B981"
   },
   {
-    "title": "Manteca, CA Approves Second Bowling Alley and Family Fun Center",
-    "summary": "A second bowling alley and family fun center is moving forward in Manteca, California, signaling continued local investment in entertainment infrastructure in suburban markets. The project adds competitive density to a market already served by one bowling facility, suggesting strong local demand. Operators in similar secondary markets may find this a useful data point when evaluating new-build feasibility.",
-    "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQc3MwSWFZWlpxQjYyc19ScFc2enRtLUNtRGJuNGQ2WGRMNzVvSnlZYjI2aDhheU42QnYyZi1tWnBNOVljS2FyajNMZi1KemVGRVp4LVJvRTJvS0tIdFFrSHpuNzhEelBOVEFIUGVWNlZRQW1mbWV5eXpKd0NkNWxpeGVnT2FCdUI5M3hVMmdOYktKeW5Mb2x3RG1JbVJNZU5UQXVTY1c4akFINnZfWjZrTDFtNU5kdw",
-    "source": "Manteca Bulletin",
+    "title": "North America Family and Indoor Entertainment Centers Market Report Projects Growth Through 2032",
+    "summary": "A new market research report covering the North American family and indoor entertainment center sector outlines growth trajectories from 2023 through 2032, providing operators and investors with a forward-looking view of the industry. The report is relevant for FEC operators planning capital expenditure, expansion, or financing strategies. Understanding projected market size and segment trends can sharpen business planning and investor conversations.",
+    "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQS1JRSHN4MVBWWU9XYV9URGtDNTZWTDlOak1KWVJESmhpcE1sOFVsRW04WjZva2ZydFJ2N1g0S1NkTnJ4bHJFSWRTbjRvUW5ucDJ1QzZ0Rm9jSE5xWFJKa0dXV1RRQU5meVhKTFk0S1NpVUdYVVBZWExfWmhQUklWZW9kVTJkUmNjaTNzV3RaclhPdzY3R21F",
+    "source": "openPR.com",
     "categoryId": "business",
     "categoryLabel": "Business & Growth",
     "categoryIcon": "📊",
     "categoryColor": "#10B981"
   },
   {
-    "title": "ThunderZone Family Entertainment Center Announces Opening Date",
-    "summary": "ThunderZone Family Entertainment Center has announced its official opening date, adding a new venue to the FEC landscape. Details about the specific market and attractions offered are expected to draw local families and compete with established entertainment options in the area. New openings like this reflect sustained investor confidence in the FEC format across diverse markets.",
-    "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOUmF4T0lFYUxBRDR0cTFJSWFjYTVSWlV3LVlQUi1WNkdjdF9xdDJaeU16YWhHbzNSSDhEV3BxVXJPT183MnptcUJXLUNIZ3pKWERVNUp1YXp1TTkxSFpvNVp1cGtMbmk1VVJhTWVVaTJQMXRuTkVhSTRPaTdnNThkR3h6YTBoUHRWWVAxVkZRUWdEVEdBaEZYd0RDamdiSTRw",
-    "source": "The City Menus",
+    "title": "Adventure Parks Target Vacant Retail Spaces for New Locations",
+    "summary": "A growing number of adventure park and FEC operators are eyeing shuttered retail stores as prime sites for new venues, taking advantage of large footprints, existing parking, and favorable lease terms from landlords eager to fill space. The trend is accelerating as traditional retail continues to contract, creating opportunities for FEC concepts that require significant square footage. Operators considering expansion should evaluate retail conversion economics carefully.",
+    "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOdkxUclIxOHZ4dlMxb2VFaVF5aHpYUFM2SjhHUjlsWnFlZzM1ZHRVVjZIVkNBcmw2UTVrdXM1OGFIeldIY183dS0ySzluT1ViV3Z5b3RBY3JZNEdwWjYxVk1JOU1yM3FkYlBNZTY4TnNFak9tVEhCczBmcFZyWG1pVDRnbHRZT25jUjlaWFZIOG1LTjBXR0p1TGUwcHFRRzJk",
+    "source": "Jacksonville Daily Record",
     "categoryId": "business",
     "categoryLabel": "Business & Growth",
     "categoryIcon": "📊",
     "categoryColor": "#10B981"
   },
   {
-    "title": "Large-Scale Entertainment Center Planned for North Haven, Connecticut",
-    "summary": "A large-scale entertainment center is reportedly in the works for North Haven, Connecticut, potentially bringing a significant new leisure destination to the New England market. The project adds to a growing pipeline of FEC developments targeting suburban communities underserved by current entertainment options. Local operators and regional investors should monitor the development for competitive implications.",
-    "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPdFZxT1ZCMVJ1SW5wbjV1Rl96VUE1ODgwVEp6OEVRM0pZY1JSTkJVMDZLbHpmanNOaFV2SlJPUzhGSUlva18zYXdzaUYxSlZpMTU3Y1Rxb2I4NFczdkVHa29acTRzSXFsczFlZ0ZJSWZ3YkVxejB2cHdFNFZTV042OGVyTWFJTzF4dF96amVyTHhKZkxiZ3c3dnFWSTNfdW9L",
-    "source": "Patch",
-    "categoryId": "business",
-    "categoryLabel": "Business & Growth",
-    "categoryIcon": "📊",
-    "categoryColor": "#10B981"
-  },
-  {
-    "title": "Disneyland Rolls Out Facial Recognition Entry System With Opt-Out Option",
-    "summary": "Disneyland has launched a facial recognition entry system at its California parks, allowing guests to opt out and use alternative lanes that do not use biometric technology. The system converts facial images into numerical values for ticket matching and deletes data within 30 days except where legal requirements apply. FEC operators considering biometric ticketing or access control should watch how Disneyland manages guest communication, privacy compliance, and the opt-out experience as an industry benchmark.",
+    "title": "Disneyland Rolls Out Facial Recognition Entry System with Opt-Out Option",
+    "summary": "Disneyland has deployed facial recognition technology at the entrances of its California parks, using biometric data to match guests to their tickets for faster entry, while offering alternative non-biometric lanes for those who decline. The system deletes numerical biometric values within 30 days except where legal or fraud-prevention requirements apply. FEC operators should watch this rollout closely as biometric entry systems become more accessible and guest acceptance is tested at scale.",
     "url": "https://blooloop.com/disneyland-opt-out-facial-recognition/",
     "source": "Blooloop",
     "categoryId": "tech",
@@ -282,8 +436,8 @@ const articles = [
     "categoryColor": "#3B82F6"
   },
   {
-    "title": "Orbit Action Park Bringing Indoor Slide Experience to Madison, Wisconsin",
-    "summary": "Orbit Action Park, a slide-focused indoor attraction concept, is set to open in Madison, Wisconsin, expanding the category of active leisure FECs gaining traction across the US. The format, which competes in the same space as Slick City and similar brands, targets family and group demographics with high-energy physical experiences. The Madison opening is another indicator of robust demand for non-traditional FEC concepts in mid-sized markets.",
+    "title": "Orbit Action Park Brings Indoor Slide Experience to Madison, Wisconsin",
+    "summary": "Orbit Action Park is opening a new location in Madison, bringing its indoor slide-based entertainment concept to the Wisconsin market. The expansion reflects continued strong demand for active, non-traditional FEC formats in mid-sized U.S. cities. Local FEC operators should assess how slide park entrants affect their competitive positioning and guest demographics.",
     "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNd0tJMjJLS3pDUXBQNTlhVWFOdWJZdVFHUXc3dDdHVVRyWU1CSXI3UnhMUXhjSXlXSHNLNllJUTlOQndDdldRRWhQTmhHajFfOGdULVBTNXhyVThwMkhjNVFaN05TWEdCenZoa2NiNy1KMWVONnRhQmVhSGVWa1RKTE9wVUFCdkpkZGJxVTBaUmZxdw",
     "source": "Axios",
     "categoryId": "attractions",
@@ -292,9 +446,39 @@ const articles = [
     "categoryColor": "#FF6B35"
   },
   {
-    "title": "iSmash Rage Room Concept Opens in Rapid City, South Dakota",
-    "summary": "iSmash, a destruction-based entertainment concept where guests smash objects in a controlled environment, is opening a location in Rapid City, South Dakota in May. Rage rooms have emerged as a growing niche within the FEC industry, appealing to adults seeking stress-relief experiences and group outings. The Rapid City opening demonstrates the format's reach into smaller markets beyond major metro areas.",
-    "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFB0VzBGNURqcnJYdzU5WEVnblAzTzd5eXQwNThLcGJYOWxGX0RiZG4wTzJ3NXRnR2VQX3M1azN0SDgzRDZoUHhhQUhKX21fTFRjam1TTDVGM2I4cE5JT04xbXlveUFQRFVIMHpfT0hvc0s",
+    "title": "ThunderZone Family Entertainment Center Sets Opening Date",
+    "summary": "ThunderZone Family Entertainment Center has announced its official opening date, marking a new FEC entry into its local market. The opening adds to a steady pipeline of new FEC venues launching across the country in 2026. Competitors in the area should prepare for increased consumer choice and potential impact on visit frequency.",
+    "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOUmF4T0lFYUxBRDR0cTFJSWFjYTVSWlV3LVlQUi1WNkdjdF9xdDJaeU16YWhHbzNSSDhEV3BxVXJPT183MnptcUJXLUNIZ3pKWERVNUp1YXp1TTkxSFpvNVp1cGtMbmk1VVJhTWVVaTJQMXRuTkVhSTRPaTdnNThkR3h6YTBoUHRWWVAxVkZRUWdEVEdBaEZYd0RDamdiSTRw",
+    "source": "The City Menus",
+    "categoryId": "attractions",
+    "categoryLabel": "Attractions & Experiences",
+    "categoryIcon": "🎢",
+    "categoryColor": "#FF6B35"
+  },
+  {
+    "title": "Large-Scale Entertainment Center Planned for North Haven, Connecticut",
+    "summary": "Reports indicate a large-scale entertainment center is in development for North Haven, Connecticut, adding to the wave of new FEC openings across the Northeast. Details on the concept and timeline are emerging, but the project signals continued investor appetite for experiential entertainment in suburban markets. FEC operators in the region should track the development as it could reshape local competitive dynamics.",
+    "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPdFZxT1ZCMVJ1SW5wbjV1Rl96VUE1ODgwVEp6OEVRM0pZY1JSTkJVMDZLbHpmanNOaFV2SlJPUzhGSUlva18zYXdzaUYxSlZpMTU3Y1Rxb2I4NFczdkVHa29acTRzSXFsczFlZ0ZJSWZ3YkVxejB2cHdFNFZTV042OGVyTWFJTzF4dF96amVyTHhKZkxiZ3c3dnFWSTNfdW9L",
+    "source": "Patch",
+    "categoryId": "attractions",
+    "categoryLabel": "Attractions & Experiences",
+    "categoryIcon": "🎢",
+    "categoryColor": "#FF6B35"
+  },
+  {
+    "title": "Manteca's Second Bowling and Family Fun Center Moves Forward",
+    "summary": "A second bowling alley and family fun center is advancing toward opening in Manteca, California, bringing more competition to the local entertainment market. The project reflects sustained operator confidence in bowling-anchored FEC models as a resilient format. Existing FEC operators in similar markets should consider how complementary or competing concepts affect their value proposition.",
+    "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQc3MwSWFZWlpxQjYyc19ScFc2enRtLUNtRGJuNGQ2WGRMNzVvSnlZYjI2aDhheU42QnYyZi1tWnBNOVljS2FyajNMZi1KemVGRVp4LVJvRTJvS0tIdFFrSHpuNzhEelBOVEFIUGVWNlZRQW1mbWV5eXpKd0NkNWxpeGVnT2FCdUI5M3hVMmdOYktKeW5Mb2x3RG1JbVJNZU5UQXVTY1c0akFINnZfWjZrTDFtNU5kdw",
+    "source": "Manteca Bulletin",
+    "categoryId": "attractions",
+    "categoryLabel": "Attractions & Experiences",
+    "categoryIcon": "🎢",
+    "categoryColor": "#FF6B35"
+  },
+  {
+    "title": "iSmash Rage Room Concept Opening in Rapid City, South Dakota",
+    "summary": "iSmash, a rage room and stress-relief entertainment concept, is set to open a new location in Rapid City in May 2026. Smash-room concepts continue to expand into smaller U.S. markets, broadening the definition of FEC-adjacent experiences. Operators looking to add unique, low-capex attractions should monitor whether rage room formats attract repeat visitation or function better as add-on experiences.",
+    "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFB0VzBGNURqcnJYdzU5WEVnblAzTzd5eXQwNThLcGJYOWxGX0RiZG4wTzJ3NXRnR2VQX3M1azN0SDgzRDZoUHhhQUhKX21fTFRjam1TTDVGM2I0cE5JT04xbXlveUFQRFVIMHpfT0hvc0vSAYQBQVVfeXFMTmVXNFVMR0Q1eFp5bzBIenVITVNBckU0blVBc2N6OW1ZSWI2XzNUS1M0Z0FlZk15SXVxNjI2QllsaTc3QkM5MHNuUUhKSU5GN05McGlqenJFenZXUmtFNG1kYXJwbzFnTG1tR2ZUVzhSd0VuZm12TXhoQnFEWGo0bW1rc2oy",
     "source": "KOTA Territory News",
     "categoryId": "attractions",
     "categoryLabel": "Attractions & Experiences",
@@ -302,98 +486,18 @@ const articles = [
     "categoryColor": "#FF6B35"
   },
   {
-    "title": "Rage Room Set to Open in Kitimat, British Columbia",
-    "summary": "A rage room attraction called Breaking Point is set to open in Kitimat, BC, bringing the smash-and-destroy entertainment concept to a small Canadian market. The opening is part of a broader expansion of rage rooms as a legitimate FEC attraction category, particularly popular for group bookings and corporate events. Operators in secondary markets may find the format's low barrier to entry and strong novelty appeal worth considering.",
-    "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPZnNtMGcxMWs4OGI1RjdNTjEwZkFmc1lxWnBVMEJMSmh0TEN4bzBzRE5tbFUyM0w4cDFnTlFvMVctdXpLQUhVYUYxdUFfa0lmckpMYlN3ZVNCMGp5ODlEa1NRbGpEQm5BRlZZYXpWOE41RmppSTdzU1NVOVRnWXNoQlFwUTlBUXFTZEZjalZ4V2w",
-    "source": "Terrace Standard",
-    "categoryId": "attractions",
-    "categoryLabel": "Attractions & Experiences",
-    "categoryIcon": "🎢",
-    "categoryColor": "#FF6B35"
-  },
-  {
-    "title": "Paultons Park Launches Unlimited Monthly Membership Model",
-    "summary": "UK theme park Paultons Park has introduced an unlimited visits subscription for a monthly fee, joining a growing trend of leisure operators offering membership-based access over traditional single-visit ticketing. The model is designed to drive repeat visitation and create predictable recurring revenue, two metrics that resonate strongly with FEC operators. Subscription and membership pricing strategies are gaining traction across the broader attractions industry and could offer lessons for mid-size FEC venues.",
+    "title": "Paultons Park Launches Unlimited Monthly Membership Pass",
+    "summary": "UK theme park Paultons Park has introduced a subscription-style unlimited membership allowing guests to visit as often as they like for a fixed monthly fee. The model mirrors trends seen in gyms and streaming services and is increasingly being tested by attractions of all sizes to drive loyalty and predictable revenue. FEC operators should evaluate whether similar recurring-revenue membership structures could stabilize cash flow and increase visit frequency at their venues.",
     "url": "https://www.hampshirechronicle.co.uk/news/26040728.paultons-park-launches-unlimited-days-monthly-fee/",
     "source": "Hampshire Chronicle",
-    "categoryId": "ops",
-    "categoryLabel": "Operations & Safety",
-    "categoryIcon": "🛡️",
-    "categoryColor": "#F59E0B"
+    "categoryId": "business",
+    "categoryLabel": "Business & Growth",
+    "categoryIcon": "📊",
+    "categoryColor": "#10B981"
   },
   {
-    "title": "Carowinds Names Bridgette Bywater as New Park President",
-    "summary": "Carowinds and Carolina Harbor Waterpark have appointed Bridgette Bywater as park president, bringing 36 years of amusement industry experience to the role. Bywater's background spans operational excellence and safety leadership, both critical competencies as parks head into peak season. Leadership transitions at major parks often signal strategic shifts that ripple through supplier and operator relationships across the industry.",
-    "url": "https://amusementtoday.com/2026/04/carowinds-names-bridgette-bywater-new-park-president/",
-    "source": "Amusement Today",
-    "categoryId": "ops",
-    "categoryLabel": "Operations & Safety",
-    "categoryIcon": "🛡️",
-    "categoryColor": "#F59E0B"
-  },
-  {
-    "title": "Go-Kart Death Settlement Highlights Liability Risks for FEC Operators Running Motorized Attractions",
-    "summary": "Florida reached a $300,000 settlement with the family of a six-year-old killed in a go-kart crash at an Urban Air location, drawing renewed attention to the liability exposure FEC operators face with motorized ride attractions. The case underscores the importance of robust safety protocols, staff training, and appropriate liability coverage for any venue operating go-karts or similar rides. Industry operators should consult legal and insurance advisors to audit their current risk management frameworks.",
-    "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQUjhFYWR1OXMwTVdUeEdrRFBMSEE1VWVlU1VFX1RvcVhLeW9OdkdLSmQ4X2lSQW9sYUxDSnYxQUZCS0Q3TmdEZjFoNl9qQ20tUVZwa3hsa1lpZW9yVnJNOG5aNHRHeC1rdjRDNG8wVGoyZVJoUUdZa0I0djRucGZ1S1lkYnVZLVVLdFl1aVZRbkNtOTR6X2JDb2pQZ2REMFVmeTBfYmtMMDE0dmw2TlJDYUtCQmZxZWhwYU8wUWhBc3RQb0dMS3pEUllkTnJpTmprU2Rn0gG-AUFVX3lxTE5OUjBaZUFOTzdKRDRrelM3S3dHbVdwM1dVSnZCZE9Xa3ktV2N2emNlc3BMdDFmZWhDQklJcms4V0p0S1VDclhfUTRvRkdMYWZoTGdSRFB4ak1pNmFObEdTUXptdDh3c1Z5UkhqVFYyZFBqX0s3MUM2N2E3VUxEMnpibnZKc3FrN2wyLU1iUUJoWEVPdTBFbFBuYkxaYXJnM0VuRVJqaW12Q0lFZ1FTM1pTMVg3bVR3S1VwU2NsNmc",
-    "source": "WIOD",
-    "categoryId": "ops",
-    "categoryLabel": "Operations & Safety",
-    "categoryIcon": "🛡️",
-    "categoryColor": "#F59E0B"
-  },
-  {
-    "title": "Laredo Amusement Center Raided: Six Arrested, 88 Gaming Machines Seized",
-    "summary": "Law enforcement conducted an undercover operation at an amusement center on McPherson Road in Laredo, Texas, resulting in six arrests and the seizure of 88 gaming machines suspected of illegal gambling activity. The raid is a reminder that FEC operators running arcade or redemption game floors must ensure strict compliance with state gaming regulations to avoid criminal liability. Operators should conduct regular audits of their game inventory and consult legal counsel regarding gray-area gaming equipment.",
-    "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNa0RYQ3ZBVDRTSDBlNVRoQnpyLTVaSTdoU2JvVS1kd1lrb3VNZ1k0MjVibEVpczVNYTF3UjBnejNNVm9BSzZIbjNJdDg2b2NXcVRZaXRzZHBMRFNRYzNnWEo5Y2hsVHYtblpQQ0Q2MnpzdTY5Nk5aRjVwYkFaQmZ6VXNxNmVsZnBHR3ZwQXQ3LWlld0k3UG94RGtocUVKQXBOZw",
-    "source": "Laredo Morning Times",
-    "categoryId": "ops",
-    "categoryLabel": "Operations & Safety",
-    "categoryIcon": "🛡️",
-    "categoryColor": "#F59E0B"
-  },
-  {
-    "title": "Immersive Audio Design: How Sound Disappears Into the Guest Experience",
-    "summary": "A themed entertainment sound designer explores how the most effective audio work is invisible to guests, seamlessly reinforcing environmental storytelling without drawing attention to itself. The principles discussed apply directly to FEC operators designing immersive zones, escape rooms, VR areas, or themed mini-golf courses where ambient audio contributes to guest engagement and dwell time. Investing in professional audio design, rather than generic background music, can meaningfully differentiate an FEC experience.",
-    "url": "https://blooloop.com/sonic-perception-invisible-audio/",
-    "source": "Blooloop",
-    "categoryId": "design",
-    "categoryLabel": "Design & Trends",
-    "categoryIcon": "🎨",
-    "categoryColor": "#EC4899"
-  },
-  {
-    "title": "Low-Ego Design Teams Deliver Better Outcomes for Entertainment Venues",
-    "summary": "Architecture and design firm Cuningham argues that entertainment project success correlates with design teams that prioritize collective achievement over individual creative credit, reducing client risk and improving project execution. The insight is relevant for FEC operators commissioning venue renovations, expansions, or new builds, where misaligned creative egos can cause costly delays and scope creep. Selecting design partners with a collaborative culture and clear accountability structures is framed as a practical risk-mitigation strategy.",
-    "url": "https://blooloop.com/low-ego-design-teams/",
-    "source": "Blooloop",
-    "categoryId": "design",
-    "categoryLabel": "Design & Trends",
-    "categoryIcon": "🎨",
-    "categoryColor": "#EC4899"
-  },
-  {
-    "title": "EPIC Entertainment Group Expands Story-Led Seasonal Experience Portfolio Across the US",
-    "summary": "EPIC Entertainment Group is rolling out a portfolio of spring and summer immersive experiences across US partner destinations, building on strong holiday season revenue performance. The company positions itself as a strategic operator for narrative-driven attractions, including its role as US operating partner for the Dolce and Gabbana exhibition in Miami. FEC operators looking to add seasonal programming or temporary attractions may find the turnkey, story-led model an attractive option to drive incremental visits.",
-    "url": "https://blooloop.com/epic-entertainment-group-destination-strategy/",
-    "source": "Blooloop",
-    "categoryId": "design",
-    "categoryLabel": "Design & Trends",
-    "categoryIcon": "🎨",
-    "categoryColor": "#EC4899"
-  },
-  {
-    "title": "The Giant Dublin: PwC Study Confirms Landmark Interactive Attraction Viable as City Regeneration Catalyst",
-    "summary": "A PwC feasibility study co-funded by Dublin City Council and Enterprise Ireland has confirmed strong economic, social, and tourism potential for The Giant, a 30-metre programmable LED moving statue proposed for the Irish capital. The attraction blends art, technology, and storytelling in a format designed to appeal to families and drive city-centre foot traffic. For FEC industry observers, The Giant represents an emerging category of large-format public-private experiential landmarks that blend entertainment with destination development.",
-    "url": "https://blooloop.com/the-giant-pwc-feasibility/",
-    "source": "Blooloop",
-    "categoryId": "design",
-    "categoryLabel": "Design & Trends",
-    "categoryIcon": "🎨",
-    "categoryColor": "#EC4899"
-  },
-  {
-    "title": "Futuroscope Named World's Best Theme Park in TripAdvisor Travellers' Choice Awards",
-    "summary": "France's Futuroscope, a technology and education-focused theme park, has topped the TripAdvisor Travellers' Choice Awards for best theme park globally, displacing Ferrari World Abu Dhabi. The recognition underscores the growing consumer appetite for tech-driven, experiential attractions over traditional thrill-ride parks, a trend with direct implications for FEC operators investing in immersive and educational entertainment. US operators can draw inspiration from Futuroscope's blend of cutting-edge technology and family-friendly programming.",
+    "title": "Futuroscope Named World's Best Theme Park in Tripadvisor Travellers' Choice Awards",
+    "summary": "France's Futuroscope, known for blending technology, education, and entertainment, has claimed the top spot in Tripadvisor's global theme park rankings for 2026, displacing Ferrari World Abu Dhabi. The recognition highlights growing consumer appetite for tech-forward, immersive destination experiences. FEC operators can draw inspiration from Futuroscope's model of combining cutting-edge attractions with educational content to differentiate their offerings.",
     "url": "https://blooloop.com/futuroscope-tripadvisor-travellers-choice-awards/",
     "source": "Blooloop",
     "categoryId": "attractions",
@@ -402,8 +506,38 @@ const articles = [
     "categoryColor": "#FF6B35"
   },
   {
-    "title": "Square Enix to Open First Official US Themed Cafe in Los Angeles This Spring",
-    "summary": "Video game publisher Square Enix is opening its first officially licensed cafe in the United States in Los Angeles, alongside a Tokyo location, featuring themed food, drinks, and merchandise tied to franchises including Final Fantasy and Kingdom Hearts. The move reflects a broader trend of IP holders creating branded immersive dining and retail experiences as standalone attractions. FEC operators with arcade or gaming components may want to monitor this format as a potential partnership or licensing opportunity.",
+    "title": "Middle East Theme Parks Face Headwinds as Regional Tourism Declines",
+    "summary": "Theme parks across the Middle East are experiencing reduced visitation amid a broader regional tourism slowdown, putting pressure on revenues and expansion plans. The trend has implications for international FEC and attraction operators with exposure to Gulf markets. Operators with regional partnerships or franchise agreements should reassess near-term traffic projections and marketing strategies.",
+    "url": "https://licensinginternational.org/news/middle-east-theme-parks-hit-by-tourism-decline/",
+    "source": "Licensing International",
+    "categoryId": "business",
+    "categoryLabel": "Business & Growth",
+    "categoryIcon": "📊",
+    "categoryColor": "#10B981"
+  },
+  {
+    "title": "Hong Kong Disneyland Reports 36% Profit Drop as Costs Rise and Visitor Numbers Fall",
+    "summary": "Hong Kong Disneyland saw its profit decline 36% to HK$536 million as operating costs increased and guest attendance softened. Despite the setback, the park is pressing ahead with further expansion investments tied to its 20th anniversary initiatives. The results serve as a reminder to FEC operators that rising cost structures can quickly erode margins even when brands maintain strong guest loyalty.",
+    "url": "https://www.scmp.com/news/hong-kong/hong-kong-economy/article/3351663/hong-kong-disneyland-profit-drops-36-hk536-million-costs-rise-visitors-fall",
+    "source": "South China Morning Post",
+    "categoryId": "business",
+    "categoryLabel": "Business & Growth",
+    "categoryIcon": "📊",
+    "categoryColor": "#10B981"
+  },
+  {
+    "title": "Pop Mart Eyes Domestic and International Expansion for Its Pop Land Theme Park",
+    "summary": "Chinese collectible toy brand Pop Mart is planning to expand its Pop Land theme park concept both within China and into international markets, leveraging its strong IP and fan base. The move reflects how consumer brands with deep audience loyalty are increasingly moving into experiential entertainment venues. FEC operators should take note of IP-driven park concepts as a competitive format that blurs the line between retail, entertainment, and destination attractions.",
+    "url": "https://www.scmp.com/business/china-business/article/3351344/chinas-pop-mart-eyes-expansion-home-and-abroad-its-pop-land-theme-park",
+    "source": "South China Morning Post",
+    "categoryId": "business",
+    "categoryLabel": "Business & Growth",
+    "categoryIcon": "📊",
+    "categoryColor": "#10B981"
+  },
+  {
+    "title": "Square Enix to Open First Official Branded Cafes in Los Angeles and Tokyo",
+    "summary": "Video game publisher Square Enix is launching officially licensed cafes in Los Angeles and Shinjuku, Tokyo this spring, offering food and merchandise tied to franchises including Final Fantasy and Dragon Quest. The LA location marks the first time an official Square Enix cafe with a full menu has operated in the United States. For FEC operators, the concept illustrates how strong gaming IP can anchor food-and-entertainment hybrid venues that drive repeat visits from passionate fan communities.",
     "url": "https://blooloop.com/square-enix-cafe-la-tokyo/",
     "source": "Blooloop",
     "categoryId": "attractions",
@@ -412,38 +546,8 @@ const articles = [
     "categoryColor": "#FF6B35"
   },
   {
-    "title": "Six Flags Great Adventure's New Shoreline Pier Development Rises in New Jersey",
-    "summary": "Construction at Six Flags Great Adventure's new Shoreline Pier area is progressing with vertical work underway on Barrels O' Fun, a spinning attraction set to debut this season as part of a broader waterfront entertainment zone. The development represents Six Flags' continued investment in area theming and multi-attraction zones to increase per-visit engagement and guest dwell time. FEC operators can draw lessons from the pier concept's approach to clustering complementary experiences within a defined themed environment.",
-    "url": "https://amusementtoday.com/2026/04/six-flags-great-adventures-shoreline-pier-continues-to-rise/",
-    "source": "Amusement Today",
-    "categoryId": "attractions",
-    "categoryLabel": "Attractions & Experiences",
-    "categoryIcon": "🎢",
-    "categoryColor": "#FF6B35"
-  },
-  {
-    "title": "Hurricane Harbor Arlington Adds Fast Lane Program for 2026 Season Opening",
-    "summary": "Six Flags Hurricane Harbor Arlington is reopening May 16 with a new Fast Lane premium access program, park-wide improvements, and upgraded attractions for the 2026 summer season. The Fast Lane addition reflects the industry-wide shift toward tiered access pricing as a revenue optimization strategy, a model increasingly adopted by FECs and parks of all sizes. Operators looking to increase per-cap revenue without adding capacity should study the implementation of skip-the-line premium offerings.",
-    "url": "https://amusementtoday.com/2026/04/hurricane-harbor-arlington-makes-a-splash-with-may-16-season-opening/",
-    "source": "Amusement Today",
-    "categoryId": "ops",
-    "categoryLabel": "Operations & Safety",
-    "categoryIcon": "🛡️",
-    "categoryColor": "#F59E0B"
-  },
-  {
-    "title": "ZIERER Launches Force 360 Coaster with Debut Installation at Duinrell in the Netherlands",
-    "summary": "ZIERER has unveiled its new Force 360 Coaster model with the opening of the Kikker8baan at Duinrell, replacing a beloved family coaster that ran for over 40 years at the Dutch park. The project showcases how ride manufacturers and parks can honor legacy attractions while upgrading to modern safety and performance standards. FEC operators considering ride replacement or fleet modernization can look to this project as a case study in balancing guest nostalgia with operational advancement.",
-    "url": "https://blooloop.com/zierer-kikker8baan-duinrell/",
-    "source": "Blooloop",
-    "categoryId": "attractions",
-    "categoryLabel": "Attractions & Experiences",
-    "categoryIcon": "🎢",
-    "categoryColor": "#FF6B35"
-  },
-  {
-    "title": "Resorts World NYC Opens City's First Table Games Casino, Adding Entertainment Competition",
-    "summary": "Resorts World New York City has opened the city's first table games casino, featuring over 240 table games and 2,500 slot machines after securing a commercial gaming license. The launch transforms a slots-only facility into a full Las Vegas-style entertainment destination in Queens, increasing competition for leisure dollars in the New York metro market. FEC operators in the greater New York area should factor the expanded casino into their competitive landscape analysis.",
+    "title": "Resorts World NYC Opens City's First Table Games Casino",
+    "summary": "Resorts World New York City has launched the city's first commercial table games casino, featuring over 240 table game positions and 2,500 slot machines on a reimagined third floor after securing a gaming license from Genting Group. The opening transforms a slots-only facility into a full Las Vegas-style casino resort in Queens. FEC operators in the New York metro area should factor the new entertainment destination into their competitive landscape and guest time-spend analysis.",
     "url": "https://blooloop.com/resorts-world-nyc-casino/",
     "source": "Blooloop",
     "categoryId": "business",
@@ -452,14 +556,104 @@ const articles = [
     "categoryColor": "#10B981"
   },
   {
-    "title": "Coachella Partners with Google DeepMind AI to Experiment with Live Entertainment Formats",
-    "summary": "The Coachella Valley Music and Arts Festival has partnered with Google DeepMind to test artificial intelligence applications in live entertainment, exploring how AI can enhance or transform the festival guest experience. While focused on large-scale live events, the AI tools being piloted have potential downstream applications for FEC operators in areas such as dynamic programming, crowd flow optimization, and personalized guest engagement. Operators should track how AI adoption at major entertainment brands translates into accessible tools for mid-size venues.",
-    "url": "https://decrypt.co/365532/coachella-google-deepmind-ai-test-future-live-entertainment",
-    "source": "Decrypt",
-    "categoryId": "tech",
-    "categoryLabel": "Technology",
-    "categoryIcon": "⚙️",
-    "categoryColor": "#3B82F6"
+    "title": "EPIC Entertainment Group Expands Story-Led Seasonal Experience Portfolio Across the US",
+    "summary": "EPIC Entertainment Group is rolling out a series of spring and summer immersive experiences across multiple U.S. destinations, building on holiday-season momentum and positioning itself as a strategic partner for narrative-driven venue programming. The company's portfolio spans immersive attractions, seasonal events, and cultural exhibitions, including the US debut of a Dolce&Gabbana experience in Miami. FEC operators seeking to differentiate through themed seasonal programming can look to EPIC's model as a template for outsourcing high-quality experience design.",
+    "url": "https://blooloop.com/epic-entertainment-group-destination-strategy/",
+    "source": "Blooloop",
+    "categoryId": "design",
+    "categoryLabel": "Design & Trends",
+    "categoryIcon": "🎨",
+    "categoryColor": "#EC4899"
+  },
+  {
+    "title": "Low-Ego Design Team Culture Delivers Better Outcomes for Themed Entertainment Projects",
+    "summary": "A commentary from Cuningham's Orlando office argues that deprioritizing individual creative credit in favor of collective project success leads to measurably better results in themed entertainment design, functioning as a natural risk-mitigation strategy for venue owners. The firm points to clarity, trust, and shared purpose as the core drivers of successful complex projects. FEC operators embarking on new builds or major renovations should consider team culture and decision-making structures as part of their vendor evaluation process.",
+    "url": "https://blooloop.com/low-ego-design-teams/",
+    "source": "Blooloop",
+    "categoryId": "design",
+    "categoryLabel": "Design & Trends",
+    "categoryIcon": "🎨",
+    "categoryColor": "#EC4899"
+  },
+  {
+    "title": "How Immersive Audio Design Shapes Guest Perception Without Drawing Attention to Itself",
+    "summary": "An audio designer reflects on how the most effective sound design in themed environments works invisibly, reinforcing atmosphere and storytelling without guests ever consciously noticing it. The article uses a lifelike generator sound effect as a case study in how ambient audio contributes to believability and immersion. FEC operators investing in themed zones, escape rooms, or immersive attractions should consider professional audio design as a cost-effective way to elevate the guest experience.",
+    "url": "https://blooloop.com/sonic-perception-invisible-audio/",
+    "source": "Blooloop",
+    "categoryId": "design",
+    "categoryLabel": "Design & Trends",
+    "categoryIcon": "🎨",
+    "categoryColor": "#EC4899"
+  },
+  {
+    "title": "The Giant: PwC Feasibility Study Backs Landmark Moving Statue Attraction for Dublin",
+    "summary": "A PwC feasibility study co-funded by Dublin City Council and Enterprise Ireland identifies The Giant — a 30-metre programmable LED human-shaped statue — as a major potential catalyst for city-centre tourism, family entertainment, and digital innovation, with George's Dock identified as the preferred site. The report projects significant social, cultural, and economic returns for Dublin if the project proceeds. The concept illustrates how large-scale technology-driven public attractions are increasingly being positioned as anchors for broader entertainment districts, a model relevant to FEC destination planning.",
+    "url": "https://blooloop.com/the-giant-pwc-feasibility/",
+    "source": "Blooloop",
+    "categoryId": "design",
+    "categoryLabel": "Design & Trends",
+    "categoryIcon": "🎨",
+    "categoryColor": "#EC4899"
+  },
+  {
+    "title": "ZIERER Launches Force 360 Coaster with Debut Installation at Duinrell, Netherlands",
+    "summary": "ZIERER has unveiled its new Force 360 Coaster with the opening of the Kikker8baan at Dutch park Duinrell, replacing a beloved ride that operated for over 40 years while honoring its legacy through design continuity. The project demonstrates how parks can modernize aging attractions without sacrificing their emotional connection to guests. For FEC operators with aging ride inventories, the approach offers a blueprint for strategic replacement that preserves brand identity.",
+    "url": "https://blooloop.com/zierer-kikker8baan-duinrell/",
+    "source": "Blooloop",
+    "categoryId": "attractions",
+    "categoryLabel": "Attractions & Experiences",
+    "categoryIcon": "🎢",
+    "categoryColor": "#FF6B35"
+  },
+  {
+    "title": "Laredo Amusement Center Raided in Gambling Investigation; Six Arrested, 88 Machines Seized",
+    "summary": "Six people were arrested and 88 gaming machines were seized following an undercover investigation into an amusement center on McPherson Road in Laredo, Texas. The operation highlights ongoing regulatory scrutiny of amusement venues operating games that may cross into illegal gambling territory. FEC operators should ensure their game redemption and prize structures comply with local gaming regulations to avoid similar enforcement actions.",
+    "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNa0RYQ3ZBVDRTSDBlNVRoQnpyLTVaSTdoU2JvVS1kd1lrb3VNZ1k0MjVibEVpczVNYTF3UjBnejNNVm9BSzZIbjNJdDg2b2NXcVRZaXRzZHBMRFNRYzNnWEo1Y2hsVHYtblpQQ0Q2MnpzdTY5Nk5aRjVwYkFaQmZ6VXNxNmVsZnBHR3ZwQXQ3LWlld0k3UG95REtyaHFFSkFwTmc",
+    "source": "Laredo Morning Times",
+    "categoryId": "ops",
+    "categoryLabel": "Operations & Safety",
+    "categoryIcon": "🛡️",
+    "categoryColor": "#F59E0B"
+  },
+  {
+    "title": "Bay Beach Amusement Park Introduces Paid Premier Parking for Summer Season",
+    "summary": "Bay Beach Amusement Park in Green Bay, Wisconsin is introducing a paid premier parking tier for the 2026 summer season, adding a new revenue stream while offering guests a convenience upgrade. The move mirrors a strategy widely used by larger theme parks and stadiums. FEC operators looking to optimize ancillary revenue without raising gate prices may find tiered parking a practical and low-friction option.",
+    "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPUFVyUmdGUzlyNTR3cllMSmpJVU5uM3BwYTVHY3NpOVpXQ0h5WG9Uam91MTJWYy10R1FmemhYbkZzdE8zR3VzelZscFQ4N0tDM0p0akhZek9ZWGtHYTJvRDVneXJoOUtwU2lfcjFLQW5wcjlTQ3FMbG9QMl85UDc1RlRHdEtIZDVOb3c",
+    "source": "NBC26",
+    "categoryId": "ops",
+    "categoryLabel": "Operations & Safety",
+    "categoryIcon": "🛡️",
+    "categoryColor": "#F59E0B"
+  },
+  {
+    "title": "Carowinds Names Bridgette Bywater as New Park President",
+    "summary": "Carowinds and Carolina Harbor Waterpark have appointed Bridgette Bywater as park president, bringing 36 years of amusement industry experience focused on operational excellence and safety leadership. Her appointment reflects the industry's continued emphasis on seasoned operators at the helm of major venues. FEC operators can draw lessons from large park leadership transitions in how operational experience and safety culture are increasingly prized at the executive level.",
+    "url": "https://amusementtoday.com/2026/04/carowinds-names-bridgette-bywater-new-park-president/",
+    "source": "Amusement Today",
+    "categoryId": "ops",
+    "categoryLabel": "Operations & Safety",
+    "categoryIcon": "🛡️",
+    "categoryColor": "#F59E0B"
+  },
+  {
+    "title": "Six Flags Great Adventure's New Shoreline Pier Boardwalk Expansion Takes Shape",
+    "summary": "Construction at Six Flags Great Adventure's Shoreline Pier transformation is progressing visibly, with the Barrels O' Fun spinning ride structure rising and additional attraction site work underway for the 2026 season. The boardwalk-to-pier conversion represents a significant investment in refreshing a major entertainment zone within an existing park. FEC operators planning zone refreshes can observe how large parks approach phased construction to maintain guest experience during builds.",
+    "url": "https://amusementtoday.com/2026/04/six-flags-great-adventures-shoreline-pier-continues-to-rise/",
+    "source": "Amusement Today",
+    "categoryId": "design",
+    "categoryLabel": "Design & Trends",
+    "categoryIcon": "🎨",
+    "categoryColor": "#EC4899"
+  },
+  {
+    "title": "Aquatica Orlando Expands AquaGlow Nighttime Event with New Slide Experiences",
+    "summary": "Aquatica Orlando is returning its AquaGlow nighttime event for a third year with new slide experiences, enhanced entertainment, and expanded neon-themed programming running select nights from May through September. The event demonstrates how parks can drive incremental revenue from existing infrastructure by creating after-hours experiences with limited capacity and premium positioning. FEC operators with underutilized evening hours should consider whether themed nighttime events could unlock new revenue without major capital investment.",
+    "url": "https://amusementtoday.com/2026/04/aquatica-orlandos-aquaglow-returns-with-all-new-nighttime-slide-experiences-and-electrifying-entertainment/",
+    "source": "Amusement Today",
+    "categoryId": "ops",
+    "categoryLabel": "Operations & Safety",
+    "categoryIcon": "🛡️",
+    "categoryColor": "#F59E0B"
   }
 ];
 const CATEGORIES = [
@@ -527,6 +721,110 @@ function renderFeed() {
 renderHeader();
 renderTabs();
 renderFeed();
+
+/* ---------- Chat Widget ---------- */
+const launcher = document.getElementById("chatLauncher");
+const panel = document.getElementById("chatPanel");
+const messages = document.getElementById("chatMessages");
+const chatInput = document.getElementById("chatInput");
+const chatSend = document.getElementById("chatSend");
+const chatInputArea = document.getElementById("chatInputArea");
+const feedbackArea = document.getElementById("feedbackArea");
+
+launcher.addEventListener("click", () => {
+  const open = panel.classList.toggle("open");
+  launcher.classList.toggle("open", open);
+  if (open) chatInput.focus();
+});
+
+document.querySelectorAll(".chat-tab").forEach(tab => {
+  tab.addEventListener("click", () => {
+    document.querySelectorAll(".chat-tab").forEach(t => t.classList.remove("active"));
+    tab.classList.add("active");
+    const isFeedback = tab.dataset.tab === "feedback";
+    messages.style.display = isFeedback ? "none" : "flex";
+    chatInputArea.style.display = isFeedback ? "none" : "flex";
+    feedbackArea.classList.toggle("active", isFeedback);
+  });
+});
+
+function addMessage(text, type) {
+  const div = document.createElement("div");
+  div.className = `chat-msg ${type}`;
+  div.textContent = text;
+  messages.appendChild(div);
+  messages.scrollTop = messages.scrollHeight;
+  return div;
+}
+
+function showTyping() {
+  const div = document.createElement("div");
+  div.className = "chat-msg bot typing";
+  div.id = "typingIndicator";
+  div.innerHTML = '<span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span>';
+  messages.appendChild(div);
+  messages.scrollTop = messages.scrollHeight;
+}
+function hideTyping() {
+  const el = document.getElementById("typingIndicator");
+  if (el) el.remove();
+}
+
+let chatHistory = [];
+
+async function sendMessage() {
+  const text = chatInput.value.trim();
+  if (!text) return;
+  chatInput.value = "";
+  chatSend.disabled = true;
+  addMessage(text, "user");
+  chatHistory.push({ role: "user", content: text });
+  showTyping();
+
+  try {
+    const res = await fetch(CHAT_API + "/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        message: text,
+        history: chatHistory.slice(-6),
+        articles: articles.map(a => ({ title: a.title, summary: a.summary, categoryLabel: a.categoryLabel, source: a.source }))
+      })
+    });
+    hideTyping();
+    if (!res.ok) throw new Error("Chat unavailable");
+    const data = await res.json();
+    const reply = data.reply || "Sorry, I couldn't process that.";
+    addMessage(reply, "bot");
+    chatHistory.push({ role: "assistant", content: reply });
+  } catch (e) {
+    hideTyping();
+    addMessage("Sorry, I'm having trouble connecting right now. Please try again later.", "bot");
+  }
+  chatSend.disabled = false;
+  chatInput.focus();
+}
+
+chatSend.addEventListener("click", sendMessage);
+chatInput.addEventListener("keydown", e => { if (e.key === "Enter") sendMessage(); });
+
+document.getElementById("feedbackSubmit").addEventListener("click", async () => {
+  const text = document.getElementById("feedbackText").value.trim();
+  const email = document.getElementById("feedbackEmail").value.trim();
+  if (!text) return;
+
+  try {
+    await fetch(CHAT_API + "/feedback", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message: text, email })
+    });
+  } catch (e) { /* best-effort */ }
+
+  feedbackArea.innerHTML = '<div class="feedback-success">\u2705 Thank you for your feedback!</div>';
+});
+
+/* ---------- iframe height ---------- */
 function postHeight() {
   if (window.parent === window) return;
   const h = Math.max(document.documentElement.scrollHeight, document.body.scrollHeight);
