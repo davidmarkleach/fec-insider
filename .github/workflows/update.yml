@@ -25,6 +25,9 @@ jobs:
       - name: Run curation script
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GA4_ID: ${{ secrets.GA4_ID }}
+          CLARITY_ID: ${{ secrets.CLARITY_ID }}
+          CHAT_API_URL: ${{ secrets.CHAT_API_URL }}
         run: python scripts/curate.py
 
       - name: Commit and push if changed

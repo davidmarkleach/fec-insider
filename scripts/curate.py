@@ -190,6 +190,9 @@ def render_html(articles: list[dict]) -> str:
     articles_json = json.dumps(articles, ensure_ascii=False, indent=2)
     html = template.replace("{{TIMESTAMP_ISO}}", now_iso)
     html = html.replace("{{ARTICLES_JSON}}", articles_json)
+    html = html.replace("{{GA4_ID}}", os.environ.get("GA4_ID", "G-XXXXXXXXXX"))
+    html = html.replace("{{CLARITY_ID}}", os.environ.get("CLARITY_ID", "xxxxxxxxxx"))
+    html = html.replace("{{CHAT_API_URL}}", os.environ.get("CHAT_API_URL", "https://fec-insider-chat.davidmarkleach.workers.dev"))
     return html
 
 

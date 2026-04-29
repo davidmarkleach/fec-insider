@@ -7,6 +7,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@400;500;600;700&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{GA4_ID}}"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','{{GA4_ID}}');</script>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","{{CLARITY_ID}}");</script>
 <style>
   :root {
     --bg:            #070714;
@@ -48,9 +53,7 @@
     color: var(--on-dark);
     margin-bottom: 10px;
   }
-  .title strong {
-    font-weight: 700; color: var(--accent-strong);
-  }
+  .title strong { font-weight: 700; color: var(--accent-strong); }
   .subtitle {
     font-family: 'Lato', sans-serif;
     font-size: 16px; line-height: 1.5;
@@ -79,92 +82,235 @@
     transition: background-color 0.2s ease, color 0.2s ease,
                 box-shadow 0.2s ease, border-color 0.2s ease;
   }
-  .tab:hover {
-    background: rgba(255, 255, 255, 0.06);
-    color: var(--on-dark);
-  }
+  .tab:hover { background: rgba(255, 255, 255, 0.06); color: var(--on-dark); }
   .tab.active {
     background: var(--accent-a10);
     color: var(--on-dark);
-    box-shadow:
-      inset 0 0 0 1px var(--accent-a30),
-      inset 0 0 0 2px rgba(255, 255, 255, 0.06);
+    box-shadow: inset 0 0 0 1px var(--accent-a30), inset 0 0 0 2px rgba(255, 255, 255, 0.06);
   }
   .feed { display: flex; flex-direction: column; gap: 14px; }
   .card {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    background: #ffffff;
-    border-radius: 1.25rem;
-    padding: 22px 24px;
-    box-shadow:
-      0 0 0 1px var(--on-dark-ring),
-      0 2px 3px 0 rgba(0, 0, 0, 0.10),
-      0 1px 1px 0 rgba(0, 0, 0, 0.08),
-      0 16px 32px -10px rgba(0, 0, 0, 0.45);
+    display: block; text-decoration: none; color: inherit;
+    background: #ffffff; border-radius: 1.25rem; padding: 22px 24px;
+    box-shadow: 0 0 0 1px var(--on-dark-ring), 0 2px 3px 0 rgba(0,0,0,0.10),
+      0 1px 1px 0 rgba(0,0,0,0.08), 0 16px 32px -10px rgba(0,0,0,0.45);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     animation: fadeSlideIn 0.5s ease-out both;
   }
   a.card { cursor: pointer; }
   .card:hover {
     transform: translateY(-2px);
-    box-shadow:
-      0 0 0 1px rgba(255, 255, 255, 0.22),
-      0 4px 6px 0 rgba(0, 0, 0, 0.12),
-      0 20px 40px -10px rgba(0, 0, 0, 0.55);
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.22), 0 4px 6px 0 rgba(0,0,0,0.12),
+      0 20px 40px -10px rgba(0,0,0,0.55);
   }
   a.card:hover h3 {
-    text-decoration: underline;
-    text-decoration-color: var(--accent);
-    text-decoration-thickness: 2px;
-    text-underline-offset: 3px;
+    text-decoration: underline; text-decoration-color: var(--accent);
+    text-decoration-thickness: 2px; text-underline-offset: 3px;
   }
   .card-top {
     display: flex; justify-content: space-between; align-items: baseline;
     gap: 12px; margin-bottom: 8px;
   }
   .card-cat {
-    font-family: 'Lato', sans-serif;
-    font-size: 12px; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.1em;
-    white-space: nowrap;
+    font-family: 'Lato', sans-serif; font-size: 12px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.1em; white-space: nowrap;
   }
   .card-source {
-    font-family: 'Lato', sans-serif;
-    font-size: 12px; color: var(--ink-50);
-    font-weight: 400; text-align: right;
-    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    font-family: 'Lato', sans-serif; font-size: 12px; color: var(--ink-50);
+    font-weight: 400; text-align: right; overflow: hidden;
+    text-overflow: ellipsis; white-space: nowrap;
   }
   .card h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 18px; font-weight: 600;
-    letter-spacing: -0.01em; line-height: 1.3;
-    color: var(--ink);
-    margin-bottom: 8px;
+    font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 600;
+    letter-spacing: -0.01em; line-height: 1.3; color: var(--ink); margin-bottom: 8px;
   }
   .card p {
-    font-family: 'Lato', sans-serif;
-    font-size: 14px; line-height: 1.6;
-    color: var(--ink-70);
-    font-weight: 400;
+    font-family: 'Lato', sans-serif; font-size: 14px; line-height: 1.6;
+    color: var(--ink-70); font-weight: 400;
   }
   .footer {
     margin-top: 34px; padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.08); text-align: center;
   }
-  .footer p {
-    font-family: 'Lato', sans-serif;
-    font-size: 13px; color: var(--on-dark-60);
-    font-weight: 400;
-  }
-  .footer .brand {
-    color: var(--on-dark); font-weight: 700;
-  }
+  .footer p { font-family: 'Lato', sans-serif; font-size: 13px; color: var(--on-dark-60); font-weight: 400; }
+  .footer .brand { color: var(--on-dark); font-weight: 700; }
   @keyframes fadeSlideIn {
     from { opacity: 0; transform: translateY(8px); }
     to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ========== Chat Widget ========== */
+  .chat-launcher {
+    position: fixed; bottom: 24px; right: 24px; z-index: 9999;
+    width: 60px; height: 60px; border-radius: 50%; border: none;
+    cursor: pointer; padding: 0; overflow: hidden;
+    box-shadow: 0 4px 16px rgba(124,58,237,0.4), 0 2px 4px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: var(--accent);
+  }
+  .chat-launcher:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 24px rgba(124,58,237,0.5), 0 4px 8px rgba(0,0,0,0.3);
+  }
+  .chat-launcher img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+  }
+  .chat-launcher .close-icon {
+    display: none; position: absolute; inset: 0;
+    background: var(--accent); color: white;
+    font-size: 28px; line-height: 60px; text-align: center;
+  }
+  .chat-launcher.open img { display: none; }
+  .chat-launcher.open .close-icon { display: block; }
+
+  .chat-badge {
+    position: absolute; top: -2px; right: -2px;
+    width: 18px; height: 18px; border-radius: 50%;
+    background: #FF6B35; border: 2px solid var(--bg);
+    animation: pulse-badge 2s infinite;
+  }
+  .chat-launcher.open .chat-badge { display: none; }
+  @keyframes pulse-badge {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+  }
+
+  .chat-panel {
+    position: fixed; bottom: 96px; right: 24px; z-index: 9998;
+    width: 380px; max-height: 520px; border-radius: 16px;
+    background: #ffffff; overflow: hidden;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.35), 0 0 0 1px rgba(0,0,0,0.08);
+    display: flex; flex-direction: column;
+    transform: scale(0.9) translateY(20px); opacity: 0;
+    pointer-events: none;
+    transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), opacity 0.2s ease;
+    transform-origin: bottom right;
+  }
+  .chat-panel.open {
+    transform: scale(1) translateY(0); opacity: 1; pointer-events: auto;
+  }
+  @media (max-width: 440px) {
+    .chat-panel { right: 8px; left: 8px; width: auto; bottom: 88px; max-height: 70vh; }
+    .chat-launcher { bottom: 16px; right: 16px; }
+  }
+
+  .chat-header {
+    background: linear-gradient(135deg, var(--accent) 0%, #5B21B6 100%);
+    padding: 16px 18px; display: flex; align-items: center; gap: 12px;
+    flex-shrink: 0;
+  }
+  .chat-header-avatar {
+    width: 36px; height: 36px; border-radius: 50%; object-fit: cover;
+    border: 2px solid rgba(255,255,255,0.3);
+  }
+  .chat-header-info { flex: 1; }
+  .chat-header-title {
+    font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600;
+    color: #fff; line-height: 1.2;
+  }
+  .chat-header-sub {
+    font-family: 'Lato', sans-serif; font-size: 12px; color: rgba(255,255,255,0.75);
+  }
+
+  .chat-tabs {
+    display: flex; border-bottom: 1px solid #e5e7eb; flex-shrink: 0;
+  }
+  .chat-tab {
+    flex: 1; padding: 10px; text-align: center; font-family: 'Lato', sans-serif;
+    font-size: 13px; font-weight: 600; color: #6b7280; background: none;
+    border: none; cursor: pointer; border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .chat-tab:hover { color: var(--ink); }
+  .chat-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+  .chat-messages {
+    flex: 1; overflow-y: auto; padding: 16px; display: flex;
+    flex-direction: column; gap: 12px; min-height: 200px;
+    scrollbar-width: thin; scrollbar-color: #d1d5db transparent;
+  }
+  .chat-messages::-webkit-scrollbar { width: 4px; }
+  .chat-messages::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 2px; }
+
+  .chat-msg {
+    max-width: 85%; padding: 10px 14px; border-radius: 16px;
+    font-family: 'Lato', sans-serif; font-size: 14px; line-height: 1.5;
+    animation: fadeSlideIn 0.3s ease-out;
+  }
+  .chat-msg.bot {
+    align-self: flex-start; background: #f3f4f6; color: var(--ink);
+    border-bottom-left-radius: 4px;
+  }
+  .chat-msg.user {
+    align-self: flex-end; background: var(--accent); color: #fff;
+    border-bottom-right-radius: 4px;
+  }
+  .chat-msg.typing { display: flex; gap: 4px; align-items: center; padding: 12px 18px; }
+  .typing-dot {
+    width: 8px; height: 8px; border-radius: 50%; background: #9ca3af;
+    animation: typing-bounce 1.4s infinite both;
+  }
+  .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+  .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes typing-bounce {
+    0%, 60%, 100% { transform: translateY(0); }
+    30% { transform: translateY(-6px); }
+  }
+
+  .chat-input-area {
+    padding: 12px 16px; border-top: 1px solid #e5e7eb;
+    display: flex; gap: 8px; align-items: center; flex-shrink: 0;
+  }
+  .chat-input {
+    flex: 1; padding: 10px 14px; border: 1px solid #d1d5db;
+    border-radius: 24px; font-family: 'Lato', sans-serif; font-size: 14px;
+    outline: none; color: var(--ink); transition: border-color 0.2s;
+  }
+  .chat-input:focus { border-color: var(--accent); }
+  .chat-input::placeholder { color: #9ca3af; }
+  .chat-send {
+    width: 36px; height: 36px; border-radius: 50%; border: none;
+    background: var(--accent); color: #fff; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background-color 0.2s, transform 0.15s;
+    flex-shrink: 0;
+  }
+  .chat-send:hover { background: #6D28D9; }
+  .chat-send:active { transform: scale(0.92); }
+  .chat-send:disabled { opacity: 0.5; cursor: not-allowed; }
+  .chat-send svg { width: 18px; height: 18px; }
+
+  .feedback-area {
+    display: none; flex-direction: column; gap: 10px; padding: 16px;
+    flex: 1; overflow-y: auto;
+  }
+  .feedback-area.active { display: flex; }
+  .feedback-area label {
+    font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 600;
+    color: var(--ink);
+  }
+  .feedback-area textarea {
+    width: 100%; min-height: 100px; padding: 12px; border: 1px solid #d1d5db;
+    border-radius: 12px; font-family: 'Lato', sans-serif; font-size: 14px;
+    resize: vertical; outline: none; color: var(--ink);
+  }
+  .feedback-area textarea:focus { border-color: var(--accent); }
+  .feedback-area input[type="email"] {
+    width: 100%; padding: 10px 14px; border: 1px solid #d1d5db;
+    border-radius: 12px; font-family: 'Lato', sans-serif; font-size: 14px;
+    outline: none; color: var(--ink);
+  }
+  .feedback-area input:focus { border-color: var(--accent); }
+  .feedback-submit {
+    align-self: flex-end; padding: 10px 24px; border-radius: 24px;
+    border: none; background: var(--accent); color: #fff;
+    font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 600;
+    cursor: pointer; transition: background-color 0.2s;
+  }
+  .feedback-submit:hover { background: #6D28D9; }
+  .feedback-success {
+    text-align: center; padding: 40px 20px; color: #10B981;
+    font-family: 'Lato', sans-serif; font-size: 15px; font-weight: 600;
   }
 </style>
 </head>
@@ -179,7 +325,45 @@
   <div class="feed" id="feed"></div>
   <div class="footer"><p>Powered by AI &middot; <span class="brand">FEC Insider</span> &middot; Subscriber Exclusive</p></div>
 </div>
+
+<!-- Chat Widget -->
+<button class="chat-launcher" id="chatLauncher" aria-label="Open chat">
+  <img src="avatar.png" alt="FEC Insider assistant">
+  <span class="close-icon">&times;</span>
+  <span class="chat-badge"></span>
+</button>
+
+<div class="chat-panel" id="chatPanel">
+  <div class="chat-header">
+    <img class="chat-header-avatar" src="avatar.png" alt="">
+    <div class="chat-header-info">
+      <div class="chat-header-title">FEC Insider</div>
+      <div class="chat-header-sub">Ask me about today's FEC news</div>
+    </div>
+  </div>
+  <div class="chat-tabs">
+    <button class="chat-tab active" data-tab="chat">Chat</button>
+    <button class="chat-tab" data-tab="feedback">Leave Feedback</button>
+  </div>
+  <div class="chat-messages" id="chatMessages">
+    <div class="chat-msg bot">Hey! I'm the FEC Insider assistant. Ask me anything about today's industry news, or switch to the Feedback tab to share your thoughts.</div>
+  </div>
+  <div class="chat-input-area" id="chatInputArea">
+    <input class="chat-input" id="chatInput" type="text" placeholder="Ask about today's FEC news..." autocomplete="off">
+    <button class="chat-send" id="chatSend" aria-label="Send message">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+    </button>
+  </div>
+  <div class="feedback-area" id="feedbackArea">
+    <label>We'd love to hear from you</label>
+    <textarea id="feedbackText" placeholder="What do you think of FEC Insider? What topics should we cover?"></textarea>
+    <input type="email" id="feedbackEmail" placeholder="Email (optional)">
+    <button class="feedback-submit" id="feedbackSubmit">Send Feedback</button>
+  </div>
+</div>
+
 <script>
+const CHAT_API = "{{CHAT_API_URL}}";
 const articles = {{ARTICLES_JSON}};
 const CATEGORIES = [
   { id: "all",         label: "All Updates" },
@@ -246,6 +430,110 @@ function renderFeed() {
 renderHeader();
 renderTabs();
 renderFeed();
+
+/* ---------- Chat Widget ---------- */
+const launcher = document.getElementById("chatLauncher");
+const panel = document.getElementById("chatPanel");
+const messages = document.getElementById("chatMessages");
+const chatInput = document.getElementById("chatInput");
+const chatSend = document.getElementById("chatSend");
+const chatInputArea = document.getElementById("chatInputArea");
+const feedbackArea = document.getElementById("feedbackArea");
+
+launcher.addEventListener("click", () => {
+  const open = panel.classList.toggle("open");
+  launcher.classList.toggle("open", open);
+  if (open) chatInput.focus();
+});
+
+document.querySelectorAll(".chat-tab").forEach(tab => {
+  tab.addEventListener("click", () => {
+    document.querySelectorAll(".chat-tab").forEach(t => t.classList.remove("active"));
+    tab.classList.add("active");
+    const isFeedback = tab.dataset.tab === "feedback";
+    messages.style.display = isFeedback ? "none" : "flex";
+    chatInputArea.style.display = isFeedback ? "none" : "flex";
+    feedbackArea.classList.toggle("active", isFeedback);
+  });
+});
+
+function addMessage(text, type) {
+  const div = document.createElement("div");
+  div.className = `chat-msg ${type}`;
+  div.textContent = text;
+  messages.appendChild(div);
+  messages.scrollTop = messages.scrollHeight;
+  return div;
+}
+
+function showTyping() {
+  const div = document.createElement("div");
+  div.className = "chat-msg bot typing";
+  div.id = "typingIndicator";
+  div.innerHTML = '<span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span>';
+  messages.appendChild(div);
+  messages.scrollTop = messages.scrollHeight;
+}
+function hideTyping() {
+  const el = document.getElementById("typingIndicator");
+  if (el) el.remove();
+}
+
+let chatHistory = [];
+
+async function sendMessage() {
+  const text = chatInput.value.trim();
+  if (!text) return;
+  chatInput.value = "";
+  chatSend.disabled = true;
+  addMessage(text, "user");
+  chatHistory.push({ role: "user", content: text });
+  showTyping();
+
+  try {
+    const res = await fetch(CHAT_API + "/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        message: text,
+        history: chatHistory.slice(-6),
+        articles: articles.map(a => ({ title: a.title, summary: a.summary, categoryLabel: a.categoryLabel, source: a.source }))
+      })
+    });
+    hideTyping();
+    if (!res.ok) throw new Error("Chat unavailable");
+    const data = await res.json();
+    const reply = data.reply || "Sorry, I couldn't process that.";
+    addMessage(reply, "bot");
+    chatHistory.push({ role: "assistant", content: reply });
+  } catch (e) {
+    hideTyping();
+    addMessage("Sorry, I'm having trouble connecting right now. Please try again later.", "bot");
+  }
+  chatSend.disabled = false;
+  chatInput.focus();
+}
+
+chatSend.addEventListener("click", sendMessage);
+chatInput.addEventListener("keydown", e => { if (e.key === "Enter") sendMessage(); });
+
+document.getElementById("feedbackSubmit").addEventListener("click", async () => {
+  const text = document.getElementById("feedbackText").value.trim();
+  const email = document.getElementById("feedbackEmail").value.trim();
+  if (!text) return;
+
+  try {
+    await fetch(CHAT_API + "/feedback", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message: text, email })
+    });
+  } catch (e) { /* best-effort */ }
+
+  feedbackArea.innerHTML = '<div class="feedback-success">\u2705 Thank you for your feedback!</div>';
+});
+
+/* ---------- iframe height ---------- */
 function postHeight() {
   if (window.parent === window) return;
   const h = Math.max(document.documentElement.scrollHeight, document.body.scrollHeight);
