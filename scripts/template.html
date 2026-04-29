@@ -189,9 +189,23 @@
   .chat-panel.open {
     transform: scale(1) translateY(0); opacity: 1; pointer-events: auto;
   }
-  @media (max-width: 440px) {
-    .chat-panel { right: 8px; left: 8px; width: auto; bottom: 88px; max-height: 70vh; }
+  @media (max-width: 640px) {
+    body.chat-open {
+      overflow: hidden; position: fixed; width: 100%; height: 100%;
+    }
+    .chat-panel {
+      top: 0; left: 0; right: 0; bottom: 0;
+      width: 100%; height: 100vh; height: 100dvh;
+      max-height: 100vh; max-height: 100dvh;
+      border-radius: 0;
+      transform-origin: bottom center;
+    }
     .chat-launcher { bottom: 16px; right: 16px; }
+    .chat-launcher .close-icon { min-width: 44px; min-height: 44px; }
+    .chat-input-area {
+      padding-bottom: calc(12px + env(safe-area-inset-bottom, 0));
+    }
+    .chat-messages { min-height: 0; }
   }
 
   .chat-header {
@@ -440,10 +454,20 @@ const chatSend = document.getElementById("chatSend");
 const chatInputArea = document.getElementById("chatInputArea");
 const feedbackArea = document.getElementById("feedbackArea");
 
+let chatScrollY = 0;
 launcher.addEventListener("click", () => {
   const open = panel.classList.toggle("open");
   launcher.classList.toggle("open", open);
-  if (open) chatInput.focus();
+  if (open) {
+    chatScrollY = window.scrollY;
+    document.body.classList.add("chat-open");
+    document.body.style.top = `-${chatScrollY}px`;
+    chatInput.focus();
+  } else {
+    document.body.classList.remove("chat-open");
+    document.body.style.top = "";
+    window.scrollTo(0, chatScrollY);
+  }
 });
 
 document.querySelectorAll(".chat-tab").forEach(tab => {
