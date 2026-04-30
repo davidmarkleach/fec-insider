@@ -67,7 +67,7 @@
 
   /* ---------- Tabs ---------- */
   .tabs {
-    display: flex; gap: 4px; margin-bottom: 22px;
+    display: flex; gap: 4px; margin-bottom: 14px;
     overflow-x: auto; padding-bottom: 2px; scrollbar-width: none;
   }
   .tabs::-webkit-scrollbar { display: none; }
@@ -88,6 +88,47 @@
     color: var(--on-dark);
   }
   .tab.active {
+    background: var(--accent-a10);
+    color: var(--on-dark);
+    box-shadow:
+      inset 0 0 0 1px var(--accent-a30),
+      inset 0 0 0 2px rgba(255, 255, 255, 0.06);
+  }
+
+  /* ---------- Sort ---------- */
+  .sort-row {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 22px;
+    flex-wrap: wrap;
+  }
+  .sort-label {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 13px; font-weight: 500;
+    color: var(--on-dark-45);
+    flex-shrink: 0;
+  }
+  .sort-tabs {
+    display: flex; gap: 4px;
+    overflow-x: auto; padding-bottom: 2px; scrollbar-width: none;
+    flex: 1; min-width: 0;
+  }
+  .sort-tabs::-webkit-scrollbar { display: none; }
+  .sort-tab {
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 100rem;
+    padding: 6px 12px;
+    color: var(--on-dark-75);
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 13px; font-weight: 400;
+    cursor: pointer; white-space: nowrap;
+    transition: background-color 0.2s ease, color 0.2s ease,
+                box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+  .sort-tab:hover {
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--on-dark);
+  }
+  .sort-tab.active {
     background: var(--accent-a10);
     color: var(--on-dark);
     box-shadow:
@@ -128,7 +169,14 @@
   }
   .card-top {
     display: flex; justify-content: space-between; align-items: baseline;
-    gap: 12px; margin-bottom: 8px;
+    gap: 12px; margin-bottom: 6px;
+  }
+  .card-date {
+    font-family: 'Lato', sans-serif;
+    font-size: 12px; font-weight: 600;
+    color: var(--ink-50);
+    letter-spacing: 0.02em;
+    margin-bottom: 10px;
   }
   .card-cat {
     font-family: 'Lato', sans-serif;
@@ -185,6 +233,7 @@
     <p class="timestamp" id="timestamp" data-iso="2026-04-28T23:00:00.000Z"></p>
   </div>
   <div class="tabs" id="tabs"></div>
+  <div class="sort-row" id="sort-row" aria-label="Sort articles"></div>
   <div class="feed" id="feed"></div>
   <div class="footer"><p>Powered by AI &middot; <span class="brand">FEC Insider</span> &middot; Subscriber Exclusive</p></div>
 </div>
@@ -199,7 +248,9 @@ const articles = [
     "categoryId": "business",
     "categoryLabel": "Business & Growth",
     "categoryIcon": "\ud83d\udcca",
-    "categoryColor": "#10B981"
+    "categoryColor": "#10B981",
+    "publishedAt": "2026-01-15",
+    "curatorScore": 92
   },
   {
     "title": "Embed AI Debuts Revolutionary AI-Powered Platform for Family Entertainment Centers",
@@ -210,7 +261,9 @@ const articles = [
     "categoryId": "tech",
     "categoryLabel": "Technology",
     "categoryIcon": "\u2699\ufe0f",
-    "categoryColor": "#3B82F6"
+    "categoryColor": "#3B82F6",
+    "publishedAt": "2026-04-12",
+    "curatorScore": 95
   },
   {
     "title": "Hybrid Immersive Attractions Lead FEC Design Trends in 2026",
@@ -221,7 +274,9 @@ const articles = [
     "categoryId": "attractions",
     "categoryLabel": "Attractions & Experiences",
     "categoryIcon": "\ud83c\udfa2",
-    "categoryColor": "#FF6B35"
+    "categoryColor": "#FF6B35",
+    "publishedAt": "2026-03-08",
+    "curatorScore": 78
   },
   {
     "title": "Launch Entertainment Accelerates National Expansion With 12-State Rollout",
@@ -232,7 +287,9 @@ const articles = [
     "categoryId": "business",
     "categoryLabel": "Business & Growth",
     "categoryIcon": "\ud83d\udcca",
-    "categoryColor": "#10B981"
+    "categoryColor": "#10B981",
+    "publishedAt": "2026-03-03",
+    "curatorScore": 82
   },
   {
     "title": "RFID Wristbands Go Mainstream as Cashless Becomes the FEC Standard",
@@ -243,7 +300,9 @@ const articles = [
     "categoryId": "tech",
     "categoryLabel": "Technology",
     "categoryIcon": "\u2699\ufe0f",
-    "categoryColor": "#3B82F6"
+    "categoryColor": "#3B82F6",
+    "publishedAt": "2026-03-22",
+    "curatorScore": 88
   },
   {
     "title": "New ASTM Safety Standards Merge Global Requirements for Amusement Rides",
@@ -254,7 +313,9 @@ const articles = [
     "categoryId": "ops",
     "categoryLabel": "Operations & Safety",
     "categoryIcon": "\ud83d\udee1\ufe0f",
-    "categoryColor": "#F59E0B"
+    "categoryColor": "#F59E0B",
+    "publishedAt": "2026-02-18",
+    "curatorScore": 94
   },
   {
     "title": "VR Escape Rooms and AR Arenas Drive Next Wave of FEC Innovation",
@@ -265,7 +326,9 @@ const articles = [
     "categoryId": "attractions",
     "categoryLabel": "Attractions & Experiences",
     "categoryIcon": "\ud83c\udfa2",
-    "categoryColor": "#FF6B35"
+    "categoryColor": "#FF6B35",
+    "publishedAt": "2026-02-25",
+    "curatorScore": 80
   },
   {
     "title": "AI-Driven Dynamic Pricing Helps FECs Maximize Revenue Per Guest",
@@ -276,7 +339,9 @@ const articles = [
     "categoryId": "tech",
     "categoryLabel": "Technology",
     "categoryIcon": "\u2699\ufe0f",
-    "categoryColor": "#3B82F6"
+    "categoryColor": "#3B82F6",
+    "publishedAt": "2026-04-05",
+    "curatorScore": 90
   },
   {
     "title": "Big Play Atlanta to Open 42,000 Sq Ft Mega Entertainment Complex",
@@ -287,7 +352,9 @@ const articles = [
     "categoryId": "business",
     "categoryLabel": "Business & Growth",
     "categoryIcon": "\ud83d\udcca",
-    "categoryColor": "#10B981"
+    "categoryColor": "#10B981",
+    "publishedAt": "2026-01-28",
+    "curatorScore": 75
   },
   {
     "title": "AI Automation Transforms FEC Staffing With Smart Scheduling",
@@ -298,7 +365,9 @@ const articles = [
     "categoryId": "ops",
     "categoryLabel": "Operations & Safety",
     "categoryIcon": "\ud83d\udee1\ufe0f",
-    "categoryColor": "#F59E0B"
+    "categoryColor": "#F59E0B",
+    "publishedAt": "2026-03-15",
+    "curatorScore": 85
   },
   {
     "title": "Round1 Opens Third New Jersey Location as Japanese FEC Giant Expands",
@@ -309,7 +378,9 @@ const articles = [
     "categoryId": "business",
     "categoryLabel": "Business & Growth",
     "categoryIcon": "\ud83d\udcca",
-    "categoryColor": "#10B981"
+    "categoryColor": "#10B981",
+    "publishedAt": "2026-02-07",
+    "curatorScore": 79
   },
   {
     "title": "Multi-Generational Appeal: How Hybrid FECs Balance All Ages Under One Roof",
@@ -320,7 +391,9 @@ const articles = [
     "categoryId": "design",
     "categoryLabel": "Design & Trends",
     "categoryIcon": "\ud83c\udfa8",
-    "categoryColor": "#EC4899"
+    "categoryColor": "#EC4899",
+    "publishedAt": "2026-03-20",
+    "curatorScore": 76
   },
   {
     "title": "Mobile-First Booking and Contactless Entry Now Industry Standard",
@@ -331,7 +404,9 @@ const articles = [
     "categoryId": "tech",
     "categoryLabel": "Technology",
     "categoryIcon": "\u2699\ufe0f",
-    "categoryColor": "#3B82F6"
+    "categoryColor": "#3B82F6",
+    "publishedAt": "2026-03-12",
+    "curatorScore": 84
   },
   {
     "title": "GENDA Inc. Acquires Indigo NewCo, Adding 100+ UK Entertainment Venues",
@@ -342,7 +417,9 @@ const articles = [
     "categoryId": "business",
     "categoryLabel": "Business & Growth",
     "categoryIcon": "\ud83d\udcca",
-    "categoryColor": "#10B981"
+    "categoryColor": "#10B981",
+    "publishedAt": "2025-12-01",
+    "curatorScore": 86
   },
   {
     "title": "Interactive LED Floors Redefine Entertainment Standards at Family Centers",
@@ -353,7 +430,9 @@ const articles = [
     "categoryId": "attractions",
     "categoryLabel": "Attractions & Experiences",
     "categoryIcon": "\ud83c\udfa2",
-    "categoryColor": "#FF6B35"
+    "categoryColor": "#FF6B35",
+    "publishedAt": "2026-04-18",
+    "curatorScore": 72
   },
   {
     "title": "Sustainability Emerges as Competitive Advantage for FEC Operators",
@@ -364,7 +443,9 @@ const articles = [
     "categoryId": "ops",
     "categoryLabel": "Operations & Safety",
     "categoryIcon": "\ud83d\udee1\ufe0f",
-    "categoryColor": "#F59E0B"
+    "categoryColor": "#F59E0B",
+    "publishedAt": "2026-03-05",
+    "curatorScore": 81
   },
   {
     "title": "AI-Driven Weapons Detectors Speed Up Venue Entry Without Sacrificing Safety",
@@ -375,7 +456,9 @@ const articles = [
     "categoryId": "ops",
     "categoryLabel": "Operations & Safety",
     "categoryIcon": "\ud83d\udee1\ufe0f",
-    "categoryColor": "#F59E0B"
+    "categoryColor": "#F59E0B",
+    "publishedAt": "2026-04-08",
+    "curatorScore": 83
   },
   {
     "title": "Social-First Attraction Design Creates Shareable Moments That Market Themselves",
@@ -386,7 +469,9 @@ const articles = [
     "categoryId": "design",
     "categoryLabel": "Design & Trends",
     "categoryIcon": "\ud83c\udfa8",
-    "categoryColor": "#EC4899"
+    "categoryColor": "#EC4899",
+    "publishedAt": "2026-03-25",
+    "curatorScore": 77
   },
   {
     "title": "Cloud-Based POS Systems Transform FEC Operations With Real-Time Analytics",
@@ -397,7 +482,9 @@ const articles = [
     "categoryId": "tech",
     "categoryLabel": "Technology",
     "categoryIcon": "\u2699\ufe0f",
-    "categoryColor": "#3B82F6"
+    "categoryColor": "#3B82F6",
+    "publishedAt": "2026-02-12",
+    "curatorScore": 87
   },
   {
     "title": "Low-Maintenance Attractions Gain Favor as FECs Simplify Operations",
@@ -408,7 +495,9 @@ const articles = [
     "categoryId": "ops",
     "categoryLabel": "Operations & Safety",
     "categoryIcon": "\ud83d\udee1\ufe0f",
-    "categoryColor": "#F59E0B"
+    "categoryColor": "#F59E0B",
+    "publishedAt": "2026-03-10",
+    "curatorScore": 80
   },
   {
     "title": "Sensory-Friendly Spaces and Inclusive Design Drive FEC Renovation Wave",
@@ -419,7 +508,9 @@ const articles = [
     "categoryId": "design",
     "categoryLabel": "Design & Trends",
     "categoryIcon": "\ud83c\udfa8",
-    "categoryColor": "#EC4899"
+    "categoryColor": "#EC4899",
+    "publishedAt": "2026-04-01",
+    "curatorScore": 89
   },
   {
     "title": "North American FEC Companies Pivot to Experience-First Revenue Models",
@@ -430,7 +521,9 @@ const articles = [
     "categoryId": "business",
     "categoryLabel": "Business & Growth",
     "categoryIcon": "\ud83d\udcca",
-    "categoryColor": "#10B981"
+    "categoryColor": "#10B981",
+    "publishedAt": "2026-01-20",
+    "curatorScore": 91
   },
   {
     "title": "Party-Ready Attractions Drive Revenue as FECs Optimize for Group Bookings",
@@ -441,7 +534,9 @@ const articles = [
     "categoryId": "attractions",
     "categoryLabel": "Attractions & Experiences",
     "categoryIcon": "\ud83c\udfa2",
-    "categoryColor": "#FF6B35"
+    "categoryColor": "#FF6B35",
+    "publishedAt": "2026-03-18",
+    "curatorScore": 74
   },
   {
     "title": "Modular Attraction Design Lets FECs Refresh Without Full Renovations",
@@ -452,7 +547,9 @@ const articles = [
     "categoryId": "design",
     "categoryLabel": "Design & Trends",
     "categoryIcon": "\ud83c\udfa8",
-    "categoryColor": "#EC4899"
+    "categoryColor": "#EC4899",
+    "publishedAt": "2026-03-30",
+    "curatorScore": 73
   },
   {
     "title": "Embed Ecosystem Integrates Hardware and Software in Single FEC Platform",
@@ -463,7 +560,9 @@ const articles = [
     "categoryId": "tech",
     "categoryLabel": "Technology",
     "categoryIcon": "\u2699\ufe0f",
-    "categoryColor": "#3B82F6"
+    "categoryColor": "#3B82F6",
+    "publishedAt": "2026-04-10",
+    "curatorScore": 93
   },
   {
     "title": "Eco-Friendly Indoor Play Areas Set New Standard for Family Centers",
@@ -474,7 +573,9 @@ const articles = [
     "categoryId": "design",
     "categoryLabel": "Design & Trends",
     "categoryIcon": "\ud83c\udfa8",
-    "categoryColor": "#EC4899"
+    "categoryColor": "#EC4899",
+    "publishedAt": "2026-04-14",
+    "curatorScore": 71
   },
   {
     "title": "Integrated Command Centers Bring Real-Time Monitoring to FEC Safety",
@@ -485,7 +586,9 @@ const articles = [
     "categoryId": "ops",
     "categoryLabel": "Operations & Safety",
     "categoryIcon": "\ud83d\udee1\ufe0f",
-    "categoryColor": "#F59E0B"
+    "categoryColor": "#F59E0B",
+    "publishedAt": "2026-04-06",
+    "curatorScore": 88
   },
   {
     "title": "Data Analytics Enables Proactive FEC Decision-Making Across All Operations",
@@ -496,7 +599,9 @@ const articles = [
     "categoryId": "tech",
     "categoryLabel": "Technology",
     "categoryIcon": "\u2699\ufe0f",
-    "categoryColor": "#3B82F6"
+    "categoryColor": "#3B82F6",
+    "publishedAt": "2026-04-04",
+    "curatorScore": 86
   },
   {
     "title": "Round Lake Beach Announces New Entertainment Complex With Seven Screens",
@@ -507,7 +612,9 @@ const articles = [
     "categoryId": "business",
     "categoryLabel": "Business & Growth",
     "categoryIcon": "\ud83d\udcca",
-    "categoryColor": "#10B981"
+    "categoryColor": "#10B981",
+    "publishedAt": "2026-04-20",
+    "curatorScore": 70
   },
   {
     "title": "Esports Zones Emerge as High-Margin Addition for Forward-Thinking FECs",
@@ -518,7 +625,9 @@ const articles = [
     "categoryId": "attractions",
     "categoryLabel": "Attractions & Experiences",
     "categoryIcon": "\ud83c\udfa2",
-    "categoryColor": "#FF6B35"
+    "categoryColor": "#FF6B35",
+    "publishedAt": "2026-01-10",
+    "curatorScore": 82
   }
 ];
 
@@ -531,7 +640,14 @@ const CATEGORIES = [
   { id: "design",      label: "Design & Trends" }
 ];
 
+const SORT_OPTIONS = [
+  { id: "newest",       label: "Newest first" },
+  { id: "oldest",       label: "Oldest first" },
+  { id: "recommended",  label: "Recommended" }
+];
+
 let activeCat = "all";
+let activeSort = "newest";
 
 function formatTimestamp(iso) {
   try {
@@ -547,6 +663,42 @@ function formatTimestamp(iso) {
   } catch (e) { return ""; }
 }
 
+function formatArticleDate(iso) {
+  try {
+    if (!iso || typeof iso !== "string") return "";
+    const normalized = iso.length <= 10 ? iso + "T12:00:00" : iso;
+    const d = new Date(normalized);
+    if (isNaN(d.getTime())) return "";
+    return d.toLocaleDateString(undefined, {
+      month: "short", day: "numeric", year: "numeric"
+    });
+  } catch (e) { return ""; }
+}
+
+function parseArticleTime(iso) {
+  if (!iso || typeof iso !== "string") return 0;
+  const normalized = iso.length <= 10 ? iso + "T12:00:00" : iso;
+  const t = new Date(normalized).getTime();
+  return isNaN(t) ? 0 : t;
+}
+
+function sortArticles(list) {
+  const out = list.slice();
+  if (activeSort === "newest") {
+    out.sort((a, b) => parseArticleTime(b.publishedAt) - parseArticleTime(a.publishedAt));
+  } else if (activeSort === "oldest") {
+    out.sort((a, b) => parseArticleTime(a.publishedAt) - parseArticleTime(b.publishedAt));
+  } else if (activeSort === "recommended") {
+    out.sort((a, b) => {
+      const sa = typeof a.curatorScore === "number" ? a.curatorScore : 0;
+      const sb = typeof b.curatorScore === "number" ? b.curatorScore : 0;
+      if (sb !== sa) return sb - sa;
+      return parseArticleTime(b.publishedAt) - parseArticleTime(a.publishedAt);
+    });
+  }
+  return out;
+}
+
 function renderHeader() {
   const el = document.getElementById("timestamp");
   el.textContent = formatTimestamp(el.dataset.iso);
@@ -555,12 +707,30 @@ function renderHeader() {
 function renderTabs() {
   const container = document.getElementById("tabs");
   container.innerHTML = CATEGORIES.map(c =>
-    `<button class="tab ${c.id === activeCat ? 'active' : ''}" data-cat="${c.id}">${c.label}</button>`
+    `<button type="button" class="tab ${c.id === activeCat ? "active" : ""}" data-cat="${c.id}">${c.label}</button>`
   ).join("");
   container.querySelectorAll(".tab").forEach(btn => {
     btn.addEventListener("click", () => {
       activeCat = btn.dataset.cat;
       renderTabs();
+      renderFeed();
+    });
+  });
+}
+
+function renderSort() {
+  const container = document.getElementById("sort-row");
+  container.innerHTML =
+    `<span class="sort-label">Sort</span>` +
+    `<div class="sort-tabs" role="group">` +
+    SORT_OPTIONS.map(s =>
+      `<button type="button" class="sort-tab ${s.id === activeSort ? "active" : ""}" data-sort="${s.id}">${s.label}</button>`
+    ).join("") +
+    `</div>`;
+  container.querySelectorAll(".sort-tab").forEach(btn => {
+    btn.addEventListener("click", () => {
+      activeSort = btn.dataset.sort;
+      renderSort();
       renderFeed();
     });
   });
@@ -579,20 +749,26 @@ function renderFeed() {
   const filtered = activeCat === "all"
     ? articles
     : articles.filter(a => a.categoryId === activeCat);
+  const ordered = sortArticles(filtered);
   const container = document.getElementById("feed");
-  container.innerHTML = filtered.map((a, i) => {
+  container.innerHTML = ordered.map((a, i) => {
     const href = safeHref(a.url);
     const tag = href ? "a" : "article";
     const attrs = href
       ? `href="${href}" target="_blank" rel="noopener noreferrer"`
       : "";
     const catColor = a.categoryColor || "var(--accent)";
+    const dateStr = formatArticleDate(a.publishedAt);
+    const dateHtml = dateStr
+      ? `<div class="card-date">${dateStr}</div>`
+      : "";
     return `
     <${tag} class="card" ${attrs} style="animation-delay: ${i * 0.05}s">
       <div class="card-top">
         <span class="card-cat" style="color: ${catColor}">${a.categoryLabel || a.category}</span>
-        <span class="card-source">${a.source ? 'via ' + a.source : ''}</span>
+        <span class="card-source">${a.source ? "via " + a.source : ""}</span>
       </div>
+      ${dateHtml}
       <h3>${a.title}</h3>
       <p>${a.summary}</p>
     </${tag}>`;
@@ -601,6 +777,7 @@ function renderFeed() {
 
 renderHeader();
 renderTabs();
+renderSort();
 renderFeed();
 
 function postHeight() {
