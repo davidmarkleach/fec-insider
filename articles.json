@@ -1,30 +1,10 @@
 {
-  "generated": "2026-05-05T12:03:13.119281+00:00",
-  "count": 26,
+  "generated": "2026-05-06T12:28:47.399680+00:00",
+  "count": 25,
   "articles": [
     {
-      "title": "Urban Air Adventure Park Settles for $300K After Go-Kart Crash Kills 6-Year-Old",
-      "summary": "Urban Air in Port St. Lucie, Florida has agreed to pay $300,000 following an investigation into a go-kart crash that killed a six-year-old child at the venue. The settlement is a significant legal and reputational event for one of the largest FEC franchise chains in the country. Operators across the industry should review their ride safety protocols, staff training procedures, and liability coverage in light of this case.",
-      "source": "WPTV",
-      "categoryId": "ops",
-      "url": "https://www.wptv.com/wptv-investigates/urban-air-in-port-st-lucie-agrees-to-pay-300k-after-investigation-into-crash-that-killed-6-year-old",
-      "categoryLabel": "Operations & Safety",
-      "categoryIcon": "🛡️",
-      "categoryColor": "#F59E0B"
-    },
-    {
-      "title": "Florida Settles with Family of Child Killed in Go-Kart Crash at Urban Air FEC",
-      "summary": "The state of Florida reached a settlement with the family of a six-year-old who died in a go-kart crash at an Urban Air location, with the venue agreeing to a $300,000 payout. The case underscores the critical importance of ride inspection standards, age and height enforcement, and operator liability at FECs with motorized attractions. Industry stakeholders should monitor how this settlement may influence regulatory scrutiny of go-kart operations nationwide.",
-      "source": "WIOD",
-      "categoryId": "ops",
-      "url": "https://wiod.iheart.com/featured/florida-news/content/2026-04-28-settlement-between-florida-family-of-6-year-old-killed-in-go-kart-crash/",
-      "categoryLabel": "Operations & Safety",
-      "categoryIcon": "🛡️",
-      "categoryColor": "#F59E0B"
-    },
-    {
-      "title": "Embed Integrates with Square POS to Unify FEC Retail, F&B, and Cashless Systems",
-      "summary": "Embed has announced a new integration with Square POS, allowing FEC operators to sell Embed card products directly through the Square application and connect retail and food-and-beverage operations to Embed's cashless ecosystem. The integration aims to eliminate the need for multiple disconnected systems, reducing transaction friction and simplifying venue management. This is a meaningful operational upgrade for the many FECs already running Square for ancillary sales who want a more unified guest journey.",
+      "title": "Embed Integrates with Square POS, Connecting F&B and Cashless Card Systems for FECs",
+      "summary": "Embed has launched a direct integration with Square POS, allowing FEC operators to sell Embed card products through the Square platform and unify retail, F&B, and cashless game card transactions in a single ecosystem. The move eliminates the need for multiple disconnected systems and reduces friction at the point of sale. This is a significant operational upgrade for smaller and mid-size FECs already running Square who want to add or expand cashless arcade and attraction technology.",
       "source": "Blooloop",
       "categoryId": "tech",
       "url": "https://blooloop.com/embed-square-pos-integration/",
@@ -33,8 +13,8 @@
       "categoryColor": "#3B82F6"
     },
     {
-      "title": "Accesso Appoints Lee Cowie as CEO, Doubles Down on AI Strategy",
-      "summary": "Accesso Technology Group has named Lee Cowie, its former Chief Operating Officer, as the new Chief Executive Officer following a planned leadership transition. Accesso is a major technology partner to leisure, entertainment, and cultural venues worldwide, providing ticketing, virtual queuing, and guest experience platforms used by many FEC-adjacent operators. The company signals an accelerated focus on AI-driven solutions, which could soon reshape how FECs manage capacity, pricing, and guest engagement.",
+      "title": "Accesso Appoints Lee Cowie as CEO, Accelerates AI Strategy",
+      "summary": "Accesso Technology Group, which provides ticketing, queuing, and venue management technology to over 1,100 leisure and entertainment venues worldwide, has named Lee Cowie as its new chief executive officer following a planned leadership transition. Cowie, a former accesso client who joined as COO 18 months ago, is expected to push the company's expanding data intelligence and AI capabilities. FEC operators who rely on accesso's platform should watch for strategic shifts in product direction under new leadership.",
       "source": "Amusement Today",
       "categoryId": "tech",
       "url": "https://amusementtoday.com/2026/05/lee-cowie-appointed-ceo-of-accesso-as-company-accelerates-ai-strategy/",
@@ -43,89 +23,69 @@
       "categoryColor": "#3B82F6"
     },
     {
-      "title": "Six Flags Launches Hotel Partner Program for Bundled 'Stay & Play' Packages",
-      "summary": "Six Flags Entertainment Corporation has introduced a new Hotel Partner Program allowing guests to book park admission and hotel accommodations together through a streamlined platform. The initiative is designed to increase destination appeal and capture more overnight visitors across its regional park portfolio. FEC operators near Six Flags properties or similar destination parks should note how bundled lodging and entertainment packages are reshaping guest spending expectations.",
+      "title": "Urban Air Adventure Park to Pay $300K Settlement After Go-Kart Death of 6-Year-Old",
+      "summary": "An Urban Air location in Port St. Lucie, Florida has agreed to a $300,000 settlement following an investigation into a go-kart crash that killed a six-year-old child. The case highlights significant liability risks associated with go-kart attractions at FECs, particularly regarding safety protocols and equipment standards. FEC operators with go-kart attractions should review safety procedures, rider height and age requirements, and insurance coverage in light of this case.",
+      "source": "WPTV",
+      "categoryId": "ops",
+      "url": "https://www.wptv.com/wptv-investigates/urban-air-in-port-st-lucie-agrees-to-pay-300k-after-investigation-into-crash-that-killed-6-year-old",
+      "categoryLabel": "Operations & Safety",
+      "categoryIcon": "🛡️",
+      "categoryColor": "#F59E0B"
+    },
+    {
+      "title": "Florida Settles with Family of Child Killed in Go-Kart Crash at FEC",
+      "summary": "A settlement has been reached between the state of Florida and the family of a six-year-old who died in a go-kart crash at an indoor entertainment center, underscoring the serious safety and legal consequences that can follow ride incidents. The $300,000 agreement draws attention to regulatory oversight of FEC attractions and potential gaps in safety enforcement. Operators across the country should treat this as a reminder to audit ride safety policies and staff training rigorously.",
+      "source": "WIOD",
+      "categoryId": "ops",
+      "url": "https://wiod.iheart.com/featured/florida-news/content/2026-04-28-settlement-between-florida-family-of-6-year-old-killed-in-go-kart-crash/",
+      "categoryLabel": "Operations & Safety",
+      "categoryIcon": "🛡️",
+      "categoryColor": "#F59E0B"
+    },
+    {
+      "title": "Intercard Hires Bowling Industry Veteran JR Huyck as North American Sales Manager",
+      "summary": "Intercard, a leading provider of cashless technology for FECs and bowling centers, has brought on JR Huyck as its new North American Sales Manager. Huyck brings deep roots in the bowling industry, having grown up in the business and developed relationships across the sector. The hire signals Intercard's continued focus on expanding its footprint in bowling and family entertainment venues across North America.",
       "source": "Amusement Today",
       "categoryId": "business",
-      "url": "https://amusementtoday.com/2026/05/six-flags-today-launches-new-hotel-partner-program-offering-guests-the-ultimate-stay-play-experience/",
+      "url": "https://amusementtoday.com/2026/05/jr-huyck-is-new-intercard-north-american-sales-manager/",
       "categoryLabel": "Business & Growth",
       "categoryIcon": "📊",
       "categoryColor": "#10B981"
     },
     {
-      "title": "Valleyfair Adds 13 New Water Slides in Major Waterpark Expansion Opening May 23",
-      "summary": "Valleyfair in Shakopee, Minnesota is debuting a significant waterpark expansion called Superior Shores, adding 13 new slides and attractions to bring its total water experiences to 24. The investment positions Valleyfair as the premier summer destination in Minnesota and reflects a broader trend of regional amusement parks investing heavily in wet attractions to extend seasonal revenue. FEC operators with water play elements should watch how this expansion influences consumer expectations for variety and scale.",
+      "title": "Five Intercard Operator Customers Win Bowling Center Architecture & Design Awards",
+      "summary": "Five venues using Intercard's cashless systems were recognized at the 41st annual Bowling Center Architecture and Design Awards, hosted by Bowling Center Management magazine. The recognition highlights how leading FEC operators are investing in facility design alongside technology upgrades. For operators considering a remodel, the award-winning venues serve as a benchmark for best-in-class facility presentation.",
       "source": "Amusement Today",
-      "categoryId": "attractions",
-      "url": "https://amusementtoday.com/2026/04/valleyfair-will-debut-major-waterpark-expansion-in-may/",
-      "categoryLabel": "Attractions & Experiences",
-      "categoryIcon": "🎢",
-      "categoryColor": "#FF6B35"
-    },
-    {
-      "title": "$50M Entertainment Destination Planned for Downtown Clearwater Linked to Church of Scientology",
-      "summary": "A $50 million entertainment complex is in development for downtown Clearwater, Florida, with reported ties to the Church of Scientology, raising questions about community reception and competitive dynamics in the local market. The project joins a cluster of entertainment announcements for the Clearwater area, including a proposed world-record movie screen. FEC developers should monitor how mixed-use entertainment investments in mid-sized markets are evolving and what controversies can affect community support.",
-      "source": "WTSP",
-      "categoryId": "business",
-      "url": "https://www.wtsp.com/article/entertainment/clearwater-evo-entertainment-center-cleveland-street/67-9a5976eb-07e0-4196-939c-ea3e07aaa185",
-      "categoryLabel": "Business & Growth",
-      "categoryIcon": "📊",
-      "categoryColor": "#10B981"
-    },
-    {
-      "title": "World's Largest Movie Theater Screen Announced for Downtown Clearwater",
-      "summary": "A venue featuring what is being billed as the world's largest movie theater screen has been announced for downtown Clearwater, Florida, adding to a wave of large-format entertainment investment in the region. The announcement signals growing investor appetite for experiential entertainment destinations outside of traditional theme park corridors. FEC operators and developers should take note of how large-format immersive screen experiences are entering the location-based entertainment competitive landscape.",
-      "source": "Attractions Magazine",
-      "categoryId": "attractions",
-      "url": "https://attractionsmagazine.com/worlds-largest-movie-screen-coming-to-clearwater-fl/",
-      "categoryLabel": "Attractions & Experiences",
-      "categoryIcon": "🎢",
-      "categoryColor": "#FF6B35"
-    },
-    {
-      "title": "Frontgrid's ParadropVR Expands to Third Sportainment Venue in the Netherlands",
-      "summary": "Frontgrid has confirmed that its motion-based ParadropVR flying experience will be installed at a third Sparkx sportainment location in the Netherlands, marking the attraction's first placement in that country. The Sparkx venues host approximately 50 sport-related experiences under one roof, making them a compelling case study for multi-attraction FEC formats that blend physical and virtual activities. The continued rollout validates ParadropVR's scalability and commercial performance in high-footfall entertainment environments.",
-      "source": "Blooloop",
-      "categoryId": "attractions",
-      "url": "https://blooloop.com/frontgrid-paradropvr-third-sparkx-venue/",
-      "categoryLabel": "Attractions & Experiences",
-      "categoryIcon": "🎢",
-      "categoryColor": "#FF6B35"
-    },
-    {
-      "title": "Greenspan Projects Delivers Immersive 12-Hole Adventure Golf for Europa-Park's Wild West Zone",
-      "summary": "Greenspan Projects has completed Gold Rush Golf, a themed 12-hole adventure golf course for Europa-Park's new Silver Lake City Wild West expansion, incorporating interactive elements, photo opportunities, and story-driven design. The project illustrates how world-class theme parks are elevating mini golf from a filler attraction to a fully immersive, narrative-led experience. FEC operators running adventure golf should study this approach for inspiration on how theming and interactivity can significantly boost perceived value and dwell time.",
-      "source": "Blooloop",
       "categoryId": "design",
-      "url": "https://blooloop.com/greenspan-gold-rush-golf-europa-park/",
+      "url": "https://amusementtoday.com/2026/05/intercard-congratulates-five-of-their-operators-who-won-bcm-awards/",
       "categoryLabel": "Design & Trends",
       "categoryIcon": "🎨",
       "categoryColor": "#EC4899"
     },
     {
-      "title": "Family Kingdom's New Raptor Single-Rail Coaster Delayed by Permitting Challenges",
-      "summary": "Family Kingdom Amusement Park in Myrtle Beach, South Carolina has announced that its highly anticipated Raptor single-rail steel roller coaster will be delayed beyond its originally planned opening due to permitting and construction challenges. The delay is a reminder to FEC and amusement park operators of how regulatory and logistical hurdles can significantly extend capital project timelines. Owners planning major ride installations should build permitting buffers into their project schedules and communications strategies.",
+      "title": "Six Flags Brings Back Holiday in the Park at Two Locations with Full Redesign",
+      "summary": "Six Flags Entertainment Corporation is relaunching Holiday in the Park at Six Flags Great Adventure in New Jersey and Six Flags Over Georgia in 2026, with a completely reimagined seasonal event built from the ground up. The revamped holiday programming emphasizes immersive experiences and is positioned as a major draw for the winter season. FEC and attraction operators can take note of the trend toward fully redesigned seasonal events rather than incremental updates.",
       "source": "Amusement Today",
-      "categoryId": "ops",
-      "url": "https://amusementtoday.com/2026/05/opening-of-family-kingdoms-new-raptor-coaster-delayed-until-next-year/",
-      "categoryLabel": "Operations & Safety",
-      "categoryIcon": "🛡️",
-      "categoryColor": "#F59E0B"
+      "categoryId": "attractions",
+      "url": "https://amusementtoday.com/2026/05/six-flags-announces-triumphant-return-of-holiday-in-the-park-in-new-jersey-and-georgia/",
+      "categoryLabel": "Attractions & Experiences",
+      "categoryIcon": "🎢",
+      "categoryColor": "#FF6B35"
     },
     {
-      "title": "Kings Dominion Reimagines Summer Entertainment as a Core Guest Experience Driver",
-      "summary": "Kings Dominion is rolling out a dramatically expanded summer entertainment program for 2026, positioning live shows and spectacles as a primary draw rather than a secondary offering at the regional park. The strategy reflects a growing industry trend of using entertainment programming to differentiate the guest experience beyond rides. FEC operators can draw lessons from this approach to evaluate how live events, shows, and programming can increase visits and per-cap spending at their own venues.",
+      "title": "Family Kingdom's New Raptor Roller Coaster Delayed by Permitting Challenges",
+      "summary": "Family Kingdom Amusement Park in Myrtle Beach, South Carolina has pushed back the opening of its highly anticipated Raptor single-rail steel roller coaster due to permitting and construction hurdles. Owner Corky Powers confirmed the ride will not open until later in the year at the earliest. The delay is a reminder to FEC and park operators of the permitting complexities that can affect attraction installation timelines.",
       "source": "Amusement Today",
-      "categoryId": "ops",
-      "url": "https://amusementtoday.com/2026/05/ings-dominion-unveils-dramatically-expanded-and-reimagined-summer-entertainment-program/",
-      "categoryLabel": "Operations & Safety",
-      "categoryIcon": "🛡️",
-      "categoryColor": "#F59E0B"
+      "categoryId": "attractions",
+      "url": "https://amusementtoday.com/2026/05/opening-of-family-kingdoms-new-raptor-coaster-delayed-until-next-year/",
+      "categoryLabel": "Attractions & Experiences",
+      "categoryIcon": "🎢",
+      "categoryColor": "#FF6B35"
     },
     {
       "title": "Chuck E. Cheese Named One of USA Today's Most Trusted Brands by Parents",
-      "summary": "Chuck E. Cheese has been recognized by USA Today as one of the most trusted brands among parents, a significant reputational milestone for the FEC chain that has undergone major operational and branding changes in recent years following its 2020 bankruptcy. The recognition signals that the brand's turnaround efforts are resonating with its core family audience. Independent FEC operators should note how brand trust and parental confidence remain critical drivers of repeat visitation and word-of-mouth referral.",
-      "source": "Chuck E. Cheese",
+      "summary": "Chuck E. Cheese has earned recognition from USA Today as one of the most trusted brands among parents, a significant credibility marker for the family entertainment category. The designation reinforces the brand's ongoing repositioning efforts following its post-bankruptcy relaunch. For competing FEC operators, this highlights the importance of brand trust and safety perception in attracting family audiences.",
+      "source": "Chuck E. Cheese / Google News",
       "categoryId": "business",
       "url": "https://www.chuckecheese.com/bell-ca/blogs/chuck-e-cheese-named-one-of-usa-todays-most-trusted-brands-by-parents/",
       "categoryLabel": "Business & Growth",
@@ -133,28 +93,58 @@
       "categoryColor": "#10B981"
     },
     {
-      "title": "ThunderZone Family Entertainment Center Announces Grand Opening Date",
-      "summary": "ThunderZone Family Entertainment Center has officially announced its opening date, signaling another new entrant into the FEC market. New venue openings in the FEC sector continue at a steady pace, reflecting sustained consumer demand for out-of-home family entertainment experiences. Operators in the region should monitor the new competition and use the opening as a benchmarking opportunity for their own offerings.",
-      "source": "The City Menus",
-      "categoryId": "business",
-      "url": "https://thecitymenus.com/2026/04/21/thunderzone-family-entertainment-center-announces-opening-date/",
-      "categoryLabel": "Business & Growth",
-      "categoryIcon": "📊",
-      "categoryColor": "#10B981"
+      "title": "Accesso Names Lee Cowie CEO in Planned Leadership Transition",
+      "summary": "Accesso Technology Group has promoted chief operating officer Lee Cowie to CEO, succeeding Steve Brown who founded the accesso business in 2008. The company serves more than 1,100 venues in 31 countries with ticketing, POS, and operational technology. Cowie's background as a former accesso client is expected to bring an operator-focused perspective to the company's next growth phase.",
+      "source": "Blooloop",
+      "categoryId": "tech",
+      "url": "https://blooloop.com/accesso-names-lee-cowie-ceo/",
+      "categoryLabel": "Technology",
+      "categoryIcon": "⚙️",
+      "categoryColor": "#3B82F6"
     },
     {
-      "title": "Kidtopia Indoor Playground Opens in Dublin with Obstacle Courses and Climbing Attractions",
-      "summary": "Kidtopia, a new indoor playground concept, is coming to Dublin, Ireland, featuring obstacle courses, indoor climbing structures, and other active play experiences. The opening reflects continued global expansion of the indoor active play format, which has proven resilient across various markets. FEC operators in the active play segment should track new concept entrants like Kidtopia to assess design trends and competitive positioning.",
-      "source": "Patch",
+      "title": "Breeze Creative Delivers Custom Interactive Tech for Bluey's House Touring Experience",
+      "summary": "Breeze Creative has partnered with BeFun to supply bespoke interactive technology for Bluey's House, a touring immersive location-based entertainment experience based on the hit children's series. The installation integrates physical set design with digital interactives to drive storytelling, active play, and educational outcomes for families. FEC operators interested in IP-driven LBE attractions can look to this project as a model for scalable, narrative-led technology integration.",
+      "source": "Blooloop",
       "categoryId": "attractions",
-      "url": "https://patch.com/california/dublin/dublin-get-new-kidtopia-indoor-playground-amador-valley-boulevard-site",
+      "url": "https://blooloop.com/breeze-creative-befun-blueys-house/",
       "categoryLabel": "Attractions & Experiences",
       "categoryIcon": "🎢",
       "categoryColor": "#FF6B35"
     },
     {
-      "title": "23 Jump Street Trampoline Park Opens High-Energy Family Venue in Cape Town",
-      "summary": "23 Jump Street has opened a new high-energy family entertainment venue at Rivergate in Cape Town, South Africa, expanding the trampoline park and indoor active play format into the South African market. The opening reflects the continued international growth of the jump park concept beyond its traditional North American and European strongholds. Global FEC operators and investors should note the expanding geographic appetite for active entertainment venues.",
+      "title": "Why Most Immersive Experience Projects Never Get Built — and How to Avoid That Fate",
+      "summary": "A new analysis explores the common but rarely discussed reality that most immersive and experiential entertainment projects stall before construction ever begins, typically due to a slow buildup of misaligned expectations rather than a single failure point. The piece offers practical insight for FEC developers and investors navigating the gap between concept enthusiasm and project execution. Operators planning new attractions or venue expansions will find the discussion of development friction directly applicable.",
+      "source": "Blooloop",
+      "categoryId": "business",
+      "url": "https://blooloop.com/why-immersive-projects-stall/",
+      "categoryLabel": "Business & Growth",
+      "categoryIcon": "📊",
+      "categoryColor": "#10B981"
+    },
+    {
+      "title": "Three Ways Dark Ride Operators Can Elevate Guest Experiences with Modern Technology",
+      "summary": "As new benchmark attractions like Universal's Epic Universe raise guest expectations for dark rides, a new guide outlines three practical strategies for delivering compelling experiences, including the shift from pre-rendered to real-time content. The piece is relevant for FEC and attraction operators considering investment in immersive ride experiences or interactive dark ride upgrades. Real-time content generation in particular opens new possibilities for personalization and repeatability.",
+      "source": "Blooloop",
+      "categoryId": "attractions",
+      "url": "https://blooloop.com/elevate-your-dark-ride/",
+      "categoryLabel": "Attractions & Experiences",
+      "categoryIcon": "🎢",
+      "categoryColor": "#FF6B35"
+    },
+    {
+      "title": "New Kidtopia Indoor Playground with Obstacle Courses and Climbing Coming to Dublin",
+      "summary": "Kidtopia, a new indoor playground concept featuring obstacle courses, indoor climbing, and active play areas, is set to open in Dublin. The venue represents continued growth in the soft-play and active family entertainment segment. FEC operators can monitor Kidtopia as an emerging competitor or concept in the indoor children's entertainment space.",
+      "source": "Patch",
+      "categoryId": "business",
+      "url": "https://patch.com/california/dublin/dublin-get-new-kidtopia-indoor-playground-amador-valley-boulevard-site",
+      "categoryLabel": "Business & Growth",
+      "categoryIcon": "📊",
+      "categoryColor": "#10B981"
+    },
+    {
+      "title": "23 Jump Street Trampoline Park Opens High-Energy Family Venue at Rivergate",
+      "summary": "23 Jump Street has opened a new high-energy family entertainment venue at Rivergate, expanding its trampoline park and active entertainment footprint. The opening reflects continued demand for active, family-oriented indoor attractions. FEC operators can look to the venue's programming and format as a reference point for the competitive trampoline park segment.",
       "source": "Cape Town ETC",
       "categoryId": "business",
       "url": "https://www.capetownetc.com/things-to-do-cape-town/23-jump-street-brings-high-energy-family-fun-to-rivergate/",
@@ -163,38 +153,18 @@
       "categoryColor": "#10B981"
     },
     {
-      "title": "Dollywood Parks & Resorts Wins Seven Top Workplaces Culture Excellence Awards",
-      "summary": "Dollywood Parks & Resorts earned seven awards at the 2026 Top Workplaces Culture Excellence and Industry Awards, recognizing the company's outstanding employee culture across its Smoky Mountain properties. In an industry that faces persistent seasonal staffing challenges, Dollywood's recognition highlights how investing in workplace culture can become a competitive differentiator for talent recruitment and retention. FEC operators should examine Dollywood's culture practices as a model for improving staff engagement and reducing turnover.",
+      "title": "Ellis & Associates Recognizes 2026 Elite Aquatic Safety Professionals",
+      "summary": "Ellis & Associates, the leading global aquatic safety and risk management firm, has announced its 2026 Associate and Senior Associate honorees, recognizing more than 100 elite lifeguard instructor trainers for achievement and dedication. For FEC operators with water play areas, splash pads, or waterpark elements, maintaining certified aquatic safety staff is a critical liability management priority. This recognition program sets a professional benchmark for aquatic safety training standards.",
       "source": "Amusement Today",
       "categoryId": "ops",
-      "url": "https://amusementtoday.com/2026/04/dollywood-parks-resorts-earns-numerous-honors-in-2026-top-workplaces-annual-awards/",
+      "url": "https://amusementtoday.com/2026/05/ellis-associates-announces-new-2026-associate-honorees/",
       "categoryLabel": "Operations & Safety",
       "categoryIcon": "🛡️",
       "categoryColor": "#F59E0B"
     },
     {
-      "title": "LEGOLAND Marks Galacticoaster Debut with Viral Space Day Stunt",
-      "summary": "LEGOLAND California and LEGOLAND Florida celebrated the launch of Galacticoaster, their first indoor space-themed family coaster, on National Space Day by sending real guest reaction videos into the upper atmosphere. The experiential marketing campaign generated social buzz while introducing the new indoor coaster to a broad family audience. FEC operators can draw inspiration from LEGOLAND's approach to tying new attraction launches to cultural calendar moments for amplified media impact.",
-      "source": "Amusement Today",
-      "categoryId": "attractions",
-      "url": "https://amusementtoday.com/2026/05/legoland-resorts-launch-families-to-the-edge-of-space-for-national-space-day/",
-      "categoryLabel": "Attractions & Experiences",
-      "categoryIcon": "🎢",
-      "categoryColor": "#FF6B35"
-    },
-    {
-      "title": "Layered Reality Ceases Trading, Closing Elvis Evolution and War of the Worlds Immersive Shows",
-      "summary": "Layered Reality, the operator behind high-profile London immersive experiences Elvis Evolution and Jeff Wayne's War of the Worlds, has shut down after its parent company Ellipsis Entertainment ceased trading. The sudden closure left staff, performers, and ticket holders in limbo and raises questions about the financial sustainability of premium immersive entertainment ventures. Investors and operators in the location-based immersive experience sector should take note of the cash flow and operational risks inherent in large-scale narrative immersive productions.",
-      "source": "Blooloop",
-      "categoryId": "business",
-      "url": "https://blooloop.com/layered-reality-immersive-shows-close/",
-      "categoryLabel": "Business & Growth",
-      "categoryIcon": "📊",
-      "categoryColor": "#10B981"
-    },
-    {
-      "title": "Rage Room Concept 'Breaking Point' Set to Open in Kitimat, British Columbia",
-      "summary": "A new rage room experience called Breaking Point is preparing to open in Kitimat, British Columbia, adding to the growing list of unconventional indoor entertainment concepts appearing in smaller Canadian markets. Rage rooms, where guests pay to smash objects in a controlled environment, represent a low-capital alternative attraction format gaining traction among adult entertainment seekers. FEC operators looking to attract non-traditional demographics should monitor the continued spread of experiential stress-relief concepts.",
+      "title": "Rage Room Concept 'Breaking Point' Set to Open in Kitimat, BC",
+      "summary": "A new rage room attraction called Breaking Point is preparing to open in Kitimat, British Columbia, adding to the growing list of alternative entertainment concepts targeting stress-relief experiences. Rage rooms have gained traction as a low-barrier FEC add-on or standalone attraction, particularly for adult audiences. Operators exploring experiential entertainment beyond traditional games and rides may find the concept worth watching.",
       "source": "Terrace Standard",
       "categoryId": "attractions",
       "url": "https://terracestandard.com/2026/04/25/breaking-point-rage-room-set-to-open-in-kitimat/",
@@ -203,8 +173,8 @@
       "categoryColor": "#FF6B35"
     },
     {
-      "title": "ISmash Destruction Experience Opening in Rapid City, South Dakota",
-      "summary": "ISmash, a destruction and rage room entertainment concept, is expanding to Rapid City, South Dakota, bringing smash-room style indoor entertainment to a mid-sized market. The concept's continued geographic spread signals viable consumer demand for adult-focused experiential entertainment in markets traditionally underserved by FEC operators. Operators considering diversification of their attraction mix should evaluate how destruction experiences can complement or supplement existing offerings.",
+      "title": "ISmash Smash Room Experience Opening in Rapid City, South Dakota",
+      "summary": "ISmash, a smash room and rage room concept, is opening a new location in Rapid City, South Dakota in May. The concept allows guests to safely break and smash objects as a cathartic experience, representing a growing niche in experiential indoor entertainment. FEC operators in smaller markets should note that smash room attractions are proving viable even outside major metro areas.",
       "source": "MSN",
       "categoryId": "attractions",
       "url": "https://www.msn.com/en-us/news/us/ismash-coming-to-rapid-city-in-may/ar-AA21Wi70?apiversion=v2&domshim=1&noservercache=1&noservertelemetry=1&batchservertelemetry=1&renderwebcomponents=1&wcseo=1",
@@ -213,38 +183,28 @@
       "categoryColor": "#FF6B35"
     },
     {
-      "title": "Fort Wayne Zoo Launches Monthly Sensory-Friendly Sundays for Inclusive Guest Experiences",
-      "summary": "The Fort Wayne Children's Zoo is introducing Sensory-Friendly Sundays on the first Sunday of each month through October, creating a lower-stimulation environment to accommodate guests with sensory sensitivities. The initiative is part of the zoo's broader 'Zoo for All' accessibility program and reflects a growing movement among family entertainment venues to serve neurodiverse guests. FEC operators should consider how sensory-friendly programming can broaden their audience and demonstrate social responsibility.",
-      "source": "Amusement Today",
-      "categoryId": "ops",
-      "url": "https://amusementtoday.com/2026/05/fort-wayne-zoo-introduces-sensory-friendly-sundays-at-part-of-zoo-for-all-initiative/",
-      "categoryLabel": "Operations & Safety",
-      "categoryIcon": "🛡️",
-      "categoryColor": "#F59E0B"
-    },
-    {
-      "title": "Industry Experts Break Down the Design Principles Behind a Successful Dark Ride",
-      "summary": "A detailed analysis from five leading attractions industry professionals covers the critical design decisions that determine whether a dark ride succeeds, from early layout choices and vehicle selection to storytelling structure and long-term maintenance planning. Experts from Efteling, ETF Ride Systems, Alterface, Jora Vision, and Europa-Park agree that strong theming and emotional impact deliver more value than expensive technology alone. FEC operators exploring immersive ride investments will find this a practical framework for evaluating design priorities and budget allocation.",
-      "source": "Blooloop",
+      "title": "Amoeba Bengaluru Relaunches as Next-Gen Sports Bar with Entertainment Focus",
+      "summary": "Amoeba, a well-known entertainment venue in Bengaluru, India, has relaunched with a next-generation sports bar concept, blending dining, entertainment, and sports viewing into a single experience. The repositioning reflects a broader global trend of entertainment centers evolving into hybrid food-and-fun destinations. FEC operators considering a F&B and entertainment integration strategy may find the Amoeba relaunch a useful international case study.",
+      "source": "Passionate In Marketing",
       "categoryId": "design",
-      "url": "https://blooloop.com/how-to-design-dark-ride/",
+      "url": "https://www.passionateinmarketing.com/amoeba-reclaims-church-street-with-a-next-generation-sports-bar-marking-25-years-of-social-entertainment-leadership-2/",
       "categoryLabel": "Design & Trends",
       "categoryIcon": "🎨",
       "categoryColor": "#EC4899"
     },
     {
-      "title": "Disneyland's Use of Facial Recognition Technology Raises Guest Privacy Concerns",
-      "summary": "Disneyland's deployment of facial recognition technology at its parks is generating privacy concerns among guests and advocacy groups. As biometric data collection becomes more prevalent across the attractions and FEC industry for access control and personalization, operators face growing scrutiny over data security and guest consent practices. FEC operators considering or currently using facial recognition or similar biometric tools should proactively review their privacy policies and disclosure practices.",
+      "title": "MSC World Asia Cruise Ship Unveils FEC-Style Entertainment Including Bumper Cars and Game Shows",
+      "summary": "MSC Cruises has revealed the full entertainment lineup for MSC World Asia, including bumper cars, roller skating, a ropes course, a dry slide, and original interactive game shows in a dedicated family entertainment arena. The ship's Clubhouse and Luna Park Arena concepts mirror land-based FEC formats applied at sea, offering design and programming inspiration for FEC operators. The attraction mix demonstrates how cruise lines are borrowing heavily from the FEC playbook to drive family engagement.",
       "source": "Blooloop",
-      "categoryId": "tech",
-      "url": "https://www.latimes.com/california/story/2026-04-28/disneyland-rolls-out-facial-recognition-at-park-entrances-heres-how-it-works",
-      "categoryLabel": "Technology",
-      "categoryIcon": "⚙️",
-      "categoryColor": "#3B82F6"
+      "categoryId": "design",
+      "url": "https://blooloop.com/msc-world-asia-entertainment-attractions/",
+      "categoryLabel": "Design & Trends",
+      "categoryIcon": "🎨",
+      "categoryColor": "#EC4899"
     },
     {
-      "title": "Amusement Center Agrees to $300K Settlement Following Investigation into Child's Death",
-      "summary": "An amusement center has agreed to pay $300,000 following an investigation into the death of a young girl at the facility. The settlement is a stark reminder of the serious liability exposure FEC operators face when guest safety incidents occur, particularly involving minors. Operators should use this case as a prompt to conduct thorough safety audits, review their insurance coverage, and ensure all attraction protocols meet or exceed regulatory standards.",
+      "title": "Amusement Center Agrees to $300K Settlement Following Child Death Investigation",
+      "summary": "An amusement center has agreed to pay $300,000 following a regulatory investigation into the death of a young girl at the facility. The case serves as a serious reminder for FEC operators of the safety, liability, and reputational risks associated with operating physical attractions. Operators should use high-profile incidents like this to prompt internal safety audits and ensure compliance with all applicable regulations.",
       "source": "WPTV",
       "categoryId": "ops",
       "url": "https://www.wptv.com/videos/wptv-investigates/amusement-center-agrees-to-pay-300k-after-investigation-into-girls-death",
@@ -253,11 +213,41 @@
       "categoryColor": "#F59E0B"
     },
     {
-      "title": "Former FEC in Queensbury, NY to Be Converted Into Distillery",
-      "summary": "A former family fun center in Queensbury, New York is being repurposed as a distillery under new ownership plans, reflecting the ongoing wave of FEC closures and subsequent adaptive reuse of entertainment real estate. The conversion highlights both the challenges facing older, smaller FEC formats and the opportunities that vacated entertainment spaces present for alternative hospitality concepts. Landlords and developers holding FEC-anchored properties should evaluate repositioning strategies in light of evolving consumer preferences.",
-      "source": "The Business Journals",
+      "title": "Laredo Gambling Raid at Amusement Center Results in 6 Arrests and 88 Machine Seizures",
+      "summary": "A law enforcement raid on an amusement center in Laredo, Texas resulted in six arrests and the seizure of 88 gaming machines suspected of illegal gambling activity. The incident is a cautionary tale for FEC operators regarding the legal boundaries of prize redemption and gaming machine operations. Operators should ensure their game and redemption offerings are clearly compliant with state and local gaming regulations to avoid similar enforcement actions.",
+      "source": "KGNS",
+      "categoryId": "ops",
+      "url": "https://www.kgns.tv/2026/04/24/laredo-gambling-raid-results-6-arrests-seizure-88-machines/",
+      "categoryLabel": "Operations & Safety",
+      "categoryIcon": "🛡️",
+      "categoryColor": "#F59E0B"
+    },
+    {
+      "title": "Icon Park Implements Chaperone Policy After Teen Takeover Incidents and Arrests",
+      "summary": "Icon Park in Orlando has introduced a chaperone policy requiring adults to accompany young visitors following a series of disruptive teen takeover events and arrests at the venue. The policy change reflects a growing challenge for entertainment venues managing large groups of unsupervised youth. FEC operators should evaluate their own guest conduct policies and consider whether similar chaperone or supervision requirements could protect staff, guests, and venue reputation.",
+      "source": "Blooloop",
+      "categoryId": "ops",
+      "url": "https://www.fox35orlando.com/news/icon-park-adds-chaperone-policy-after-teen-takeover-chaos-arrests",
+      "categoryLabel": "Operations & Safety",
+      "categoryIcon": "🛡️",
+      "categoryColor": "#F59E0B"
+    },
+    {
+      "title": "Creative Studio Berlin Wins Thea Award for Immersive Educational Experience",
+      "summary": "Creative Studio Berlin has received a TEA Thea Award in the Historical Experience category for The Secret Laboratory, a 50-minute immersive educational experience set in Renaissance-era Saxony that blends storytelling, hands-on learning, and themed environments. The project demonstrates the growing appeal of edutainment formats that combine escape room-style engagement with historical content for families and school groups. FEC operators with escape room offerings or event programming may find the format a compelling model for differentiated experiences.",
+      "source": "Blooloop",
+      "categoryId": "design",
+      "url": "https://blooloop.com/creative-studio-berlin-thea-award/",
+      "categoryLabel": "Design & Trends",
+      "categoryIcon": "🎨",
+      "categoryColor": "#EC4899"
+    },
+    {
+      "title": "Large Illinois Indoor Amusement Center Spotlighted as a Family Destination",
+      "summary": "A feature highlights a large indoor amusement center in Illinois as a standout family entertainment destination, drawing attention to the continued appeal of sprawling, multi-attraction indoor venues. The coverage reinforces that well-executed large-format FECs remain competitive in today's entertainment landscape. Operators can use such profiles to benchmark their own attraction mix and guest experience positioning.",
+      "source": "Fast Food Club",
       "categoryId": "business",
-      "url": "https://www.bizjournals.com/albany/news/2026/04/30/new-york-highlands-distilling-queensbury.html",
+      "url": "https://fastfoodclub.com/p/this-huge-indoor-amusement-center-in-illinois-is-perfect-for-feeling-like-a-kid-again/",
       "categoryLabel": "Business & Growth",
       "categoryIcon": "📊",
       "categoryColor": "#10B981"
