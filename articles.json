@@ -1,10 +1,10 @@
 {
-  "generated": "2026-05-07T12:30:31.152142+00:00",
-  "count": 25,
+  "generated": "2026-05-08T12:10:17.741705+00:00",
+  "count": 27,
   "articles": [
     {
-      "title": "Urban Air Adventure Park to Pay $300K Settlement After 6-Year-Old's Fatal Crash",
-      "summary": "Urban Air in Port St. Lucie, Florida has agreed to pay $300,000 following an investigation into the death of a 6-year-old girl at the trampoline park facility. The settlement raises serious safety and liability concerns for FEC operators running high-energy indoor attractions. Operators should review their safety protocols, equipment maintenance procedures, and liability insurance coverage in light of this case.",
+      "title": "Urban Air Trampoline Park Agrees to $300K Settlement After Go-Kart Death of 6-Year-Old",
+      "summary": "Urban Air Adventure Park in Port St. Lucie, Florida has agreed to pay $300,000 following an investigation into a go-kart crash that killed a six-year-old child. The settlement carries major implications for FEC operators running go-kart attractions, highlighting the critical importance of ride safety protocols, age and height restrictions, and liability management. FEC operators should review their own safety procedures and insurance coverage in light of this case.",
       "source": "WPTV",
       "categoryId": "ops",
       "url": "https://www.wptv.com/wptv-investigates/urban-air-in-port-st-lucie-agrees-to-pay-300k-after-investigation-into-crash-that-killed-6-year-old",
@@ -13,58 +13,48 @@
       "categoryColor": "#F59E0B"
     },
     {
-      "title": "FEC Chain Settles for $300K After Child's Death at Indoor Amusement Venue",
-      "summary": "An amusement center has reached a $300,000 settlement following a fatal incident involving a young child, highlighting the critical importance of safety oversight at family entertainment venues. The case underscores the need for rigorous inspection regimes and well-trained staff at all FEC attractions. Operators should consult legal counsel to ensure their liability exposure and safety standards are up to date.",
-      "source": "Yahoo",
+      "title": "Florida Settles with Family of 6-Year-Old Killed in FEC Go-Kart Crash",
+      "summary": "Florida authorities have reached a $300,000 settlement with the family of a child killed in a go-kart accident at a family entertainment center. The case underscores the regulatory and legal risks associated with go-kart and high-speed attractions in FEC environments. Operators should treat this as a prompt to audit safety standards, staff training, and their exposure to liability claims.",
+      "source": "WIOD",
       "categoryId": "ops",
-      "url": "https://www.yahoo.com/news/videos/amusement-center-agrees-pay-300k-211410893.html",
+      "url": "https://wiod.iheart.com/featured/florida-news/content/2026-04-28-settlement-between-florida-family-of-6-year-old-killed-in-go-kart-crash/",
       "categoryLabel": "Operations & Safety",
       "categoryIcon": "🛡️",
       "categoryColor": "#F59E0B"
     },
     {
-      "title": "accesso Names Lee Cowie as New CEO in Planned Leadership Transition",
-      "summary": "accesso Technology Group, which powers ticketing and operations technology for over 1,100 venues across 31 countries, has promoted COO Lee Cowie to chief executive officer, succeeding founder Steve Brown. Cowie brings firsthand operator experience to the role, which may shape how accesso develops its data intelligence and venue management tools going forward. FEC operators who rely on accesso platforms should expect continuity with a possible emphasis on more operator-centric product development.",
-      "source": "Blooloop",
-      "categoryId": "business",
-      "url": "https://blooloop.com/accesso-names-lee-cowie-ceo/",
-      "categoryLabel": "Business & Growth",
-      "categoryIcon": "📊",
-      "categoryColor": "#10B981"
+      "title": "Raw Thrills Launches Stranger Things Arcade Redemption Game for Up to 4 Players",
+      "summary": "Raw Thrills has globally launched Stranger Things Arcade, a family-friendly multiplayer redemption game themed around the hit Netflix series, supporting up to four players across iconic locations like Hawkins Lab and Starcourt Mall. The title leverages one of the most-watched streaming franchises in history to drive arcade floor traffic and repeat play. FEC operators looking to refresh their redemption mix with a recognizable IP should take note of this new cabinet.",
+      "source": "Amusement Today",
+      "categoryId": "attractions",
+      "url": "https://amusementtoday.com/2026/05/raw-thrills-unleashes-the-all-new-stranger-things-arcade/",
+      "categoryLabel": "Attractions & Experiences",
+      "categoryIcon": "🎢",
+      "categoryColor": "#FF6B35"
     },
     {
-      "title": "Icon Park Introduces Chaperone Policy After Teen Takeover Incidents and Arrests",
-      "summary": "Icon Park in Orlando has implemented a chaperone policy following a series of disruptive incidents involving large groups of unsupervised teens that led to chaos and arrests at the venue. The move reflects a growing trend among FEC and amusement venues grappling with crowd management and security challenges during peak periods. Operators of similar venues should consider reviewing their guest conduct policies and staffing plans to proactively address comparable risks.",
-      "source": "Blooloop",
-      "categoryId": "ops",
-      "url": "https://www.fox35orlando.com/news/icon-park-adds-chaperone-policy-after-teen-takeover-chaos-arrests",
-      "categoryLabel": "Operations & Safety",
-      "categoryIcon": "🛡️",
-      "categoryColor": "#F59E0B"
+      "title": "Intercard Hires Bowling Industry Veteran JR Huyck as North American Sales Manager",
+      "summary": "Intercard, a leading cashless payment technology provider for FECs and amusement venues, has appointed bowling industry veteran JR Huyck as its North American Sales Manager. Huyck brings deep roots in the bowling sector, a key FEC vertical, signaling Intercard's continued push to expand its cashless solutions across the industry. This hire may accelerate adoption of Intercard's technology among bowling-centric FEC operators.",
+      "source": "Amusement Today",
+      "categoryId": "tech",
+      "url": "https://amusementtoday.com/2026/05/jr-huyck-is-new-intercard-north-american-sales-manager/",
+      "categoryLabel": "Technology",
+      "categoryIcon": "⚙️",
+      "categoryColor": "#3B82F6"
     },
     {
-      "title": "£11M 'Mega City' FEC with Arcades, Laser Tag, and More Set to Open in UK",
-      "summary": "A major new family entertainment complex combining arcades, laser tag, and a range of other attractions is set to open in the UK following an £11 million investment. The large-scale venue signals continued investor confidence in the multi-attraction FEC format in the UK market. Operators and developers can look to this project as a benchmark for the scope and investment level needed to compete in the evolving FEC landscape.",
-      "source": "The Sun",
-      "categoryId": "business",
-      "url": "https://www.thesun.co.uk/travel/38966822/indoor-mega-city-arcades-laser-tag-bowling-karaoke-uk/",
-      "categoryLabel": "Business & Growth",
-      "categoryIcon": "📊",
-      "categoryColor": "#10B981"
+      "title": "Intercard Showcases New Cashless Technology at Asia Amusement & Attractions Expo",
+      "summary": "Intercard is presenting its latest cashless payment innovations, including the new Impulse system, at the Asia Amusement & Attractions Expo in Guangzhou, China, running May 10-12. The expo is a key sourcing and trend-spotting event for amusement operators globally, and Intercard's presence highlights the growing international demand for card-based and cashless venue management. FEC operators evaluating cashless upgrades should watch for product announcements coming out of the show.",
+      "source": "Amusement Today",
+      "categoryId": "tech",
+      "url": "https://amusementtoday.com/2026/05/intercard-brings-latest-cashless-technology-to-aaa-expo-in-china-may-10-12/",
+      "categoryLabel": "Technology",
+      "categoryIcon": "⚙️",
+      "categoryColor": "#3B82F6"
     },
     {
-      "title": "New Family Entertainment Center Announced for Mt. Juliet, Tennessee",
-      "summary": "A new family entertainment center is planned for Mt. Juliet, Tennessee, adding to the growing number of FEC openings in suburban markets across the US. The development reflects continued demand for local, accessible family leisure options in fast-growing communities. FEC operators and developers should note the trend of suburban expansion as a viable growth strategy.",
-      "source": "WKRN News 2",
-      "categoryId": "business",
-      "url": "https://www.wkrn.com/video/family-entertainment-center-coming-to-mt-juliet%C2%A0/11767805/",
-      "categoryLabel": "Business & Growth",
-      "categoryIcon": "📊",
-      "categoryColor": "#10B981"
-    },
-    {
-      "title": "Chuck E. Cheese Recognized Among USA Today's Most Trusted Brands by Parents",
-      "summary": "Chuck E. Cheese has been named one of USA Today's most trusted brands by parents, a significant endorsement for the iconic FEC chain as it continues its brand revitalization efforts. Trust and safety perception are critical drivers of FEC visitation decisions among families, making this recognition strategically valuable. Competing FEC operators may want to assess how their own brand reputation and parent trust scores compare.",
+      "title": "Chuck E. Cheese Named One of USA Today's Most Trusted Brands by Parents",
+      "summary": "Chuck E. Cheese has been recognized by USA Today as one of the most trusted brands by parents, a significant reputational milestone for the FEC chain as it continues its post-bankruptcy brand rebuild. Trust and safety perception are key drivers of FEC visitation among family demographics, making this recognition competitively meaningful. Independent FEC operators can use this benchmark to evaluate their own community reputation and family-focused brand positioning.",
       "source": "chuckecheese.com",
       "categoryId": "business",
       "url": "https://www.chuckecheese.com/bell-ca/blogs/chuck-e-cheese-named-one-of-usa-todays-most-trusted-brands-by-parents/",
@@ -73,8 +63,18 @@
       "categoryColor": "#10B981"
     },
     {
+      "title": "New Family Entertainment Center Announced for Mt. Juliet, Tennessee",
+      "summary": "A new family entertainment center is coming to Mt. Juliet, Tennessee, adding to the growing pipeline of FEC developments in suburban markets across the US. Mt. Juliet is one of the fastest-growing communities in the Nashville metro area, making it an attractive target for leisure and entertainment investment. This opening reflects continued operator confidence in suburban FEC demand.",
+      "source": "WKRN News 2",
+      "categoryId": "business",
+      "url": "https://www.wkrn.com/news/local-news/family-entertainment-center-coming-to-mt-juliet/",
+      "categoryLabel": "Business & Growth",
+      "categoryIcon": "📊",
+      "categoryColor": "#10B981"
+    },
+    {
       "title": "Kidtopia Indoor Playground Opens in Dublin with Obstacle Courses and Climbing",
-      "summary": "A new indoor playground called Kidtopia is coming to Dublin, featuring obstacle courses, indoor climbing, and other active play elements targeting younger children. The opening reflects the continued popularity of active play concepts within the FEC space, particularly for the under-12 demographic. Operators looking to add or refresh children's activity zones can observe Kidtopia's format as an example of current market preferences.",
+      "summary": "Kidtopia, a new indoor playground concept, is coming to Dublin featuring obstacle courses, indoor climbing, and active play attractions aimed at younger children. The concept reflects a broader trend of indoor active-play venues targeting the sub-10 age demographic, a segment that remains strong in FEC markets. Operators in the indoor playground and trampoline park space should monitor how Kidtopia's format competes with and complements traditional FEC offerings.",
       "source": "Patch",
       "categoryId": "attractions",
       "url": "https://patch.com/california/dublin/dublin-get-new-kidtopia-indoor-playground-amador-valley-boulevard-site",
@@ -83,8 +83,38 @@
       "categoryColor": "#FF6B35"
     },
     {
-      "title": "23 Jump Street Trampoline Park Brings Family Entertainment to Cape Town's Rivergate",
-      "summary": "23 Jump Street has opened a high-energy family entertainment venue at Rivergate in Cape Town, South Africa, expanding the brand's footprint in the region. The opening highlights the global growth of trampoline and active entertainment concepts beyond traditional Western markets. FEC operators and franchisors can view this as further evidence of international demand for the jump park format.",
+      "title": "Black Bunny Blends Gaming, Adventure and Family Entertainment in Dubai",
+      "summary": "Black Bunny, a new entertainment venue in Dubai, combines gaming, adventure activities, and family-friendly programming under one roof, reflecting the growing FEC hybrid model gaining traction in the Middle East. The venue's multi-concept approach mirrors strategies being deployed by successful FEC operators globally to drive longer dwell times and broader demographic appeal. International FEC developers and suppliers should take note of the Middle East as an increasingly active growth market.",
+      "source": "Khaleej Times",
+      "categoryId": "business",
+      "url": "https://www.khaleejtimes.com/kt-network/black-bunny-combines-gaming-adventure-and-family-entertainment-in-dubai?amp=1",
+      "categoryLabel": "Business & Growth",
+      "categoryIcon": "📊",
+      "categoryColor": "#10B981"
+    },
+    {
+      "title": "WhiteWater Opens 60+ Water Attraction Projects Worldwide in Record Year",
+      "summary": "WhiteWater, the world's largest water attraction manufacturer, is highlighting more than 60 project openings globally in 2026, spanning waterparks, water rides, surf lagoons, and FlowRider installations. The volume of openings signals robust capital investment in water-based entertainment, a sector that overlaps significantly with FEC and resort entertainment. FEC operators considering aquatic additions or expansions should be aware of the broad range of WhiteWater products now proven in market.",
+      "source": "Amusement Today",
+      "categoryId": "attractions",
+      "url": "https://amusementtoday.com/2026/05/whitewater-unveils-breakthrough-attractions-across-60-project-openings-worldwide/",
+      "categoryLabel": "Attractions & Experiences",
+      "categoryIcon": "🎢",
+      "categoryColor": "#FF6B35"
+    },
+    {
+      "title": "WhiteWater Highlights Record-Breaking Water Attraction Projects Across the Globe",
+      "summary": "WhiteWater has spotlighted standout projects from its 60-plus 2026 openings, including the record-breaking Aquarabia waterpark in Riyadh and a FlowRider installation at Six Flags Qiddiya City. The projects demonstrate the increasing scale and technical ambition of water-based leisure investments, particularly in the Middle East. For FEC developers planning aquatic components, WhiteWater's project portfolio offers useful benchmarks for what is achievable at different investment levels.",
+      "source": "blooloop",
+      "categoryId": "attractions",
+      "url": "https://blooloop.com/whitewater-highlight-projects/",
+      "categoryLabel": "Attractions & Experiences",
+      "categoryIcon": "🎢",
+      "categoryColor": "#FF6B35"
+    },
+    {
+      "title": "23 Jump Street Trampoline and Adventure Park Opens at Rivergate, Cape Town",
+      "summary": "23 Jump Street has launched a high-energy family entertainment venue at Rivergate in Cape Town, South Africa, offering trampoline and adventure-based attractions. The opening is part of a broader global expansion of the trampoline park and indoor adventure format into emerging markets. FEC operators and franchisors can look to this opening as evidence of continued international appetite for active family entertainment concepts.",
       "source": "Cape Town ETC",
       "categoryId": "business",
       "url": "https://www.capetownetc.com/things-to-do-cape-town/23-jump-street-brings-high-energy-family-fun-to-rivergate/",
@@ -93,68 +123,8 @@
       "categoryColor": "#10B981"
     },
     {
-      "title": "Holiday in the Park Christmas Event Returns to Two Six Flags Locations",
-      "summary": "Six Flags is bringing back its popular Holiday in the Park seasonal event to two parks where it had previously been canceled, signaling renewed investment in seasonal programming. Seasonal events are a key revenue driver for large amusement venues and increasingly being adopted by FECs to extend visitation beyond peak summer months. Smaller FEC operators can draw inspiration from this strategy for developing their own holiday-themed event calendars.",
-      "source": "Blooloop",
-      "categoryId": "ops",
-      "url": "https://eu.usatoday.com/story/travel/amusement-parks/2026/05/05/six-flags-holiday-in-the-park-return/89934403007/",
-      "categoryLabel": "Operations & Safety",
-      "categoryIcon": "🛡️",
-      "categoryColor": "#F59E0B"
-    },
-    {
-      "title": "Sanrio Amusement Park to Host Horror-Themed 'Psycho Game' Event This Summer",
-      "summary": "A Sanrio-branded amusement park is adding a horror-themed event called Psycho Game this summer, blending a typically family-friendly IP with a scare attraction format. The move demonstrates how established family entertainment venues are experimenting with adult-oriented events to diversify their audience and revenue streams. FEC operators could consider similar after-hours or age-segmented event programming to drive incremental visits.",
-      "source": "Blooloop",
-      "categoryId": "attractions",
-      "url": "https://japantoday.com/category/features/lifestyle/sanrio-amusement-park-in-tokyo-to-host-psycho-game-horror-event-this-summer?",
-      "categoryLabel": "Attractions & Experiences",
-      "categoryIcon": "🎢",
-      "categoryColor": "#FF6B35"
-    },
-    {
-      "title": "Breeze Creative Delivers Custom Interactive Tech for Bluey's House Touring Experience",
-      "summary": "Breeze Creative has developed bespoke interactive technology for Bluey's House, a touring immersive family attraction based on the hit children's series, combining physical set design with narrative-driven digital interactives. The project showcases how IP-driven location-based entertainment can be enhanced with scalable interactive technology to deepen engagement for young visitors and their parents. FEC operators considering IP-based attractions or interactive upgrades can look to this collaboration as a model for integrating technology and storytelling.",
-      "source": "Blooloop",
-      "categoryId": "tech",
-      "url": "https://blooloop.com/breeze-creative-befun-blueys-house/",
-      "categoryLabel": "Technology",
-      "categoryIcon": "⚙️",
-      "categoryColor": "#3B82F6"
-    },
-    {
-      "title": "A Global Tour of Today's Most Compelling Immersive Experiences",
-      "summary": "A roundup of the world's leading immersive experiences highlights the diversity of formats now attracting family and adult audiences, from teamLab and Meow Wolf to Sphere Las Vegas. For FEC operators, the piece illustrates the rising consumer expectation for multi-sensory, technology-driven environments that go beyond traditional amusement formats. Understanding what top-tier immersive venues are delivering can inform product development and capital investment decisions at the FEC level.",
-      "source": "Blooloop",
-      "categoryId": "attractions",
-      "url": "https://blooloop.com/technology/in-depth/top-immersive-experiences/",
-      "categoryLabel": "Attractions & Experiences",
-      "categoryIcon": "🎢",
-      "categoryColor": "#FF6B35"
-    },
-    {
-      "title": "India Positioned as the Next Major Growth Market for Entertainment Attractions",
-      "summary": "With a middle class of 500 million people projected to grow by another 310 million over the next decade and 66% of the population under 35, India is emerging as a critical expansion market for the global attractions and entertainment industry. Industry experts note rapidly increasing consumer willingness to spend on quality leisure experiences, with demand outpacing current supply at multiple scales. FEC operators, franchisors, and investors looking for international growth opportunities should place India high on their radar.",
-      "source": "Blooloop",
-      "categoryId": "business",
-      "url": "https://blooloop.com/india-growing-market-attractions/",
-      "categoryLabel": "Business & Growth",
-      "categoryIcon": "📊",
-      "categoryColor": "#10B981"
-    },
-    {
-      "title": "Amoeba Bengaluru Relaunches as a Next-Gen Sports Bar Entertainment Venue",
-      "summary": "Amoeba in Bengaluru, India has relaunched as a next-generation sports bar concept, blending entertainment and food-and-beverage in a format targeting young urban adults. The repositioning reflects a broader trend of FEC-adjacent venues evolving their concepts to capture the growing Indian leisure spending market. Operators considering F&B-led entertainment formats can watch this relaunch for early performance signals in a key emerging market.",
-      "source": "Passionate In Marketing",
-      "categoryId": "business",
-      "url": "https://www.passionateinmarketing.com/amoeba-reclaims-church-street-with-a-next-generation-sports-bar-marking-25-years-of-social-entertainment-leadership-2/",
-      "categoryLabel": "Business & Growth",
-      "categoryIcon": "📊",
-      "categoryColor": "#10B981"
-    },
-    {
-      "title": "Rage Room Concept 'Breaking Point' Set to Open in Kitimat, Canada",
-      "summary": "A new rage room attraction called Breaking Point is preparing to open in Kitimat, British Columbia, adding to the growing roster of experiential stress-relief entertainment concepts. Rage rooms represent a low-capital, high-novelty attraction type that has found a consistent adult audience and can be integrated into multi-attraction FEC formats. Operators looking to diversify their attraction mix with adult-oriented experiences may find this format worth evaluating.",
+      "title": "Rage Room Attraction Set to Open in Kitimat, British Columbia",
+      "summary": "A new rage room concept called Breaking Point is preparing to open in Kitimat, BC, adding to the growing segment of alternative experiential entertainment within the FEC industry. Rage rooms, where guests pay to smash objects in a controlled environment, have found a niche audience seeking stress relief and novel social experiences. FEC operators exploring low-capex experiential add-ons may find the rage room format worth evaluating for their own mix.",
       "source": "Terrace Standard",
       "categoryId": "attractions",
       "url": "https://terracestandard.com/2026/04/25/breaking-point-rage-room-set-to-open-in-kitimat/",
@@ -163,29 +133,69 @@
       "categoryColor": "#FF6B35"
     },
     {
-      "title": "ISmash Destruction Venue Coming to Rapid City, South Dakota",
-      "summary": "ISmash, an indoor destruction and smash room experience, is opening a new location in Rapid City, South Dakota, continuing the brand's national expansion. The concept appeals to adult and teen demographics seeking novel stress-relief entertainment, a growing segment for FEC operators looking to extend beyond child-focused attractions. The opening is a useful data point for operators assessing the viability of destruction-themed attractions in smaller US markets.",
+      "title": "ISmash Breakout Experience Coming to Rapid City in May",
+      "summary": "ISmash, a smash-room and breakout experience brand, is expanding to Rapid City, South Dakota, continuing the national rollout of destruction-themed entertainment venues. The concept targets adults and groups seeking cathartic, hands-on experiences distinct from traditional FEC offerings. Operators looking to differentiate their venues or add adult-oriented revenue streams should monitor the growth trajectory of this format.",
       "source": "MSN",
-      "categoryId": "attractions",
+      "categoryId": "business",
       "url": "https://www.msn.com/en-us/news/us/ismash-coming-to-rapid-city-in-may/ar-AA21Wi70?apiversion=v2&domshim=1&noservercache=1&noservertelemetry=1&batchservertelemetry=1&renderwebcomponents=1&wcseo=1",
-      "categoryLabel": "Attractions & Experiences",
-      "categoryIcon": "🎢",
-      "categoryColor": "#FF6B35"
+      "categoryLabel": "Business & Growth",
+      "categoryIcon": "📊",
+      "categoryColor": "#10B981"
     },
     {
-      "title": "Three Strategies for Elevating the Dark Ride Guest Experience",
-      "summary": "An industry analysis outlines three key approaches for upgrading dark ride attractions, including real-time content rendering, immersive set design, and personalization technology, framed against the high bar set by Universal's Epic Universe. While aimed at large theme parks, the underlying principles around guest experience investment and technology adoption are directly relevant to FEC operators running dark rides or planning themed walk-through attractions. The piece serves as a useful reference for operators preparing capital improvement plans.",
-      "source": "Blooloop",
+      "title": "Disneyland Moves Toward Cashless Operations",
+      "summary": "Disneyland is preparing for a cashless future, signaling a major shift in how one of the world's most-visited theme parks will handle guest transactions. Cashless systems reduce cash handling costs, speed up transactions, and generate richer guest spending data — benefits that are equally relevant for FEC operators at any scale. This move by Disney is likely to accelerate broader industry adoption of cashless payment infrastructure across FECs and amusement parks.",
+      "source": "blooloop",
+      "categoryId": "tech",
+      "url": "https://www.ocregister.com/2026/05/06/disneyland-prepares-for-a-cashless-future/",
+      "categoryLabel": "Technology",
+      "categoryIcon": "⚙️",
+      "categoryColor": "#3B82F6"
+    },
+    {
+      "title": "Bengaluru FEC Amoeba Relaunches as Next-Gen Sports Bar Entertainment Venue",
+      "summary": "Amoeba, a well-known amusement and entertainment center in Bengaluru, India, has relaunched as a next-generation sports bar, blending gaming and entertainment with a bar-and-dining concept. The relaunch reflects a broader pivot by traditional FEC operators toward adult-oriented hybrid entertainment models that drive higher per-head spending. As the India entertainment market accelerates, this format evolution offers a useful case study for operators considering an adult-centric repositioning.",
+      "source": "Passionate In Marketing",
+      "categoryId": "business",
+      "url": "https://www.passionateinmarketing.com/amoeba-reclaims-church-street-with-a-next-generation-sports-bar-marking-25-years-of-social-entertainment-leadership-2/",
+      "categoryLabel": "Business & Growth",
+      "categoryIcon": "📊",
+      "categoryColor": "#10B981"
+    },
+    {
+      "title": "India Emerging as Next Major Market for Entertainment and Attractions",
+      "summary": "Industry experts are identifying India as the next transformative growth market for entertainment and recreation, driven by a middle class of 500 million people projected to grow by 310 million over the next decade. With 66 percent of India's population under age 35, demand for quality family leisure and FEC-style experiences is accelerating rapidly. FEC developers, investors, and suppliers should be actively evaluating India as a high-priority expansion target.",
+      "source": "blooloop",
+      "categoryId": "business",
+      "url": "https://blooloop.com/india-growing-market-attractions/",
+      "categoryLabel": "Business & Growth",
+      "categoryIcon": "📊",
+      "categoryColor": "#10B981"
+    },
+    {
+      "title": "A Look at the World's Leading Immersive Entertainment Experiences in 2026",
+      "summary": "A comprehensive review of top global immersive experiences in 2026 highlights venues spanning immersive art, themed dining, technology-driven attractions, and wellness destinations, from Meow Wolf to the Sphere in Las Vegas. For FEC operators, the immersive experience category represents both a competitive threat and a design inspiration for differentiating their own venues. Understanding what is working at the high end of immersive entertainment can help FEC operators identify scalable concepts for their own markets.",
+      "source": "blooloop",
       "categoryId": "design",
-      "url": "https://blooloop.com/elevate-your-dark-ride/",
+      "url": "https://blooloop.com/technology/in-depth/top-immersive-experiences/",
       "categoryLabel": "Design & Trends",
       "categoryIcon": "🎨",
       "categoryColor": "#EC4899"
     },
     {
-      "title": "Industry Panel: How Storytelling and 'Main Character Energy' Drive Guest Engagement",
-      "summary": "A panel at blooloop's 2026 Festival of Innovation brought together leaders from Kennedy Space Center, Merlin Entertainments, and EPIC Entertainment Group to discuss how narrative-driven design creates deeper guest connections. The session emphasized that giving guests a sense of agency and personal narrative within an attraction significantly boosts satisfaction and repeat visitation. FEC operators investing in themed zones, escape rooms, or immersive experiences can apply these storytelling principles to their design and programming decisions.",
-      "source": "Blooloop",
+      "title": "Three Strategies to Elevate Dark Ride Experiences Using Real-Time Technology",
+      "summary": "Industry experts outline three approaches to improving dark ride quality, with real-time content rendering emerging as a key differentiator over traditional pre-rendered video systems, as demonstrated by major new installations like Universal Epic Universe. While large-scale dark rides are primarily a theme park format, the underlying technology principles around interactivity, visual fidelity, and personalization are increasingly applicable to FEC attractions and VR experiences. FEC operators investing in immersive attractions should familiarize themselves with where ride media technology is heading.",
+      "source": "blooloop",
+      "categoryId": "tech",
+      "url": "https://blooloop.com/elevate-your-dark-ride/",
+      "categoryLabel": "Technology",
+      "categoryIcon": "⚙️",
+      "categoryColor": "#3B82F6"
+    },
+    {
+      "title": "How FEC and Attraction Operators Are Using Storytelling to Drive Guest Engagement",
+      "summary": "A panel at Blooloop's 2026 Festival of Innovation featuring executives from Kennedy Space Center, Merlin Entertainments, and EPIC Entertainment Group explored how immersive storytelling can create stronger guest connections and memorable experiences. The session emphasized giving guests a sense of agency and identity within an attraction's narrative — a technique increasingly being applied across FEC-adjacent venues. FEC operators looking to deepen guest loyalty and justify premium pricing should consider how narrative design can be integrated into their own offerings.",
+      "source": "blooloop",
       "categoryId": "design",
       "url": "https://blooloop.com/main-character-energy-storytelling/",
       "categoryLabel": "Design & Trends",
@@ -193,18 +203,58 @@
       "categoryColor": "#EC4899"
     },
     {
-      "title": "Set & Scene 2026 Showcases Convergence of Immersive Design, Live Events, and Technology",
-      "summary": "The inaugural Set & Scene event in London brought together 800 designers, makers, and technologists from film, TV, live events, and immersive experiences to explore shared craft and production challenges. The event highlights the increasing cross-pollination between entertainment design disciplines, with techniques from film and stage production increasingly finding their way into location-based entertainment. FEC operators and attraction designers can track this event as an emerging source of creative and technical innovation relevant to themed environments.",
-      "source": "Blooloop",
-      "categoryId": "design",
-      "url": "https://blooloop.com/set-scene-2026-review/",
-      "categoryLabel": "Design & Trends",
-      "categoryIcon": "🎨",
-      "categoryColor": "#EC4899"
+      "title": "Ellis & Associates Recognizes 2026 Aquatic Safety Honorees",
+      "summary": "Ellis & Associates, the leading aquatic safety and risk management organization, has announced its 2026 Associate and Senior Associate honorees from its pool of over 100 professional lifeguard instructor trainers. For FEC operators running water attractions, pools, or splash pads, maintaining certified aquatic safety staff is both a regulatory requirement and a liability management priority. Recognition programs like this help reinforce professional standards across the aquatic safety workforce.",
+      "source": "Amusement Today",
+      "categoryId": "ops",
+      "url": "https://amusementtoday.com/2026/05/ellis-associates-announces-new-2026-associate-honorees/",
+      "categoryLabel": "Operations & Safety",
+      "categoryIcon": "🛡️",
+      "categoryColor": "#F59E0B"
     },
     {
-      "title": "Illinois Indoor Amusement Center Highlighted as a Must-Visit FEC Experience",
-      "summary": "A large indoor amusement center in Illinois has been spotlighted as an exemplary venue offering a broad range of activities that appeal to guests of all ages. The feature underscores how well-curated multi-attraction FECs can generate strong word-of-mouth and media attention. Operators looking to benchmark their attraction mix and overall guest experience can reference this venue as a current consumer favorite.",
+      "title": "Renewable Lubricants Marks 35 Years of Eco-Friendly Products for Amusement and Other Industries",
+      "summary": "Renewable Lubricants, an Ohio-based manufacturer of bio-based and food-grade lubricants, celebrated its 35th anniversary, highlighting its products' relevance across amusement rides and other mechanical equipment. As sustainability becomes a growing priority for FEC operators and their guests, bio-based lubricants offer a practical way to reduce environmental impact in day-to-day ride maintenance. Operators seeking greener maintenance supply chains should be aware of the available alternatives to conventional petroleum-based products.",
+      "source": "Amusement Today",
+      "categoryId": "ops",
+      "url": "https://amusementtoday.com/2026/05/renewable-lubricants-celebrates-35-years-manufacturing-environmentally-friendly-and-food-grade-lubricants/",
+      "categoryLabel": "Operations & Safety",
+      "categoryIcon": "🛡️",
+      "categoryColor": "#F59E0B"
+    },
+    {
+      "title": "Amusement Center Agrees to $300K Settlement Following Child Fatality Investigation",
+      "summary": "An amusement center has agreed to pay $300,000 following a government investigation into the death of a young girl at the facility. The settlement is a stark reminder of the legal and financial consequences that can follow safety failures at FEC and amusement venues. Operators should use this case to reinforce safety audits, incident response protocols, and adequate liability insurance coverage.",
+      "source": "WPTV",
+      "categoryId": "ops",
+      "url": "https://www.wptv.com/videos/wptv-investigates/amusement-center-agrees-to-pay-300k-after-investigation-into-girls-death",
+      "categoryLabel": "Operations & Safety",
+      "categoryIcon": "🛡️",
+      "categoryColor": "#F59E0B"
+    },
+    {
+      "title": "Bókun Launchpad Competition Offers $10K Prize for Innovative Experience Operators in Europe",
+      "summary": "Bókun, a Tripadvisor-owned booking and channel management platform, has launched a competition inviting European experience operators to pitch innovative concepts for a chance to win a $10,000 cash prize plus 12 months of free booking tools and distribution on Viator and GetYourGuide. For FEC and attraction operators in Europe looking to grow their online booking presence and OTA distribution, this competition offers both funding and valuable market exposure. The prize package also includes conference access and a professionally produced video case study.",
+      "source": "blooloop",
+      "categoryId": "business",
+      "url": "https://blooloop.com/bokun-launchpad-competition/",
+      "categoryLabel": "Business & Growth",
+      "categoryIcon": "📊",
+      "categoryColor": "#10B981"
+    },
+    {
+      "title": "Saudi Arabia's Tourism Economy Surges, Creating FEC and Attractions Opportunities",
+      "summary": "Saudi Arabia's travel and tourism GDP rose 7.4 percent in 2026 to $178 billion, representing 46 percent of the entire Middle East tourism economy and growing at nearly twice the global average rate. The kingdom's domestic visitor numbers grew 16 percent year-on-year in Q1 2026, signaling strong internal demand for leisure and entertainment experiences. For FEC operators, suppliers, and investors, Saudi Arabia and the broader Middle East represent one of the most active development markets in the world right now.",
+      "source": "blooloop",
+      "categoryId": "business",
+      "url": "https://blooloop.com/saudi-arabia-tourism-growth/",
+      "categoryLabel": "Business & Growth",
+      "categoryIcon": "📊",
+      "categoryColor": "#10B981"
+    },
+    {
+      "title": "Illinois Indoor Amusement Mega-Center Highlighted as Must-Visit Family Destination",
+      "summary": "A large-scale indoor amusement center in Illinois is receiving consumer media attention as a standout family entertainment destination, the kind of organic coverage that drives significant foot traffic for FEC operators. Media features in consumer outlets remain a cost-effective marketing channel for FECs seeking to attract local and regional visitors. Operators should actively cultivate relationships with local and regional lifestyle media to generate similar earned coverage.",
       "source": "Fast Food Club",
       "categoryId": "ops",
       "url": "https://fastfoodclub.com/p/this-huge-indoor-amusement-center-in-illinois-is-perfect-for-feeling-like-a-kid-again/",
@@ -213,44 +263,14 @@
       "categoryColor": "#F59E0B"
     },
     {
-      "title": "Zoo Workers Strike Over Health Insurance and Wages at Brookfield Zoo",
-      "summary": "Workers at Brookfield Zoo in the Chicago area have gone on strike over disputes regarding health insurance coverage and wage levels, highlighting ongoing labor tensions at large visitor attractions. The action is a reminder for FEC operators that workforce compensation and benefits packages are increasingly critical to staff retention and operational continuity. Operators should proactively review their compensation structures given the broader trend of labor actions across the attractions industry.",
-      "source": "Blooloop",
-      "categoryId": "ops",
-      "url": "https://www.nbcchicago.com/news/local/around-100-union-workers-strike-at-brookfield-zoo-over-health-insurance-wages/3931704/",
-      "categoryLabel": "Operations & Safety",
-      "categoryIcon": "🛡️",
-      "categoryColor": "#F59E0B"
-    },
-    {
-      "title": "World's Largest Movie Theater Screen Announced for Downtown Clearwater, Florida",
-      "summary": "A new entertainment development in downtown Clearwater, Florida will feature the world's largest movie theater screen, positioning the venue as a major experiential destination near the Tampa Bay region. Large-format and immersive cinema concepts are increasingly being integrated into mixed-use entertainment developments, creating both competition and partnership opportunities for nearby FEC operators. Operators in the region and developers of entertainment-led destination projects should monitor this project's rollout.",
-      "source": "Attractions Magazine",
-      "categoryId": "attractions",
-      "url": "https://attractionsmagazine.com/worlds-largest-movie-screen-coming-to-clearwater-fl/",
-      "categoryLabel": "Attractions & Experiences",
-      "categoryIcon": "🎢",
-      "categoryColor": "#FF6B35"
-    },
-    {
-      "title": "Disney Reaffirms Abu Dhabi Theme Park Plans Amid Regional Uncertainty",
-      "summary": "Disney has confirmed that its plans for a new theme park resort in Abu Dhabi remain on track despite geopolitical uncertainty in the Middle East following the US-Israel conflict with Iran. The company's experiences segment continues to report strong performance, and the Abu Dhabi project is part of a broader capital-light international expansion strategy. For FEC investors and operators with interests in Middle East markets, Disney's commitment signals continued long-term confidence in the region's entertainment sector.",
-      "source": "Blooloop",
-      "categoryId": "business",
-      "url": "https://blooloop.com/disney-abu-dhabi-park-unchanged/",
-      "categoryLabel": "Business & Growth",
-      "categoryIcon": "📊",
-      "categoryColor": "#10B981"
-    },
-    {
-      "title": "Saudi Arabia Leads Middle East Tourism Boom with 7.4% GDP Growth",
-      "summary": "Saudi Arabia's travel and tourism GDP grew 7.4% in 2025 to $178 billion, representing 46% of the entire Middle East tourism economy and growing at nearly twice the global average rate. Domestic visitor numbers in Q1 2026 rose 16% year-on-year, reflecting surging appetite for leisure and entertainment spending within the kingdom. FEC operators and attraction developers looking for international expansion opportunities should closely watch Saudi Arabia's rapidly scaling entertainment market.",
-      "source": "Blooloop",
-      "categoryId": "business",
-      "url": "https://blooloop.com/saudi-arabia-tourism-growth/",
-      "categoryLabel": "Business & Growth",
-      "categoryIcon": "📊",
-      "categoryColor": "#10B981"
+      "title": "Disneyland Tests Electric Ride Vehicle Prototype as Part of Net-Zero Push",
+      "summary": "Disneyland has begun testing a fully electric prototype vehicle for its Autopia ride, with a commitment to retire all gas-powered vehicles from the attraction by early 2027 as part of Disney's net-zero emissions goal for 2030. The project signals a coming wave of electrification across theme park and FEC ride fleets as environmental regulations tighten, particularly in states like California. FEC operators with go-kart or ride vehicle fleets should begin evaluating the transition timeline and cost implications of shifting to electric alternatives.",
+      "source": "blooloop",
+      "categoryId": "design",
+      "url": "https://blooloop.com/disneyland-testing-electric-autopia-ride/",
+      "categoryLabel": "Design & Trends",
+      "categoryIcon": "🎨",
+      "categoryColor": "#EC4899"
     }
   ]
 }
