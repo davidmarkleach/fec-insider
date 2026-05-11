@@ -13,7 +13,7 @@ import re
 import sys
 import textwrap
 from datetime import datetime, timezone
-from pathlib import Path
+from typing import Optional
 
 import anthropic
 import feedparser
@@ -67,6 +67,17 @@ RSS_FEEDS = [
 HEADERS = {
     "User-Agent": "FECInsiderBot/1.0 (news aggregator; +https://github.com/davidmarkleach/fec-insider)"
 }
+
+
+def _entry_published_iso(entry: dict) -> Optional[str]:
+    """Best-effort publication date from RSS/Atom (YYYY-MM-DD, UTC)."""
+    tp = entry.get("published_parsed") or entry.get("updated_parsed")
+    if not tp:
+        return None
+    try:
+        return datetime(*tp[:6], tzinfo=timezone.utc).date().isoformat()
+    except (TypeError, ValueError):
+        return None
 
 
 def resolve_google_news_url(url: str) -> str:
@@ -123,6 +134,7 @@ def fetch_feeds() -> list[dict]:
                     "raw_summary": summary[:1000],
                     "url": link,
                     "source": source,
+                    "publishedAt": _entry_published_iso(entry),
                 }
             )
 
@@ -151,8 +163,11 @@ Your job:
      audience.  Focus on *why it matters* for FEC operators.  No markdown.
    - `source` — short source name (e.g. "Blooloop", "IAAPA", "Workforce.com")
    - `categoryId` — one of: attractions, tech, business, ops, design
+   - `curatorScore` — integer 1-100: how valuable and must-read this is for
+     FEC operators, investors, and suppliers (100 = highest impact).
 3. Spread articles roughly evenly across the five categories when possible.
-4. Order articles so the most impactful / newsworthy come first.
+4. Order articles so the most impactful / newsworthy come first (highest
+   `curatorScore` should generally appear earlier).
 
 Return **only** a JSON array.  No markdown fences, no commentary.
 Do NOT include a "url" field — we will fill it in from the original data using `idx`.
@@ -163,7 +178,8 @@ Example element:
   "title": "Round1 Opens Third New Jersey Location",
   "summary": "The Japanese FEC giant opened a new venue at Menlo Park Mall…",
   "source": "InterGame",
-  "categoryId": "business"
+  "categoryId": "business",
+  "curatorScore": 88
 }
 
 ---
@@ -208,6 +224,9 @@ def curate_with_claude(raw_articles: list[dict]) -> list[dict]:
         idx = a.pop("idx", None)
         if idx is not None and 0 <= idx < len(raw_articles):
             a["url"] = raw_articles[idx]["url"]
+            pub = raw_articles[idx].get("publishedAt")
+            if pub:
+                a["publishedAt"] = pub
         else:
             a.setdefault("url", "")
             print(f"  [warn] article '{a.get('title','')}' missing valid idx, url may be wrong", file=sys.stderr)
@@ -215,8 +234,8 @@ def curate_with_claude(raw_articles: list[dict]) -> list[dict]:
     return articles
 
 
-def enrich_articles(articles: list[dict]) -> list[dict]:
-    """Add category metadata and validate/resolve URLs."""
+def enrich_articles(articles: list[dict], *, default_date: str) -> list[dict]:
+    """Add category metadata, normalize scores/dates, validate/resolve URLs."""
     from urllib.parse import urlparse
 
     for a in articles:
@@ -225,6 +244,15 @@ def enrich_articles(articles: list[dict]) -> list[dict]:
         a["categoryLabel"] = meta["label"]
         a["categoryIcon"] = meta["icon"]
         a["categoryColor"] = meta["color"]
+
+        raw_score = a.get("curatorScore", 50)
+        try:
+            a["curatorScore"] = max(1, min(100, int(raw_score)))
+        except (TypeError, ValueError):
+            a["curatorScore"] = 50
+
+        if not a.get("publishedAt"):
+            a["publishedAt"] = default_date
 
         url = (a.get("url") or "").strip()
         if url:
@@ -263,7 +291,8 @@ def main():
         sys.exit(1)
 
     curated = curate_with_claude(raw)
-    curated = enrich_articles(curated)
+    default_pub = datetime.now(timezone.utc).date().isoformat()
+    curated = enrich_articles(curated, default_date=default_pub)
 
     html = render_html(curated)
     OUTPUT_PATH.write_text(html, encoding="utf-8")

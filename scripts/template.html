@@ -66,7 +66,7 @@
     font-weight: 400;
   }
   .tabs {
-    display: flex; gap: 4px; margin-bottom: 22px;
+    display: flex; gap: 4px; margin-bottom: 14px;
     overflow-x: auto; padding-bottom: 2px; scrollbar-width: none;
   }
   .tabs::-webkit-scrollbar { display: none; }
@@ -87,6 +87,45 @@
     background: var(--accent-a10);
     color: var(--on-dark);
     box-shadow: inset 0 0 0 1px var(--accent-a30), inset 0 0 0 2px rgba(255, 255, 255, 0.06);
+  }
+  .sort-row {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 22px;
+    flex-wrap: wrap;
+  }
+  .sort-label {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 13px; font-weight: 500;
+    color: var(--on-dark-45);
+    flex-shrink: 0;
+  }
+  .sort-tabs {
+    display: flex; gap: 4px;
+    overflow-x: auto; padding-bottom: 2px; scrollbar-width: none;
+    flex: 1; min-width: 0;
+  }
+  .sort-tabs::-webkit-scrollbar { display: none; }
+  .sort-tab {
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 100rem;
+    padding: 6px 12px;
+    color: var(--on-dark-75);
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 13px; font-weight: 400;
+    cursor: pointer; white-space: nowrap;
+    transition: background-color 0.2s ease, color 0.2s ease,
+                box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+  .sort-tab:hover {
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--on-dark);
+  }
+  .sort-tab.active {
+    background: var(--accent-a10);
+    color: var(--on-dark);
+    box-shadow:
+      inset 0 0 0 1px var(--accent-a30),
+      inset 0 0 0 2px rgba(255, 255, 255, 0.06);
   }
   .feed { display: flex; flex-direction: column; gap: 14px; }
   .card {
@@ -109,7 +148,14 @@
   }
   .card-top {
     display: flex; justify-content: space-between; align-items: baseline;
-    gap: 12px; margin-bottom: 8px;
+    gap: 12px; margin-bottom: 6px;
+  }
+  .card-date {
+    font-family: 'Lato', sans-serif;
+    font-size: 12px; font-weight: 600;
+    color: var(--ink-50);
+    letter-spacing: 0.02em;
+    margin-bottom: 10px;
   }
   .card-cat {
     font-family: 'Lato', sans-serif; font-size: 12px; font-weight: 700;
@@ -362,6 +408,7 @@
     <p class="timestamp" id="timestamp" data-iso="{{TIMESTAMP_ISO}}"></p>
   </div>
   <div class="tabs" id="tabs"></div>
+  <div class="sort-row" id="sort-row" aria-label="Sort articles"></div>
   <div class="feed" id="feed"></div>
   <div class="footer"><p>Powered by AI &middot; <span class="brand">FEC Insider</span> &middot; Subscriber Exclusive</p></div>
 </div>
@@ -455,6 +502,12 @@ const CATEGORIES = [
   { id: "design",      label: "Design & Trends" }
 ];
 let activeCat = "all";
+let activeSort = "newest";
+const SORT_OPTIONS = [
+  { id: "newest",      label: "Newest first" },
+  { id: "oldest",      label: "Oldest first" },
+  { id: "recommended", label: "Recommended" }
+];
 function formatTimestamp(iso) {
   try {
     const d = new Date(iso);
@@ -469,15 +522,66 @@ function renderHeader(iso) {
   if (iso) { el.dataset.iso = iso; }
   el.textContent = formatTimestamp(el.dataset.iso);
 }
+function formatArticleDate(iso) {
+  try {
+    if (!iso || typeof iso !== "string") return "";
+    const normalized = iso.length <= 10 ? iso + "T12:00:00" : iso;
+    const d = new Date(normalized);
+    if (isNaN(d.getTime())) return "";
+    return d.toLocaleDateString(undefined, {
+      month: "short", day: "numeric", year: "numeric"
+    });
+  } catch (e) { return ""; }
+}
+function parseArticleTime(iso) {
+  if (!iso || typeof iso !== "string") return 0;
+  const normalized = iso.length <= 10 ? iso + "T12:00:00" : iso;
+  const t = new Date(normalized).getTime();
+  return isNaN(t) ? 0 : t;
+}
+function sortArticles(list) {
+  const out = list.slice();
+  if (activeSort === "newest") {
+    out.sort((a, b) => parseArticleTime(b.publishedAt) - parseArticleTime(a.publishedAt));
+  } else if (activeSort === "oldest") {
+    out.sort((a, b) => parseArticleTime(a.publishedAt) - parseArticleTime(b.publishedAt));
+  } else if (activeSort === "recommended") {
+    out.sort((a, b) => {
+      const sa = typeof a.curatorScore === "number" ? a.curatorScore : 0;
+      const sb = typeof b.curatorScore === "number" ? b.curatorScore : 0;
+      if (sb !== sa) return sb - sa;
+      return parseArticleTime(b.publishedAt) - parseArticleTime(a.publishedAt);
+    });
+  }
+  return out;
+}
 function renderTabs() {
   const container = document.getElementById("tabs");
   container.innerHTML = CATEGORIES.map(c =>
-    `<button class="tab ${c.id === activeCat ? 'active' : ''}" data-cat="${c.id}">${c.label}</button>`
+    `<button type="button" class="tab ${c.id === activeCat ? 'active' : ''}" data-cat="${c.id}">${c.label}</button>`
   ).join("");
   container.querySelectorAll(".tab").forEach(btn => {
     btn.addEventListener("click", () => {
       activeCat = btn.dataset.cat;
       renderTabs();
+      renderFeed();
+    });
+  });
+}
+function renderSort() {
+  const container = document.getElementById("sort-row");
+  if (!container) return;
+  container.innerHTML =
+    '<span class="sort-label">Sort</span>' +
+    '<div class="sort-tabs" role="group">' +
+    SORT_OPTIONS.map(s =>
+      `<button type="button" class="sort-tab ${s.id === activeSort ? "active" : ""}" data-sort="${s.id}">${s.label}</button>`
+    ).join("") +
+    "</div>";
+  container.querySelectorAll(".sort-tab").forEach(btn => {
+    btn.addEventListener("click", () => {
+      activeSort = btn.dataset.sort;
+      renderSort();
       renderFeed();
     });
   });
@@ -497,17 +601,21 @@ function renderFeed() {
   const filtered = activeCat === "all"
     ? articles
     : articles.filter(a => a.categoryId === activeCat);
-  container.innerHTML = filtered.map((a, i) => {
+  const ordered = sortArticles(filtered);
+  container.innerHTML = ordered.map((a, i) => {
     const href = safeHref(a.url);
     const tag = href ? "a" : "article";
     const attrs = href ? `href="${href}" target="_blank" rel="noopener noreferrer"` : "";
     const catColor = a.categoryColor || "var(--accent)";
+    const dateStr = formatArticleDate(a.publishedAt);
+    const dateHtml = dateStr ? `<div class="card-date">${dateStr}</div>` : "";
     return `
     <${tag} class="card" ${attrs} style="animation-delay: ${i * 0.05}s">
       <div class="card-top">
         <span class="card-cat" style="color: ${catColor}">${a.categoryLabel || a.category}</span>
         <span class="card-source">${a.source ? 'via ' + a.source : ''}</span>
       </div>
+      ${dateHtml}
       <h3>${a.title}</h3>
       <p>${a.summary}</p>
     </${tag}>`;
@@ -515,10 +623,11 @@ function renderFeed() {
 }
 renderHeader();
 renderTabs();
+renderSort();
 renderFeed();
 fetch("articles.json?t=" + Date.now())
   .then(r => { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
-  .then(data => { articles = data.articles || data; renderHeader(data.generated); renderTabs(); renderFeed(); })
+  .then(data => { articles = data.articles || data; renderHeader(data.generated); renderTabs(); renderSort(); renderFeed(); })
   .catch(e => {
     console.error("Failed to load articles:", e);
     document.getElementById("feed").innerHTML = '<div style="text-align:center;padding:40px 20px;color:var(--on-dark-60);font-size:15px">Unable to load articles. Please try again later.</div>';

@@ -14,6 +14,12 @@ const CATEGORIES=[
 
 let articles=[];
 let activeCat="all";
+let activeSort="newest";
+const SORT_OPTIONS=[
+  {id:"newest",label:"Newest first"},
+  {id:"oldest",label:"Oldest first"},
+  {id:"recommended",label:"Recommended"}
+];
 let chatHistory=[];
 let panelScrollY=0;
 
@@ -26,6 +32,37 @@ function safeHref(url){
   const u=url.trim();
   if(!/^https?:\/\//i.test(u))return null;
   return esc(u);
+}
+function formatArticleDate(iso){
+  try{
+    if(!iso||typeof iso!=="string")return"";
+    const n=iso.length<=10?iso+"T12:00:00":iso;
+    const d=new Date(n);
+    if(isNaN(d.getTime()))return"";
+    return d.toLocaleDateString(undefined,{month:"short",day:"numeric",year:"numeric"});
+  }catch(e){return"";}
+}
+function parseArticleTime(iso){
+  if(!iso||typeof iso!=="string")return 0;
+  const n=iso.length<=10?iso+"T12:00:00":iso;
+  const t=new Date(n).getTime();
+  return isNaN(t)?0:t;
+}
+function sortArticles(list){
+  const out=list.slice();
+  if(activeSort==="newest"){
+    out.sort((a,b)=>parseArticleTime(b.publishedAt)-parseArticleTime(a.publishedAt));
+  }else if(activeSort==="oldest"){
+    out.sort((a,b)=>parseArticleTime(a.publishedAt)-parseArticleTime(b.publishedAt));
+  }else if(activeSort==="recommended"){
+    out.sort((a,b)=>{
+      const sa=typeof a.curatorScore==="number"?a.curatorScore:0;
+      const sb=typeof b.curatorScore==="number"?b.curatorScore:0;
+      if(sb!==sa)return sb-sa;
+      return parseArticleTime(b.publishedAt)-parseArticleTime(a.publishedAt);
+    });
+  }
+  return out;
 }
 function formatDate(iso){
   try{const d=new Date(iso);if(isNaN(d.getTime()))return"";
@@ -60,6 +97,7 @@ function buildPage(){
 </div>
 <div class="fec-wrap">
   <div class="fec-tabs" id="fec-tabs"></div>
+  <div class="fec-sort-row" id="fec-sort-row" aria-label="Sort articles"></div>
   <div class="fec-feed" id="fec-feed"></div>
   <div class="fec-about-section">
     <div class="fec-about-inner">
@@ -82,10 +120,21 @@ function renderTabs(){
   const el=document.getElementById("fec-tabs");
   if(!el)return;
   el.innerHTML=CATEGORIES.map(c=>
-    `<button class="fec-tab${c.id===activeCat?" active":""}" data-cat="${c.id}">${c.label}</button>`
+    `<button type="button" class="fec-tab${c.id===activeCat?" active":""}" data-cat="${c.id}">${c.label}</button>`
   ).join("");
   el.querySelectorAll(".fec-tab").forEach(btn=>{
     btn.addEventListener("click",()=>{activeCat=btn.dataset.cat;renderTabs();renderFeed();});
+  });
+}
+
+function renderSort(){
+  const el=document.getElementById("fec-sort-row");
+  if(!el)return;
+  el.innerHTML='<span class="fec-sort-label">Sort</span><div class="fec-sort-tabs" role="group">'+
+    SORT_OPTIONS.map(s=>`<button type="button" class="fec-sort-tab${s.id===activeSort?" active":""}" data-sort="${s.id}">${s.label}</button>`).join("")+
+    "</div>";
+  el.querySelectorAll(".fec-sort-tab").forEach(btn=>{
+    btn.addEventListener("click",()=>{activeSort=btn.dataset.sort;renderSort();renderFeed();});
   });
 }
 
@@ -94,16 +143,20 @@ function renderFeed(){
   if(!el)return;
   const filtered=activeCat==="all"?articles:articles.filter(a=>a.categoryId===activeCat);
   if(!filtered.length){el.innerHTML='<div class="fec-empty">No articles in this category yet.</div>';return;}
-  el.innerHTML=filtered.map((a,i)=>{
+  const ordered=sortArticles(filtered);
+  el.innerHTML=ordered.map((a,i)=>{
     const href=safeHref(a.url);
     const tag=href?"a":"div";
     const attrs=href?`href="${href}" target="_blank" rel="noopener noreferrer"`:"";
     const color=a.categoryColor||"#7C3AED";
+    const ds=formatArticleDate(a.publishedAt);
+    const dateHtml=ds?`<div class="fec-card-date">${esc(ds)}</div>`:"";
     return `<${tag} class="fec-card" ${attrs} style="animation-delay:${i*0.04}s">
       <div class="fec-card-top">
         <span class="fec-card-cat" style="color:${color}">${esc(a.categoryLabel||a.categoryId)}</span>
         <span class="fec-card-source">${a.source?"via "+esc(a.source):""}</span>
       </div>
+      ${dateHtml}
       <h3 class="fec-card-title">${esc(a.title)}</h3>
       <p class="fec-card-summary">${esc(a.summary)}</p>
     </${tag}>`;
@@ -125,6 +178,7 @@ async function loadArticles(){
     articles=data.articles||data;
     renderTimestamp(data.generated);
     renderTabs();
+    renderSort();
     renderFeed();
   }catch(e){
     console.error("FEC Insider: failed to load articles",e);
@@ -284,11 +338,18 @@ function injectStyles(){
 .fec-wrap{max-width:740px;margin:0 auto;padding:32px 20px 120px}
 
 /* Tabs */
-.fec-tabs{display:flex;gap:6px;margin-bottom:28px;overflow-x:auto;padding-bottom:2px;scrollbar-width:none}
+.fec-tabs{display:flex;gap:6px;margin-bottom:14px;overflow-x:auto;padding-bottom:2px;scrollbar-width:none}
 .fec-tabs::-webkit-scrollbar{display:none}
 .fec-tab{background:transparent;border:1px solid transparent;border-radius:100rem;padding:8px 16px;color:rgba(255,255,255,.75);font-family:inherit;font-size:14px;font-weight:500;cursor:pointer;white-space:nowrap;transition:all .2s}
 .fec-tab:hover{background:rgba(255,255,255,.06);color:#fff}
 .fec-tab.active{background:rgba(124,58,237,.1);color:#fff;box-shadow:inset 0 0 0 1px rgba(124,58,237,.3),inset 0 0 0 2px rgba(255,255,255,.06)}
+.fec-sort-row{display:flex;align-items:center;gap:10px;margin-bottom:22px;flex-wrap:wrap}
+.fec-sort-label{font-size:13px;font-weight:500;color:rgba(255,255,255,.45);flex-shrink:0}
+.fec-sort-tabs{display:flex;gap:4px;overflow-x:auto;flex:1;min-width:0;padding-bottom:2px;scrollbar-width:none}
+.fec-sort-tabs::-webkit-scrollbar{display:none}
+.fec-sort-tab{background:transparent;border:1px solid transparent;border-radius:100rem;padding:6px 12px;color:rgba(255,255,255,.75);font-family:inherit;font-size:13px;font-weight:500;cursor:pointer;white-space:nowrap;transition:all .2s}
+.fec-sort-tab:hover{background:rgba(255,255,255,.06);color:#fff}
+.fec-sort-tab.active{background:rgba(124,58,237,.1);color:#fff;box-shadow:inset 0 0 0 1px rgba(124,58,237,.3),inset 0 0 0 2px rgba(255,255,255,.06)}
 
 /* Feed */
 .fec-feed{display:flex;flex-direction:column;gap:14px}
@@ -296,7 +357,8 @@ function injectStyles(){
 a.fec-card{cursor:pointer}
 .fec-card:hover{transform:translateY(-2px);box-shadow:0 0 0 1px rgba(255,255,255,.22),0 4px 6px rgba(0,0,0,.12),0 20px 40px -10px rgba(0,0,0,.55)}
 a.fec-card:hover .fec-card-title{text-decoration:underline;text-decoration-color:#7C3AED;text-decoration-thickness:2px;text-underline-offset:3px}
-.fec-card-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:8px}
+.fec-card-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:6px}
+.fec-card-date{font-size:12px;font-weight:600;color:rgba(7,7,20,.5);letter-spacing:.02em;margin-bottom:10px}
 .fec-card-cat{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;white-space:nowrap}
 .fec-card-source{font-size:12px;color:rgba(7,7,20,.5);text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .fec-card-title{font-size:18px;font-weight:600;letter-spacing:-.01em;line-height:1.3;color:#070714;margin:0 0 8px}
