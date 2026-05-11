@@ -157,6 +157,30 @@
     letter-spacing: 0.02em;
     margin-bottom: 10px;
   }
+  .card-meta {
+    display: flex; align-items: center; flex-wrap: wrap; gap: 6px 10px;
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  .card-meta .card-date { margin-bottom: 0; }
+  .card-meta-sep {
+    color: var(--ink-50);
+    opacity: 0.45;
+    font-weight: 400;
+    user-select: none;
+  }
+  .card-curator {
+    display: inline-block;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 100rem;
+    background: rgba(124, 58, 237, 0.12);
+    color: var(--accent);
+    border: 1px solid rgba(124, 58, 237, 0.22);
+  }
   .card-cat {
     font-family: 'Lato', sans-serif; font-size: 12px; font-weight: 700;
     text-transform: uppercase; letter-spacing: 0.1em; white-space: nowrap;
@@ -546,9 +570,14 @@ function sortArticles(list) {
   } else if (activeSort === "oldest") {
     out.sort((a, b) => parseArticleTime(a.publishedAt) - parseArticleTime(b.publishedAt));
   } else if (activeSort === "recommended") {
+    const n = (x) => {
+      if (typeof x === "number" && !isNaN(x)) return x;
+      if (typeof x === "string" && /^\d+$/.test(x)) return parseInt(x, 10);
+      return 0;
+    };
     out.sort((a, b) => {
-      const sa = typeof a.curatorScore === "number" ? a.curatorScore : 0;
-      const sb = typeof b.curatorScore === "number" ? b.curatorScore : 0;
+      const sa = n(a.curatorScore);
+      const sb = n(b.curatorScore);
       if (sb !== sa) return sb - sa;
       return parseArticleTime(b.publishedAt) - parseArticleTime(a.publishedAt);
     });
@@ -608,14 +637,24 @@ function renderFeed() {
     const attrs = href ? `href="${href}" target="_blank" rel="noopener noreferrer"` : "";
     const catColor = a.categoryColor || "var(--accent)";
     const dateStr = formatArticleDate(a.publishedAt);
-    const dateHtml = dateStr ? `<div class="card-date">${dateStr}</div>` : "";
+    let score = a.curatorScore;
+    if (typeof score === "string" && /^\d+$/.test(score)) score = parseInt(score, 10);
+    const hasScore = typeof score === "number" && !isNaN(score);
+    const scoreHtml = hasScore
+      ? `<span class="card-curator" title="AI curator score (1–100): higher means more important for FEC operators.">Pick ${Math.min(100, Math.max(1, score))}</span>`
+      : "";
+    let metaHtml = "";
+    if (dateStr || scoreHtml) {
+      const sep = dateStr && scoreHtml ? '<span class="card-meta-sep" aria-hidden="true">·</span>' : "";
+      metaHtml = `<div class="card-meta">${dateStr ? `<span class="card-date">${dateStr}</span>` : ""}${sep}${scoreHtml}</div>`;
+    }
     return `
     <${tag} class="card" ${attrs} style="animation-delay: ${i * 0.05}s">
       <div class="card-top">
         <span class="card-cat" style="color: ${catColor}">${a.categoryLabel || a.category}</span>
         <span class="card-source">${a.source ? 'via ' + a.source : ''}</span>
       </div>
-      ${dateHtml}
+      ${metaHtml}
       <h3>${a.title}</h3>
       <p>${a.summary}</p>
     </${tag}>`;

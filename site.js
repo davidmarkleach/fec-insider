@@ -55,12 +55,8 @@ function sortArticles(list){
   }else if(activeSort==="oldest"){
     out.sort((a,b)=>parseArticleTime(a.publishedAt)-parseArticleTime(b.publishedAt));
   }else if(activeSort==="recommended"){
-    out.sort((a,b)=>{
-      const sa=typeof a.curatorScore==="number"?a.curatorScore:0;
-      const sb=typeof b.curatorScore==="number"?b.curatorScore:0;
-      if(sb!==sa)return sb-sa;
-      return parseArticleTime(b.publishedAt)-parseArticleTime(a.publishedAt);
-    });
+    const n=(x)=>{if(typeof x==="number"&&!isNaN(x))return x;if(typeof x==="string"&&/^\d+$/.test(x))return parseInt(x,10);return 0;};
+    out.sort((a,b)=>{const sa=n(a.curatorScore),sb=n(b.curatorScore);if(sb!==sa)return sb-sa;return parseArticleTime(b.publishedAt)-parseArticleTime(a.publishedAt);});
   }
   return out;
 }
@@ -150,13 +146,18 @@ function renderFeed(){
     const attrs=href?`href="${href}" target="_blank" rel="noopener noreferrer"`:"";
     const color=a.categoryColor||"#7C3AED";
     const ds=formatArticleDate(a.publishedAt);
-    const dateHtml=ds?`<div class="fec-card-date">${esc(ds)}</div>`:"";
+    let sc=a.curatorScore;
+    if(typeof sc==="string"&&/^\d+$/.test(sc))sc=parseInt(sc,10);
+    const hasSc=typeof sc==="number"&&!isNaN(sc);
+    const pick=hasSc?`<span class="fec-card-curator" title="AI curator score (1–100): higher means more important for FEC operators.">Pick ${Math.min(100,Math.max(1,sc))}</span>`:"";
+    let meta="";
+    if(ds||pick){const sep=ds&&pick?'<span class="fec-card-meta-sep" aria-hidden="true">·</span>':"";meta=`<div class="fec-card-meta">${ds?`<span class="fec-card-date">${esc(ds)}</span>`:""}${sep}${pick}</div>`;}
     return `<${tag} class="fec-card" ${attrs} style="animation-delay:${i*0.04}s">
       <div class="fec-card-top">
         <span class="fec-card-cat" style="color:${color}">${esc(a.categoryLabel||a.categoryId)}</span>
         <span class="fec-card-source">${a.source?"via "+esc(a.source):""}</span>
       </div>
-      ${dateHtml}
+      ${meta}
       <h3 class="fec-card-title">${esc(a.title)}</h3>
       <p class="fec-card-summary">${esc(a.summary)}</p>
     </${tag}>`;
@@ -358,7 +359,11 @@ a.fec-card{cursor:pointer}
 .fec-card:hover{transform:translateY(-2px);box-shadow:0 0 0 1px rgba(255,255,255,.22),0 4px 6px rgba(0,0,0,.12),0 20px 40px -10px rgba(0,0,0,.55)}
 a.fec-card:hover .fec-card-title{text-decoration:underline;text-decoration-color:#7C3AED;text-decoration-thickness:2px;text-underline-offset:3px}
 .fec-card-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:6px}
+.fec-card-meta{display:flex;align-items:center;flex-wrap:wrap;gap:6px 10px;font-size:12px;margin-bottom:10px}
+.fec-card-meta .fec-card-date{margin-bottom:0}
+.fec-card-meta-sep{color:rgba(7,7,20,.5);opacity:.45;font-weight:400;user-select:none}
 .fec-card-date{font-size:12px;font-weight:600;color:rgba(7,7,20,.5);letter-spacing:.02em;margin-bottom:10px}
+.fec-card-curator{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:3px 9px;border-radius:100rem;background:rgba(124,58,237,.12);color:#7C3AED;border:1px solid rgba(124,58,237,.22)}
 .fec-card-cat{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;white-space:nowrap}
 .fec-card-source{font-size:12px;color:rgba(7,7,20,.5);text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .fec-card-title{font-size:18px;font-weight:600;letter-spacing:-.01em;line-height:1.3;color:#070714;margin:0 0 8px}
