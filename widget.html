@@ -194,8 +194,7 @@
   .card-curator {
     display: inline-block;
     font-size: 11px; font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
+    letter-spacing: 0.02em;
     padding: 3px 9px;
     border-radius: 100rem;
     background: rgba(124, 58, 237, 0.12);
@@ -792,7 +791,7 @@ function renderFeed() {
     if (typeof score === "string" && /^\d+$/.test(score)) score = parseInt(score, 10);
     const hasScore = typeof score === "number" && !isNaN(score);
     const scoreHtml = hasScore
-      ? `<span class="card-curator" title="AI curator score (1–100): higher means more important for FEC operators.">Pick ${Math.min(100, Math.max(1, score))}</span>`
+      ? `<span class="card-curator" title="AI score (1–100): higher means more important for FEC operators.">AI Score ${Math.min(100, Math.max(1, score))}</span>`
       : "";
     let metaHtml = "";
     if (dateStr || scoreHtml) {

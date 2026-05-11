@@ -149,7 +149,7 @@ function renderFeed(){
     let sc=a.curatorScore;
     if(typeof sc==="string"&&/^\d+$/.test(sc))sc=parseInt(sc,10);
     const hasSc=typeof sc==="number"&&!isNaN(sc);
-    const pick=hasSc?`<span class="fec-card-curator" title="AI curator score (1–100): higher means more important for FEC operators.">Pick ${Math.min(100,Math.max(1,sc))}</span>`:"";
+    const pick=hasSc?`<span class="fec-card-curator" title="AI score (1–100): higher means more important for FEC operators.">AI Score ${Math.min(100,Math.max(1,sc))}</span>`:"";
     let meta="";
     if(ds||pick){const sep=ds&&pick?'<span class="fec-card-meta-sep" aria-hidden="true">·</span>':"";meta=`<div class="fec-card-meta">${ds?`<span class="fec-card-date">${esc(ds)}</span>`:""}${sep}${pick}</div>`;}
     return `<${tag} class="fec-card" ${attrs} style="animation-delay:${i*0.04}s">
@@ -363,7 +363,7 @@ a.fec-card:hover .fec-card-title{text-decoration:underline;text-decoration-color
 .fec-card-meta .fec-card-date{margin-bottom:0}
 .fec-card-meta-sep{color:rgba(7,7,20,.5);opacity:.45;font-weight:400;user-select:none}
 .fec-card-date{font-size:12px;font-weight:600;color:rgba(7,7,20,.5);letter-spacing:.02em;margin-bottom:10px}
-.fec-card-curator{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:3px 9px;border-radius:100rem;background:rgba(124,58,237,.12);color:#7C3AED;border:1px solid rgba(124,58,237,.22)}
+.fec-card-curator{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.02em;padding:3px 9px;border-radius:100rem;background:rgba(124,58,237,.12);color:#7C3AED;border:1px solid rgba(124,58,237,.22)}
 .fec-card-cat{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;white-space:nowrap}
 .fec-card-source{font-size:12px;color:rgba(7,7,20,.5);text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .fec-card-title{font-size:18px;font-weight:600;letter-spacing:-.01em;line-height:1.3;color:#070714;margin:0 0 8px}
