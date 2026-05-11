@@ -3,3 +3,6 @@ scripts/__pycache__/
 *.pyc
 .venv/
 venv/
+
+# Cloudflare Worker (local only)
+workers/fec-insider-chat/.dev.vars
