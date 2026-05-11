@@ -58,6 +58,7 @@ CATEGORY_META = {
 RSS_FEEDS = [
     "https://blooloop.com/feed/",
     "https://amusementtoday.com/feed/",
+    "https://www.inparkmagazine.com/feed/",
     "https://www.intergameonline.com/coin-op/rss",
     "https://www.intergameonline.com/leisure/rss",
     "https://news.google.com/rss/search?q=%22family+entertainment+center%22+when:14d&hl=en-US&gl=US&ceid=US:en",

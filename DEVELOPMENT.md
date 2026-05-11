@@ -18,7 +18,7 @@ Work on a branch and open a PR to `main`, or push directly to `main` if you pref
 | **`index.html`** | What GitHub Pages serves. **Regenerated when the daily job (or you) runs `curate.py`.** Do not treat it as the long-term source of truth unless you also update the template. |
 | **`articles.json`** | Article feed the page loads (same origin on Pages). **Updated by `curate.py` and the daily GitHub Action.** |
 | **`site.js`** | Optional embed for a host page with `#fec-app` or `[data-fec-app]`. Separate from the main `index.html` bundle. |
-| **`scripts/curate.py`** | Fetches RSS → Claude → writes **`articles.json`** and **`index.html`** from **`scripts/template.html`**. |
+| **`scripts/curate.py`** | Fetches RSS → Claude → writes **`articles.json`** and **`index.html`** from **`scripts/template.html`**. **RSS source URLs live in `RSS_FEEDS` inside this file** (append full feed URLs, not homepages). |
 
 **Rule of thumb:** For the main site UI, edit **`scripts/template.html`**, then run curation locally or wait for the scheduled workflow so **`index.html`** stays aligned.
 

@@ -43,6 +43,17 @@ Optional env vars (see `curate.py` / Actions): `GA4_ID`, `CLARITY_ID`, `CHAT_API
 
 This writes **`../articles.json`** and **`../index.html`** from **`template.html`**. Commit those if you want them on GitHub.
 
+### Adding or removing RSS sources
+
+Sources are the **`RSS_FEEDS`** list in **`scripts/curate.py`**. Append the **full RSS or Atom URL** (not the site homepage). Examples:
+
+- Many WordPress sites expose **`https://example.com/feed/`**.
+- Use your browser’s “View page source” or the site’s footer for an **RSS** link, or search *“site name RSS”*.
+
+**Amusement Today** is already included (`https://amusementtoday.com/feed/`). **InPark Magazine** is included (`https://www.inparkmagazine.com/feed/`).
+
+After editing the list, push to `main` (or run `curate.py` locally) so the next curation picks up the new feed.
+
 ---
 
 ## GitHub Actions checklist
