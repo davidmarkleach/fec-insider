@@ -1,8 +1,7 @@
 /**
- * FEC Insider — chat, feedback, subscribe (Ghost members).
- * All secrets must come from env (Wrangler secrets); never hardcode in source.
+ * FEC Insider — chat, feedback, subscribe (Zapier webhooks).
+ * Secrets via env / Wrangler; never hardcode in source.
  */
-
 const SYSTEM_PROMPT =
   "You are the FEC Insider assistant, a helpful AI that answers questions about the Family Entertainment Center industry based on today's curated news. You have access to the latest articles. Be concise, friendly, and informative. If asked something not covered in the articles, say so honestly but offer general FEC industry knowledge when helpful. Keep responses under 3 sentences unless the user asks for detail.";
 
@@ -199,47 +198,7 @@ async function handleFeedback(request, env) {
   return jsonResponse({ success: true });
 }
 
-function hexToArrayBuffer(hex) {
-  const bytes = new Uint8Array(hex.length / 2);
-  for (let i = 0; i < hex.length; i += 2) {
-    bytes[i / 2] = parseInt(hex.substr(i, 2), 16);
-  }
-  return bytes.buffer;
-}
-
-function base64url(source) {
-  let str;
-  if (typeof source === "string") {
-    str = btoa(source);
-  } else {
-    const bytes = new Uint8Array(source);
-    let binary = "";
-    for (let i = 0; i < bytes.byteLength; i++) binary += String.fromCharCode(bytes[i]);
-    str = btoa(binary);
-  }
-  return str.replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
-}
-
-async function generateGhostJWT(keyId, secretHex) {
-  const now = Math.floor(Date.now() / 1000);
-  const header = { alg: "HS256", typ: "JWT", kid: keyId };
-  const payload = { iat: now, exp: now + 300, aud: "/admin/" };
-  const encodedHeader = base64url(JSON.stringify(header));
-  const encodedPayload = base64url(JSON.stringify(payload));
-  const signingInput = `${encodedHeader}.${encodedPayload}`;
-  const keyData = hexToArrayBuffer(secretHex);
-  const key = await crypto.subtle.importKey(
-    "raw",
-    keyData,
-    { name: "HMAC", hash: "SHA-256" },
-    false,
-    ["sign"],
-  );
-  const signature = await crypto.subtle.sign("HMAC", key, new TextEncoder().encode(signingInput));
-  return `${signingInput}.${base64url(signature)}`;
-}
-
-async function handleSubscribe(request, env, ctx) {
+async function handleSubscribe(request, env) {
   let body;
   try {
     body = await request.json();
@@ -254,78 +213,40 @@ async function handleSubscribe(request, env, ctx) {
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailTrimmed)) {
     return jsonResponse({ error: "Invalid email address" }, 400);
   }
-  const ghostUrl = env.GHOST_URL;
-  const keyId = env.GHOST_ADMIN_KEY_ID;
-  const secretHex = env.GHOST_ADMIN_KEY_SECRET;
-  if (!ghostUrl || !keyId || !secretHex) {
-    console.error("Ghost env not configured");
+  const nameTrimmed = name && typeof name === "string" && name.trim() ? name.trim() : null;
+  const hook = env.ZAPIER_SUBSCRIBE_WEBHOOK;
+  if (!hook) {
+    console.error("ZAPIER_SUBSCRIBE_WEBHOOK is not configured");
     return jsonResponse({ error: "Service misconfigured" }, 500);
   }
-  let token;
+  const payload = {
+    type: "subscribe",
+    timestamp: new Date().toISOString(),
+    email: emailTrimmed,
+    name: nameTrimmed,
+    user_agent: request.headers.get("User-Agent") || "",
+    page_url: request.headers.get("Referer") || "",
+    source: "fec-insider-widget",
+  };
   try {
-    token = await generateGhostJWT(keyId, secretHex);
-  } catch (err) {
-    console.error("JWT generation error:", err);
-    return jsonResponse({ error: "Internal server error" }, 500);
-  }
-  const memberData = { email: emailTrimmed };
-  if (name && typeof name === "string" && name.trim()) {
-    memberData.name = name.trim();
-  }
-  try {
-    const ghostRes = await fetch(`${ghostUrl.replace(/\/$/, "")}/ghost/api/admin/members/`, {
+    const zapRes = await fetch(hook, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Ghost ${token}`,
-      },
-      body: JSON.stringify({ members: [memberData] }),
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
     });
-    if (!ghostRes.ok) {
-      const errBody = await ghostRes.text();
-      console.error(`Ghost API error ${ghostRes.status}: ${errBody}`);
-      if (ghostRes.status === 422) {
-        let parsed;
-        try {
-          parsed = JSON.parse(errBody);
-        } catch {
-          /* ignore */
-        }
-        const msg = parsed?.errors?.[0]?.message || "Validation error, cannot save member.";
-        return jsonResponse({ error: msg }, 422);
-      }
+    if (!zapRes.ok) {
+      const errText = await zapRes.text();
+      console.error(`Zapier subscribe webhook failed: ${zapRes.status} ${errText}`);
       return jsonResponse({ error: "Failed to subscribe. Please try again." }, 502);
-    }
-    const data = await ghostRes.json();
-    const member = data.members?.[0];
-    const resolvedEmail = member?.email || emailTrimmed;
-    const resolvedName = member?.name || memberData.name || null;
-    const hook = env.ZAPIER_SUBSCRIBE_WEBHOOK;
-    if (hook) {
-      const zapPayload = {
-        type: "subscribe",
-        timestamp: new Date().toISOString(),
-        email: resolvedEmail,
-        name: resolvedName,
-        user_agent: request.headers.get("User-Agent") || "",
-        page_url: request.headers.get("Referer") || "",
-        source: "fec-insider-widget",
-      };
-      const zapPromise = fetch(hook, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(zapPayload),
-      }).catch((err) => console.error("Zapier subscribe webhook error:", err));
-      if (ctx?.waitUntil) ctx.waitUntil(zapPromise);
     }
     return jsonResponse({
       success: true,
       message: "You're subscribed to FEC Insider!",
-      member: { email: resolvedEmail },
+      member: { email: emailTrimmed },
     });
   } catch (err) {
     console.error("Subscribe handler error:", err);
-    return jsonResponse({ error: "Internal server error" }, 500);
+    return jsonResponse({ error: "Failed to subscribe. Please try again." }, 502);
   }
 }
 
@@ -347,7 +268,7 @@ export default {
     if (Math.random() < 0.01) pruneRateLimitMap();
     if (path === "/chat") return handleChat(request, env, ctx);
     if (path === "/feedback") return handleFeedback(request, env);
-    if (path === "/subscribe") return handleSubscribe(request, env, ctx);
+    if (path === "/subscribe") return handleSubscribe(request, env);
     return jsonResponse({ error: "Not found" }, 404);
   },
 };
